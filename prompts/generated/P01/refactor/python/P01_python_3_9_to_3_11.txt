@@ -1,0 +1,33 @@
+El siguiente codigo resuelve "Word Frequency" en Python version 3.9:
+
+```python
+﻿# P01: Word Frequency — Python 3.9 (codigo base para refactoring)
+# Estilo: imperativo clasico, compatible con Python 3.9
+from typing import List, Dict
+
+def word_frequency(words: List[str]) -> Dict[str, int]:
+    result = {}
+    for word in words:
+        if word in result:
+            result[word] = result[word] + 1
+        else:
+            result[word] = 1
+    return result
+
+# Casos de prueba
+assert word_frequency(["the", "fox", "the"]) == {"the": 2, "fox": 1}
+assert word_frequency([]) == {}
+assert word_frequency(["hello"]) == {"hello": 1}
+```
+
+Migra este codigo a Python version 3.11:
+
+1. CARACTERISTICAS NUEVAS: Usa las de Python 3.11 que mejoren legibilidad o rendimiento. Al inicio, en un comentario, lista cuales usaste y por que.
+
+2. COMPORTAMIENTO IDENTICO: Misma logica, mismos resultados.
+
+3. NOMBRE DE FUNCION: Debe permanecer exactamente "word_frequency".
+
+4. MISMOS TESTS: Conserva los casos de prueba, adaptados a Python 3.11.
+
+5. EXPLICA TUS CAMBIOS: Al final en un comentario, enumera los cambios y por que son idiomaticos en Python 3.11.

@@ -1,0 +1,29 @@
+Resuelve el siguiente problema en Python version 3.9, usando ESTRICTAMENTE el paradigma funcional.
+
+Problema: Word Frequency
+﻿Escribe una funcion en Python que, dada una lista de palabras (strings), retorne
+un diccionario/mapa que asocie cada palabra unica con el numero de veces que aparece.
+
+Requisitos:
+- El nombre de la funcion debe ser exactamente: word_frequency
+- Si la lista de entrada esta vacia, retorna una estructura vacia.
+- No uses librerias externas, solo las de la biblioteca estandar del lenguaje.
+
+Ejemplo de entrada:  ["the", "fox", "the"]
+Ejemplo de salida:   {"the": 2, "fox": 1}
+
+Incluye al final del archivo 3 casos de prueba simples usando assert o el mecanismo
+estandar del lenguaje para validar tu implementacion.
+
+
+=== REQUISITOS ADICIONALES ===
+
+1. LENGUAJE Y VERSION: Usa EXCLUSIVAMENTE Python 3.9. Usa las caracteristicas nuevas de 3.9 cuando esten disponibles.
+
+2. PARADIGMA FUNCIONAL: Usa inmutabilidad. Emplea map(),filter(),functools.reduce(). Evita for/while con estado mutable.
+
+3. NOMBRE DE FUNCION: Exactamente "word_frequency".
+
+4. BIBLIOTECA ESTANDAR UNICAMENTE: No uses librerias de terceros.
+
+5. TESTS: Incluye al final 3 casos de prueba usando el mecanismo estandar de Python.

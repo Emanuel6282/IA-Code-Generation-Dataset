@@ -1,0 +1,5 @@
+﻿prompt_id,problem_name,language,target_version,prompt_type,paradigm_requested,ai_model_name,ai_tier,prompt_text,code_generated,compiles_or_runs,tests_passed_ratio,loc,cyclomatic_complexity,exec_time_ms,version_feature_score,deprecated_features_count,paradigm_detected,response_timestamp,notes
+P01,Word Frequency,python,3.9,neutral,neutral,gpt-4o,paid,,,,,,,,,,,,
+P01,Word Frequency,python,3.9,neutral,neutral,claude-3-5-sonnet,paid,,,,,,,,,,,,
+P01,Word Frequency,python,3.9,neutral,neutral,gemini-1.5-pro,paid,,,,,,,,,,,,
+P01,Word Frequency,python,3.9,neutral,neutral,gemini-1.5-flash,free,,,,,,,,,,,,

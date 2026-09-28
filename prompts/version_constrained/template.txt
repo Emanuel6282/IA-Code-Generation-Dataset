@@ -1,0 +1,58 @@
+﻿=============================================================================
+TEMPLATE: PROMPT RESTRINGIDO (Version-Constrained)
+=============================================================================
+Reemplaza las variables entre llaves antes de enviar al modelo:
+  {PROBLEM_DESC}     -> descripcion del problema (copia desde prompts/neutral/)
+  {LANGUAGE}         -> python | java | scala
+  {VERSION}          -> 3.9 | 3.11 | 3.14 | 8 | 17 | 21 | 2.13 | 3.3 | 3.8
+  {PARADIGM}         -> iterativo | funcional
+  {PARADIGM_DETAIL}  -> detalle del paradigma (ver abajo)
+  {FUNC_NAME}        -> nombre exacto de la funcion (ver README.md)
+=============================================================================
+
+--- PROMPT A ENVIAR ---
+
+Resuelve el siguiente problema en {LANGUAGE} version {VERSION}, utilizando
+estrictamente el paradigma {PARADIGM}.
+
+Problema:
+{PROBLEM_DESC}
+
+Requisitos obligatorios:
+1. Usa EXCLUSIVAMENTE {LANGUAGE} {VERSION}. Si usas una caracteristica o API
+   introducida en una version posterior, se considerara incorrecto.
+2. Paradigma {PARADIGM}: {PARADIGM_DETAIL}
+3. El nombre de la funcion debe ser exactamente: {FUNC_NAME}
+4. No uses librerias externas; solo la biblioteca estandar de {LANGUAGE} {VERSION}.
+5. Incluye al final 3 casos de prueba usando el mecanismo de testing estandar
+   del lenguaje que demuestren que tu implementacion es correcta.
+
+--- FIN DEL PROMPT ---
+
+=============================================================================
+DETALLES DE PARADIGMA (copiar el texto correspondiente en {PARADIGM_DETAIL})
+=============================================================================
+
+PARADIGMA ITERATIVO:
+  "Usa bucles explicitos (for, while), estructuras de datos mutables
+   (listas, arrays, stacks con push/pop). Evita funciones de orden superior
+   como map, filter, reduce, y evita la recursion."
+
+PARADIGMA FUNCIONAL:
+  "Usa inmutabilidad: no modifiques variables existentes. Emplea funciones de
+   orden superior (map, filter, reduce/fold, flatMap). Si necesitas iterar,
+   usa recursion de cola (@tailrec en Scala, itertools en Python, streams en Java).
+   Evita bucles for/while explicitos con estado mutable."
+
+=============================================================================
+TABLA DE COMBINACIONES (7 problemas x 3 lenguajes x 3 versiones x 2 paradigmas = 126 prompts)
+Usa esta tabla para llevar registro:
+
+| Problema | Lenguaje | Version | Paradigma   | GPT-4o | Claude | Gemini Pro | Gemini Flash |
+|----------|----------|---------|-------------|--------|--------|------------|--------------|
+| P01      | Python   | 3.9     | iterativo   |        |        |            |              |
+| P01      | Python   | 3.9     | funcional   |        |        |            |              |
+| P01      | Python   | 3.11    | iterativo   |        |        |            |              |
+| ...      | ...      | ...     | ...         |        |        |            |              |
+(continua para los 7 problemas x 3 lenguajes x 3 versiones x 2 paradigmas)
+=============================================================================

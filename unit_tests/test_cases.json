@@ -1,0 +1,149 @@
+﻿{
+  "problems": {
+    "P01": {
+      "name": "Word Frequency",
+      "description": "Given a list of words (strings), return a dictionary mapping each unique word to the number of times it appears.",
+      "function_names": { "python": "word_frequency", "java": "wordFrequency", "scala": "wordFrequency" },
+      "test_cases": [
+        {"id": "TC01", "input": {"words": ["the", "fox", "the"]}, "expected": {"the": 2, "fox": 1}, "note": "basic repeated word"},
+        {"id": "TC02", "input": {"words": []}, "expected": {}, "note": "empty list"},
+        {"id": "TC03", "input": {"words": ["hello"]}, "expected": {"hello": 1}, "note": "single word"},
+        {"id": "TC04", "input": {"words": ["a", "b", "a", "c", "b", "a"]}, "expected": {"a": 3, "b": 2, "c": 1}, "note": "multiple frequencies"},
+        {"id": "TC05", "input": {"words": ["cat", "dog", "cat", "bird", "dog", "cat"]}, "expected": {"cat": 3, "dog": 2, "bird": 1}, "note": "three words"}
+      ]
+    },
+    "P02": {
+      "name": "Binary Search",
+      "description": "Given a sorted list of integers and a target, return the index of the target. Return -1 if not found.",
+      "function_names": { "python": "binary_search", "java": "binarySearch", "scala": "binarySearch" },
+      "test_cases": [
+        {"id": "TC01", "input": {"arr": [1, 3, 5, 7, 9], "target": 5}, "expected": 2, "note": "target in middle"},
+        {"id": "TC02", "input": {"arr": [1, 3, 5, 7, 9], "target": 1}, "expected": 0, "note": "target at start"},
+        {"id": "TC03", "input": {"arr": [1, 3, 5, 7, 9], "target": 9}, "expected": 4, "note": "target at end"},
+        {"id": "TC04", "input": {"arr": [1, 3, 5, 7, 9], "target": 4}, "expected": -1, "note": "target not found"},
+        {"id": "TC05", "input": {"arr": [], "target": 1}, "expected": -1, "note": "empty array"},
+        {"id": "TC06", "input": {"arr": [1], "target": 1}, "expected": 0, "note": "single element found"},
+        {"id": "TC07", "input": {"arr": [2, 4, 6, 8, 10, 12], "target": 10}, "expected": 4, "note": "even-length array"}
+      ]
+    },
+    "P03": {
+      "name": "Flatten Nested List",
+      "description": "Given an arbitrarily nested list of integers, return a flat list containing all integers in order.",
+      "function_names": { "python": "flatten", "java": "flatten", "scala": "flatten" },
+      "test_cases": [
+        {"id": "TC01", "input": {"nested": [1, [2, 3], [4, [5, 6]]]}, "expected": [1, 2, 3, 4, 5, 6], "note": "basic nesting"},
+        {"id": "TC02", "input": {"nested": []}, "expected": [], "note": "empty list"},
+        {"id": "TC03", "input": {"nested": [1, 2, 3]}, "expected": [1, 2, 3], "note": "already flat"},
+        {"id": "TC04", "input": {"nested": [[1, [2, [3, [4]]]]]}, "expected": [1, 2, 3, 4], "note": "deeply nested"},
+        {"id": "TC05", "input": {"nested": [[]]}, "expected": [], "note": "nested empty list"},
+        {"id": "TC06", "input": {"nested": [1, [], 2, [3, []]]}, "expected": [1, 2, 3], "note": "mixed empty sublists"}
+      ]
+    },
+    "P04": {
+      "name": "Balanced Parentheses",
+      "description": "Given a string containing '(', ')', '[', ']', '{', '}', return True if all brackets are correctly balanced and closed in order.",
+      "function_names": { "python": "is_balanced", "java": "isBalanced", "scala": "isBalanced" },
+      "test_cases": [
+        {"id": "TC01", "input": {"s": "()"}, "expected": true, "note": "simple balanced"},
+        {"id": "TC02", "input": {"s": "()[]{}"}, "expected": true, "note": "multiple types balanced"},
+        {"id": "TC03", "input": {"s": "(]"}, "expected": false, "note": "mismatched"},
+        {"id": "TC04", "input": {"s": "([)]"}, "expected": false, "note": "interleaved"},
+        {"id": "TC05", "input": {"s": "{[]}"}, "expected": true, "note": "nested balanced"},
+        {"id": "TC06", "input": {"s": ""}, "expected": true, "note": "empty string"},
+        {"id": "TC07", "input": {"s": "("}, "expected": false, "note": "unclosed"},
+        {"id": "TC08", "input": {"s": "((()))"}, "expected": true, "note": "deeply nested same type"}
+      ]
+    },
+    "P05": {
+      "name": "Transaction Pipeline",
+      "description": "Given a list of transaction objects (each with 'id': int, 'amount': float, 'status': str, 'category': str), filter those where status=='approved' AND amount>0, apply a 10% processing fee (multiply by 0.9), and return the total sum rounded to 2 decimal places.",
+      "function_names": { "python": "process_transactions", "java": "processTransactions", "scala": "processTransactions" },
+      "test_cases": [
+        {
+          "id": "TC01",
+          "input": {"transactions": [
+            {"id": 1, "amount": 100.0, "status": "approved", "category": "income"},
+            {"id": 2, "amount": -50.0, "status": "approved", "category": "income"},
+            {"id": 3, "amount": 200.0, "status": "rejected", "category": "income"},
+            {"id": 4, "amount": 150.0, "status": "approved", "category": "expense"}
+          ]},
+          "expected": 225.0,
+          "note": "filter negative and rejected, apply 10% fee: (100+150)*0.9=225"
+        },
+        {"id": "TC02", "input": {"transactions": []}, "expected": 0.0, "note": "empty list"},
+        {
+          "id": "TC03",
+          "input": {"transactions": [{"id": 1, "amount": 200.0, "status": "rejected", "category": "income"}]},
+          "expected": 0.0,
+          "note": "all rejected"
+        },
+        {
+          "id": "TC04",
+          "input": {"transactions": [{"id": 1, "amount": 1000.0, "status": "approved", "category": "income"}]},
+          "expected": 900.0,
+          "note": "single approved: 1000*0.9=900"
+        },
+        {
+          "id": "TC05",
+          "input": {"transactions": [
+            {"id": 1, "amount": 500.0, "status": "approved", "category": "income"},
+            {"id": 2, "amount": 300.0, "status": "approved", "category": "expense"}
+          ]},
+          "expected": 720.0,
+          "note": "(500+300)*0.9=720"
+        }
+      ]
+    },
+    "P06": {
+      "name": "Maximum Subarray Sum (Kadane)",
+      "description": "Given an array of integers, return the sum of the contiguous subarray with the largest sum.",
+      "function_names": { "python": "max_subarray_sum", "java": "maxSubarraySum", "scala": "maxSubarraySum" },
+      "test_cases": [
+        {"id": "TC01", "input": {"arr": [-2, 1, -3, 4, -1, 2, 1, -5, 4]}, "expected": 6, "note": "classic Kadane example"},
+        {"id": "TC02", "input": {"arr": [1]}, "expected": 1, "note": "single positive"},
+        {"id": "TC03", "input": {"arr": [-1]}, "expected": -1, "note": "single negative"},
+        {"id": "TC04", "input": {"arr": [5, 4, -1, 7, 8]}, "expected": 23, "note": "all positive except one"},
+        {"id": "TC05", "input": {"arr": [-2, -1]}, "expected": -1, "note": "all negative, return least negative"},
+        {"id": "TC06", "input": {"arr": [1, 2, 3, 4, 5]}, "expected": 15, "note": "all positive"},
+        {"id": "TC07", "input": {"arr": [-3, 2, -1, 4, -2]}, "expected": 5, "note": "subarray in middle"}
+      ]
+    },
+    "P07": {
+      "name": "2D Flood Fill",
+      "description": "Given a 2D grid of integers, a starting position (row, col), and a new_color integer, replace the color at (row, col) and all 4-directionally connected cells of the same original color with new_color. Return the modified grid.",
+      "function_names": { "python": "flood_fill", "java": "floodFill", "scala": "floodFill" },
+      "test_cases": [
+        {
+          "id": "TC01",
+          "input": {"grid": [[1,1,1],[1,1,0],[1,0,1]], "row": 1, "col": 1, "new_color": 2},
+          "expected": [[2,2,2],[2,2,0],[2,0,1]],
+          "note": "classic flood fill"
+        },
+        {
+          "id": "TC02",
+          "input": {"grid": [[0,0,0],[0,0,0]], "row": 0, "col": 0, "new_color": 1},
+          "expected": [[1,1,1],[1,1,1]],
+          "note": "fill entire grid"
+        },
+        {
+          "id": "TC03",
+          "input": {"grid": [[1,1,1],[1,1,0],[1,0,1]], "row": 1, "col": 1, "new_color": 1},
+          "expected": [[1,1,1],[1,1,0],[1,0,1]],
+          "note": "same color, no change"
+        },
+        {
+          "id": "TC04",
+          "input": {"grid": [[0]], "row": 0, "col": 0, "new_color": 5},
+          "expected": [[5]],
+          "note": "1x1 grid"
+        },
+        {
+          "id": "TC05",
+          "input": {"grid": [[0,1,0],[1,0,1],[0,1,0]], "row": 0, "col": 0, "new_color": 3},
+          "expected": [[3,1,0],[1,0,1],[0,1,0]],
+          "note": "isolated cell"
+        }
+      ]
+    }
+  }
+}

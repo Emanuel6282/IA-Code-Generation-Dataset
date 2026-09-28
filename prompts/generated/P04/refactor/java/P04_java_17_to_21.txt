@@ -1,0 +1,47 @@
+El siguiente codigo resuelve "Balanced Parentheses" en Java version 17:
+
+```java
+﻿// P04: Balanced Parentheses — Java 8 (codigo base para refactoring)
+import java.util.Stack;
+import java.util.Map;
+import java.util.HashMap;
+
+public class P04BalancedParentheses_v8 {
+
+    public static boolean isBalanced(String s) {
+        Stack<Character> stack = new Stack<>();
+        Map<Character, Character> pairs = new HashMap<>();
+        pairs.put(')', '(');
+        pairs.put(']', '[');
+        pairs.put('}', '{');
+        for (char c : s.toCharArray()) {
+            if (c == '(' || c == '[' || c == '{') {
+                stack.push(c);
+            } else if (pairs.containsKey(c)) {
+                if (stack.isEmpty() || stack.peek() != pairs.get(c)) return false;
+                stack.pop();
+            }
+        }
+        return stack.isEmpty();
+    }
+
+    public static void main(String[] args) {
+        assert isBalanced("()") == true;
+        assert isBalanced("([)]") == false;
+        assert isBalanced("") == true;
+        System.out.println("All tests passed");
+    }
+}
+```
+
+Migra este codigo a Java version 21:
+
+1. CARACTERISTICAS NUEVAS: Usa las de Java 21 que mejoren legibilidad o rendimiento. Al inicio, en un comentario, lista cuales usaste y por que.
+
+2. COMPORTAMIENTO IDENTICO: Misma logica, mismos resultados.
+
+3. NOMBRE DE FUNCION: Debe permanecer exactamente "isBalanced".
+
+4. MISMOS TESTS: Conserva los casos de prueba, adaptados a Java 21.
+
+5. EXPLICA TUS CAMBIOS: Al final en un comentario, enumera los cambios y por que son idiomaticos en Java 21.

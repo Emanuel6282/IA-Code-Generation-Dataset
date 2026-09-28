@@ -1,0 +1,27 @@
+Resuelve el siguiente problema en Python version 3.9, usando ESTRICTAMENTE el paradigma funcional.
+
+Problema: Flatten Nested List
+﻿Escribe una funcion en Python que, dada una lista arbitrariamente anidada de enteros,
+retorne una lista plana con todos los enteros en el mismo orden de aparicion.
+
+Requisitos:
+- El nombre de la funcion debe ser exactamente: flatten
+- La funcion debe manejar cualquier nivel de anidamiento.
+- Lista vacia -> lista vacia.
+
+Ejemplo: [1, [2, 3], [4, [5, 6]]] -> [1, 2, 3, 4, 5, 6]
+
+Incluye al final del archivo 3 casos de prueba usando assert.
+
+
+=== REQUISITOS ADICIONALES ===
+
+1. LENGUAJE Y VERSION: Usa EXCLUSIVAMENTE Python 3.9. Usa las caracteristicas nuevas de 3.9 cuando esten disponibles.
+
+2. PARADIGMA FUNCIONAL: Usa inmutabilidad. Emplea map(),filter(),functools.reduce(). Evita for/while con estado mutable.
+
+3. NOMBRE DE FUNCION: Exactamente "flatten".
+
+4. BIBLIOTECA ESTANDAR UNICAMENTE: No uses librerias de terceros.
+
+5. TESTS: Incluye al final 3 casos de prueba usando el mecanismo estandar de Python.

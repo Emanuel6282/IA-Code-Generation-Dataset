@@ -1,0 +1,730 @@
+prompt_id,problem_name,language,target_version,prompt_type,paradigm_requested,ai_model_name,ai_tier,loc,compiles_or_runs,tests_passed_ratio,notes
+P01_java_17_funcional,Word Frequency,Java,17,version_constrained,funcional,ChatGPT Free,free,33,YES,1.0,
+P01_java_17_iterativo,Word Frequency,Java,17,version_constrained,iterativo,ChatGPT Free,free,44,YES,1.0,
+P01_java_17_to_21,Word Frequency,Java,17 -> 21,refactor,N/A,ChatGPT Free,free,78,YES,1.0,
+P01_java_21_funcional,Word Frequency,Java,21,version_constrained,funcional,ChatGPT Free,free,36,YES,1.0,
+P01_java_21_iterativo,Word Frequency,Java,21,version_constrained,iterativo,ChatGPT Free,free,44,YES,1.0,
+P01_java_8_funcional,Word Frequency,Java,8,version_constrained,funcional,ChatGPT Free,free,49,NO,0.0,Compilation Error
+P01_java_8_iterativo,Word Frequency,Java,8,version_constrained,iterativo,ChatGPT Free,free,44,NO,0.0,Compilation Error
+P01_java_8_to_17,Word Frequency,Java,8 -> 17,refactor,N/A,ChatGPT Free,free,63,YES,1.0,
+P01_java_neutral,Word Frequency,Java,cualquiera,neutral,neutral,ChatGPT Free,free,25,YES,1.0,
+P01_python_3.11_funcional,Word Frequency,Python,3.11,version_constrained,funcional,ChatGPT Free,free,20,NO,0.0,"File ""c:\Users\Ema\Documents\Dataset\unit_tests\python\test_p01_word_frequency.py"", line 33
+    cls.fn = staticmethod(cls.sol.word_frequency))
+                                                 ^
+Syntax"
+P01_python_3.11_iterativo,Word Frequency,Python,3.11,version_constrained,iterativo,ChatGPT Free,free,18,NO,0.0,"File ""c:\Users\Ema\Documents\Dataset\unit_tests\python\test_p01_word_frequency.py"", line 33
+    cls.fn = staticmethod(cls.sol.word_frequency))
+                                                 ^
+Syntax"
+P01_python_3.11_to_3.14,Word Frequency,Python,3.11 -> 3.14,refactor,N/A,ChatGPT Free,free,11,NO,0.0,"File ""c:\Users\Ema\Documents\Dataset\unit_tests\python\test_p01_word_frequency.py"", line 33
+    cls.fn = staticmethod(cls.sol.word_frequency))
+                                                 ^
+Syntax"
+P01_python_3.14_funcional,Word Frequency,Python,3.14,version_constrained,funcional,ChatGPT Free,free,22,NO,0.0,"File ""c:\Users\Ema\Documents\Dataset\unit_tests\python\test_p01_word_frequency.py"", line 33
+    cls.fn = staticmethod(cls.sol.word_frequency))
+                                                 ^
+Syntax"
+P01_python_3.14_iterativo,Word Frequency,Python,3.14,version_constrained,iterativo,ChatGPT Free,free,18,NO,0.0,"File ""c:\Users\Ema\Documents\Dataset\unit_tests\python\test_p01_word_frequency.py"", line 33
+    cls.fn = staticmethod(cls.sol.word_frequency))
+                                                 ^
+Syntax"
+P01_python_3.9_funcional,Word Frequency,Python,3.9,version_constrained,funcional,ChatGPT Free,free,20,NO,0.0,"File ""c:\Users\Ema\Documents\Dataset\unit_tests\python\test_p01_word_frequency.py"", line 33
+    cls.fn = staticmethod(cls.sol.word_frequency))
+                                                 ^
+Syntax"
+P01_python_3.9_iterativo,Word Frequency,Python,3.9,version_constrained,iterativo,ChatGPT Free,free,18,NO,0.0,"File ""c:\Users\Ema\Documents\Dataset\unit_tests\python\test_p01_word_frequency.py"", line 33
+    cls.fn = staticmethod(cls.sol.word_frequency))
+                                                 ^
+Syntax"
+P01_python_3.9_to_3.11,Word Frequency,Python,3.9 -> 3.11,refactor,N/A,ChatGPT Free,free,11,NO,0.0,"File ""c:\Users\Ema\Documents\Dataset\unit_tests\python\test_p01_word_frequency.py"", line 33
+    cls.fn = staticmethod(cls.sol.word_frequency))
+                                                 ^
+Syntax"
+P01_python_neutral,Word Frequency,Python,cualquiera,neutral,neutral,ChatGPT Free,free,14,NO,0.0,"File ""c:\Users\Ema\Documents\Dataset\unit_tests\python\test_p01_word_frequency.py"", line 33
+    cls.fn = staticmethod(cls.sol.word_frequency))
+                                                 ^
+Syntax"
+P01_scala_2.13_funcional,Word Frequency,Scala,2.13,version_constrained,funcional,ChatGPT Free,free,42,YES,1.0,
+P01_scala_2.13_iterativo,Word Frequency,Scala,2.13,version_constrained,iterativo,ChatGPT Free,free,30,YES,1.0,
+P01_scala_2.13_to_3.3,Word Frequency,Scala,2.13 -> 3.3,refactor,N/A,ChatGPT Free,free,24,YES,1.0,
+P01_scala_3.3_funcional,Word Frequency,Scala,3.3,version_constrained,funcional,ChatGPT Free,free,35,YES,1.0,
+P01_scala_3.3_iterativo,Word Frequency,Scala,3.3,version_constrained,iterativo,ChatGPT Free,free,29,YES,1.0,
+P01_scala_3.3_to_3.6,Word Frequency,Scala,3.3 -> 3.6,refactor,N/A,ChatGPT Free,free,24,YES,1.0,
+P01_scala_3.6_funcional,Word Frequency,Scala,3.6,version_constrained,funcional,ChatGPT Free,free,35,YES,1.0,
+P01_scala_3.6_iterativo,Word Frequency,Scala,3.6,version_constrained,iterativo,ChatGPT Free,free,29,YES,1.0,
+P01_scala_neutral,Word Frequency,Scala,cualquiera,neutral,neutral,ChatGPT Free,free,16,YES,1.0,
+P02_java_17_funcional,Binary Search,Java,17,version_constrained,funcional,ChatGPT Free,free,52,YES,0.29,
+P02_java_17_iterativo,Binary Search,Java,17,version_constrained,iterativo,ChatGPT Free,free,23,YES,1.0,
+P02_java_17_to_21,Binary Search,Java,17 -> 21,refactor,N/A,ChatGPT Free,free,23,YES,1.0,
+P02_java_21_funcional,Binary Search,Java,21,version_constrained,funcional,ChatGPT Free,free,53,YES,0.29,
+P02_java_21_iterativo,Binary Search,Java,21,version_constrained,iterativo,ChatGPT Free,free,23,YES,1.0,
+P02_java_8_funcional,Binary Search,Java,8,version_constrained,funcional,ChatGPT Free,free,17,YES,1.0,
+P02_java_8_iterativo,Binary Search,Java,8,version_constrained,iterativo,ChatGPT Free,free,23,YES,1.0,
+P02_java_8_to_17,Binary Search,Java,8 -> 17,refactor,N/A,ChatGPT Free,free,23,YES,1.0,
+P02_java_neutral,Binary Search,Java,cualquiera,neutral,neutral,ChatGPT Free,free,23,YES,1.0,
+P02_python_3.11_funcional,Binary Search,Python,3.11,version_constrained,funcional,ChatGPT Free,free,23,YES,1.0,
+P02_python_3.11_iterativo,Binary Search,Python,3.11,version_constrained,iterativo,ChatGPT Free,free,16,YES,1.0,
+P02_python_3.11_to_3.14,Binary Search,Python,3.11 -> 3.14,refactor,N/A,ChatGPT Free,free,15,YES,1.0,
+P02_python_3.14_funcional,Binary Search,Python,3.14,version_constrained,funcional,ChatGPT Free,free,23,YES,1.0,
+P02_python_3.14_iterativo,Binary Search,Python,3.14,version_constrained,iterativo,ChatGPT Free,free,16,YES,1.0,
+P02_python_3.9_funcional,Binary Search,Python,3.9,version_constrained,funcional,ChatGPT Free,free,27,YES,1.0,
+P02_python_3.9_iterativo,Binary Search,Python,3.9,version_constrained,iterativo,ChatGPT Free,free,16,YES,1.0,
+P02_python_3.9_to_3.11,Binary Search,Python,3.9 -> 3.11,refactor,N/A,ChatGPT Free,free,15,YES,1.0,
+P02_python_neutral,Binary Search,Python,cualquiera,neutral,neutral,ChatGPT Free,free,16,YES,1.0,
+P02_scala_2.13_funcional,Binary Search,Scala,2.13,version_constrained,funcional,ChatGPT Free,free,56,YES,1.0,
+P02_scala_2.13_iterativo,Binary Search,Scala,2.13,version_constrained,iterativo,ChatGPT Free,free,21,YES,1.0,
+P02_scala_2.13_to_3.3,Binary Search,Scala,2.13 -> 3.3,refactor,N/A,ChatGPT Free,free,18,YES,1.0,
+P02_scala_3.3_funcional,Binary Search,Scala,3.3,version_constrained,funcional,ChatGPT Free,free,48,YES,1.0,
+P02_scala_3.3_iterativo,Binary Search,Scala,3.3,version_constrained,iterativo,ChatGPT Free,free,32,YES,1.0,
+P02_scala_3.3_to_3.6,Binary Search,Scala,3.3 -> 3.6,refactor,N/A,ChatGPT Free,free,18,YES,1.0,
+P02_scala_3.6_funcional,Binary Search,Scala,3.6,version_constrained,funcional,ChatGPT Free,free,40,YES,1.0,
+P02_scala_3.6_iterativo,Binary Search,Scala,3.6,version_constrained,iterativo,ChatGPT Free,free,26,YES,1.0,
+P02_scala_neutral,Binary Search,Scala,cualquiera,neutral,neutral,ChatGPT Free,free,19,YES,1.0,
+P03_java_17_funcional,Flatten Nested List,Java,17,version_constrained,funcional,ChatGPT Free,free,100,YES,1.0,
+P03_java_17_iterativo,Flatten Nested List,Java,17,version_constrained,iterativo,ChatGPT Free,free,108,YES,0.6,
+P03_java_17_to_21,Flatten Nested List,Java,17 -> 21,refactor,N/A,ChatGPT Free,free,126,YES,1.0,
+P03_java_21_funcional,Flatten Nested List,Java,21,version_constrained,funcional,ChatGPT Free,free,54,YES,1.0,
+P03_java_21_iterativo,Flatten Nested List,Java,21,version_constrained,iterativo,ChatGPT Free,free,99,YES,0.6,
+P03_java_8_funcional,Flatten Nested List,Java,8,version_constrained,funcional,ChatGPT Free,free,60,NO,0.0,Compilation Error
+P03_java_8_iterativo,Flatten Nested List,Java,8,version_constrained,iterativo,ChatGPT Free,free,68,NO,0.0,Compilation Error
+P03_java_8_to_17,Flatten Nested List,Java,8 -> 17,refactor,N/A,ChatGPT Free,free,102,YES,1.0,
+P03_java_neutral,Flatten Nested List,Java,cualquiera,neutral,neutral,ChatGPT Free,free,25,YES,1.0,
+P03_python_3.11_funcional,Flatten Nested List,Python,3.11,version_constrained,funcional,ChatGPT Free,free,26,NO,0.0,"File ""c:\Users\Ema\Documents\Dataset\unit_tests\python\test_p03_flatten_list.py"", line 18
+    cls.fn = staticmethod(cls.sol.flatten
+                         ^
+SyntaxError: '(' was never closed"
+P03_python_3.11_iterativo,Flatten Nested List,Python,3.11,version_constrained,iterativo,ChatGPT Free,free,15,NO,0.0,"File ""c:\Users\Ema\Documents\Dataset\unit_tests\python\test_p03_flatten_list.py"", line 18
+    cls.fn = staticmethod(cls.sol.flatten
+                         ^
+SyntaxError: '(' was never closed"
+P03_python_3.11_to_3.14,Flatten Nested List,Python,3.11 -> 3.14,refactor,N/A,ChatGPT Free,free,15,NO,0.0,"File ""c:\Users\Ema\Documents\Dataset\unit_tests\python\test_p03_flatten_list.py"", line 18
+    cls.fn = staticmethod(cls.sol.flatten
+                         ^
+SyntaxError: '(' was never closed"
+P03_python_3.14_funcional,Flatten Nested List,Python,3.14,version_constrained,funcional,ChatGPT Free,free,26,NO,0.0,"File ""c:\Users\Ema\Documents\Dataset\unit_tests\python\test_p03_flatten_list.py"", line 18
+    cls.fn = staticmethod(cls.sol.flatten
+                         ^
+SyntaxError: '(' was never closed"
+P03_python_3.14_iterativo,Flatten Nested List,Python,3.14,version_constrained,iterativo,ChatGPT Free,free,15,NO,0.0,"File ""c:\Users\Ema\Documents\Dataset\unit_tests\python\test_p03_flatten_list.py"", line 18
+    cls.fn = staticmethod(cls.sol.flatten
+                         ^
+SyntaxError: '(' was never closed"
+P03_python_3.9_funcional,Flatten Nested List,Python,3.9,version_constrained,funcional,ChatGPT Free,free,23,NO,0.0,"File ""c:\Users\Ema\Documents\Dataset\unit_tests\python\test_p03_flatten_list.py"", line 18
+    cls.fn = staticmethod(cls.sol.flatten
+                         ^
+SyntaxError: '(' was never closed"
+P03_python_3.9_iterativo,Flatten Nested List,Python,3.9,version_constrained,iterativo,ChatGPT Free,free,16,NO,0.0,"File ""c:\Users\Ema\Documents\Dataset\unit_tests\python\test_p03_flatten_list.py"", line 18
+    cls.fn = staticmethod(cls.sol.flatten
+                         ^
+SyntaxError: '(' was never closed"
+P03_python_3.9_to_3.11,Flatten Nested List,Python,3.9 -> 3.11,refactor,N/A,ChatGPT Free,free,15,NO,0.0,"File ""c:\Users\Ema\Documents\Dataset\unit_tests\python\test_p03_flatten_list.py"", line 18
+    cls.fn = staticmethod(cls.sol.flatten
+                         ^
+SyntaxError: '(' was never closed"
+P03_python_neutral,Flatten Nested List,Python,cualquiera,neutral,neutral,ChatGPT Free,free,14,NO,0.0,"File ""c:\Users\Ema\Documents\Dataset\unit_tests\python\test_p03_flatten_list.py"", line 18
+    cls.fn = staticmethod(cls.sol.flatten
+                         ^
+SyntaxError: '(' was never closed"
+P03_scala_2.13_funcional,Flatten Nested List,Scala,2.13,version_constrained,funcional,ChatGPT Free,free,49,NO,0.0,Compilation Error
+P03_scala_2.13_iterativo,Flatten Nested List,Scala,2.13,version_constrained,iterativo,ChatGPT Free,free,88,NO,0.0,Compilation Error
+P03_scala_2.13_to_3.3,Flatten Nested List,Scala,2.13 -> 3.3,refactor,N/A,ChatGPT Free,free,112,YES,1.0,
+P03_scala_3.3_funcional,Flatten Nested List,Scala,3.3,version_constrained,funcional,ChatGPT Free,free,131,NO,0.0,Compilation Error
+P03_scala_3.3_iterativo,Flatten Nested List,Scala,3.3,version_constrained,iterativo,ChatGPT Free,free,87,NO,0.0,Compilation Error
+P03_scala_3.3_to_3.6,Flatten Nested List,Scala,3.3 -> 3.6,refactor,N/A,ChatGPT Free,free,128,YES,1.0,
+P03_scala_3.6_funcional,Flatten Nested List,Scala,3.6,version_constrained,funcional,ChatGPT Free,free,152,NO,0.0,Compilation Error
+P03_scala_3.6_iterativo,Flatten Nested List,Scala,3.6,version_constrained,iterativo,ChatGPT Free,free,120,NO,0.0,Compilation Error
+P03_scala_neutral,Flatten Nested List,Scala,cualquiera,neutral,neutral,ChatGPT Free,free,9,NO,0.0,Compilation Error
+P04_java_17_funcional,Balanced Parentheses,Java,17,version_constrained,funcional,ChatGPT Free,free,156,YES,1.0,
+P04_java_17_iterativo,Balanced Parentheses,Java,17,version_constrained,iterativo,ChatGPT Free,free,83,YES,1.0,
+P04_java_17_to_21,Balanced Parentheses,Java,17 -> 21,refactor,N/A,ChatGPT Free,free,68,YES,1.0,
+P04_java_21_funcional,Balanced Parentheses,Java,21,version_constrained,funcional,ChatGPT Free,free,71,YES,1.0,
+P04_java_21_iterativo,Balanced Parentheses,Java,21,version_constrained,iterativo,ChatGPT Free,free,89,YES,1.0,
+P04_java_8_funcional,Balanced Parentheses,Java,8,version_constrained,funcional,ChatGPT Free,free,63,NO,0.0,Compilation Error
+P04_java_8_iterativo,Balanced Parentheses,Java,8,version_constrained,iterativo,ChatGPT Free,free,33,YES,1.0,
+P04_java_8_to_17,Balanced Parentheses,Java,8 -> 17,refactor,N/A,ChatGPT Free,free,57,YES,1.0,
+P04_java_neutral,Balanced Parentheses,Java,cualquiera,neutral,neutral,ChatGPT Free,free,29,YES,1.0,
+P04_python_3.11_funcional,Balanced Parentheses,Python,3.11,version_constrained,funcional,ChatGPT Free,free,24,YES,1.0,
+P04_python_3.11_iterativo,Balanced Parentheses,Python,3.11,version_constrained,iterativo,ChatGPT Free,free,17,YES,1.0,
+P04_python_3.11_to_3.14,Balanced Parentheses,Python,3.11 -> 3.14,refactor,N/A,ChatGPT Free,free,18,YES,1.0,
+P04_python_3.14_funcional,Balanced Parentheses,Python,3.14,version_constrained,funcional,ChatGPT Free,free,44,YES,1.0,
+P04_python_3.14_iterativo,Balanced Parentheses,Python,3.14,version_constrained,iterativo,ChatGPT Free,free,17,YES,1.0,
+P04_python_3.9_funcional,Balanced Parentheses,Python,3.9,version_constrained,funcional,ChatGPT Free,free,27,YES,1.0,
+P04_python_3.9_iterativo,Balanced Parentheses,Python,3.9,version_constrained,iterativo,ChatGPT Free,free,17,YES,1.0,
+P04_python_3.9_to_3.11,Balanced Parentheses,Python,3.9 -> 3.11,refactor,N/A,ChatGPT Free,free,18,YES,1.0,
+P04_python_neutral,Balanced Parentheses,Python,cualquiera,neutral,neutral,ChatGPT Free,free,17,YES,1.0,
+P04_scala_2.13_funcional,Balanced Parentheses,Scala,2.13,version_constrained,funcional,ChatGPT Free,free,51,NO,0.0,Compilation Error
+P04_scala_2.13_iterativo,Balanced Parentheses,Scala,2.13,version_constrained,iterativo,ChatGPT Free,free,33,YES,1.0,
+P04_scala_2.13_to_3.3,Balanced Parentheses,Scala,2.13 -> 3.3,refactor,N/A,ChatGPT Free,free,66,NO,0.0,Compilation Error
+P04_scala_3.3_funcional,Balanced Parentheses,Scala,3.3,version_constrained,funcional,ChatGPT Free,free,66,YES,0.88,
+P04_scala_3.3_iterativo,Balanced Parentheses,Scala,3.3,version_constrained,iterativo,ChatGPT Free,free,59,YES,1.0,
+P04_scala_3.3_to_3.6,Balanced Parentheses,Scala,3.3 -> 3.6,refactor,N/A,ChatGPT Free,free,70,NO,0.0,Compilation Error
+P04_scala_3.6_funcional,Balanced Parentheses,Scala,3.6,version_constrained,funcional,ChatGPT Free,free,69,YES,0.88,
+P04_scala_3.6_iterativo,Balanced Parentheses,Scala,3.6,version_constrained,iterativo,ChatGPT Free,free,64,YES,1.0,
+P04_scala_neutral,Balanced Parentheses,Scala,cualquiera,neutral,neutral,ChatGPT Free,free,32,YES,1.0,
+P05_java_17_funcional,Transaction Pipeline,Java,17,version_constrained,funcional,ChatGPT Free,free,81,NO,0.0,Compilation Error
+P05_java_17_iterativo,Transaction Pipeline,Java,17,version_constrained,iterativo,ChatGPT Free,free,70,NO,0.0,Compilation Error
+P05_java_17_to_21,Transaction Pipeline,Java,17 -> 21,refactor,N/A,ChatGPT Free,free,95,YES,1.0,
+P05_java_21_funcional,Transaction Pipeline,Java,21,version_constrained,funcional,ChatGPT Free,free,86,NO,0.0,Compilation Error
+P05_java_21_iterativo,Transaction Pipeline,Java,21,version_constrained,iterativo,ChatGPT Free,free,81,NO,0.0,Compilation Error
+P05_java_8_funcional,Transaction Pipeline,Java,8,version_constrained,funcional,ChatGPT Free,free,79,NO,0.0,Compilation Error
+P05_java_8_iterativo,Transaction Pipeline,Java,8,version_constrained,iterativo,ChatGPT Free,free,75,NO,0.0,Compilation Error
+P05_java_8_to_17,Transaction Pipeline,Java,8 -> 17,refactor,N/A,ChatGPT Free,free,94,YES,1.0,
+P05_java_neutral,Transaction Pipeline,Java,cualquiera,neutral,neutral,ChatGPT Free,free,46,YES,1.0,
+P05_python_3.11_funcional,Transaction Pipeline,Python,3.11,version_constrained,funcional,ChatGPT Free,free,29,YES,1.0,
+P05_python_3.11_iterativo,Transaction Pipeline,Python,3.11,version_constrained,iterativo,ChatGPT Free,free,19,YES,1.0,
+P05_python_3.11_to_3.14,Transaction Pipeline,Python,3.11 -> 3.14,refactor,N/A,ChatGPT Free,free,13,YES,0.0,
+P05_python_3.14_funcional,Transaction Pipeline,Python,3.14,version_constrained,funcional,ChatGPT Free,free,29,YES,1.0,
+P05_python_3.14_iterativo,Transaction Pipeline,Python,3.14,version_constrained,iterativo,ChatGPT Free,free,19,YES,1.0,
+P05_python_3.9_funcional,Transaction Pipeline,Python,3.9,version_constrained,funcional,ChatGPT Free,free,29,YES,1.0,
+P05_python_3.9_iterativo,Transaction Pipeline,Python,3.9,version_constrained,iterativo,ChatGPT Free,free,16,YES,1.0,
+P05_python_3.9_to_3.11,Transaction Pipeline,Python,3.9 -> 3.11,refactor,N/A,ChatGPT Free,free,13,YES,1.0,
+P05_python_neutral,Transaction Pipeline,Python,cualquiera,neutral,neutral,ChatGPT Free,free,16,YES,1.0,
+P05_scala_2.13_funcional,Transaction Pipeline,Scala,2.13,version_constrained,funcional,ChatGPT Free,free,117,YES,1.0,
+P05_scala_2.13_iterativo,Transaction Pipeline,Scala,2.13,version_constrained,iterativo,ChatGPT Free,free,62,NO,0.0,Compilation Error
+P05_scala_2.13_to_3.3,Transaction Pipeline,Scala,2.13 -> 3.3,refactor,N/A,ChatGPT Free,free,95,NO,0.0,Compilation Error
+P05_scala_3.3_funcional,Transaction Pipeline,Scala,3.3,version_constrained,funcional,ChatGPT Free,free,113,NO,0.0,Compilation Error
+P05_scala_3.3_iterativo,Transaction Pipeline,Scala,3.3,version_constrained,iterativo,ChatGPT Free,free,101,NO,0.0,Compilation Error
+P05_scala_3.3_to_3.6,Transaction Pipeline,Scala,3.3 -> 3.6,refactor,N/A,ChatGPT Free,free,120,NO,0.0,Compilation Error
+P05_scala_3.6_funcional,Transaction Pipeline,Scala,3.6,version_constrained,funcional,ChatGPT Free,free,105,NO,0.0,Compilation Error
+P05_scala_3.6_iterativo,Transaction Pipeline,Scala,3.6,version_constrained,iterativo,ChatGPT Free,free,100,NO,0.0,Compilation Error
+P05_scala_neutral,Transaction Pipeline,Scala,cualquiera,neutral,neutral,ChatGPT Free,free,64,YES,1.0,
+P06_java_17_funcional,Max Subarray Sum,Java,17,version_constrained,funcional,ChatGPT Free,free,60,YES,1.0,
+P06_java_17_iterativo,Max Subarray Sum,Java,17,version_constrained,iterativo,ChatGPT Free,free,26,YES,1.0,
+P06_java_17_to_21,Max Subarray Sum,Java,17 -> 21,refactor,N/A,ChatGPT Free,free,54,YES,1.0,
+P06_java_21_funcional,Max Subarray Sum,Java,21,version_constrained,funcional,ChatGPT Free,free,60,YES,1.0,
+P06_java_21_iterativo,Max Subarray Sum,Java,21,version_constrained,iterativo,ChatGPT Free,free,29,YES,1.0,
+P06_java_8_funcional,Max Subarray Sum,Java,8,version_constrained,funcional,ChatGPT Free,free,47,NO,0.0,Compilation Error
+P06_java_8_iterativo,Max Subarray Sum,Java,8,version_constrained,iterativo,ChatGPT Free,free,29,YES,1.0,
+P06_java_8_to_17,Max Subarray Sum,Java,8 -> 17,refactor,N/A,ChatGPT Free,free,59,YES,1.0,
+P06_java_neutral,Max Subarray Sum,Java,cualquiera,neutral,neutral,ChatGPT Free,free,17,YES,1.0,
+P06_python_3.11_funcional,Max Subarray Sum,Python,3.11,version_constrained,funcional,ChatGPT Free,free,42,YES,1.0,
+P06_python_3.11_iterativo,Max Subarray Sum,Python,3.11,version_constrained,iterativo,ChatGPT Free,free,21,YES,1.0,
+P06_python_3.11_to_3.14,Max Subarray Sum,Python,3.11 -> 3.14,refactor,N/A,ChatGPT Free,free,14,YES,1.0,
+P06_python_3.14_funcional,Max Subarray Sum,Python,3.14,version_constrained,funcional,ChatGPT Free,free,42,YES,1.0,
+P06_python_3.14_iterativo,Max Subarray Sum,Python,3.14,version_constrained,iterativo,ChatGPT Free,free,21,YES,1.0,
+P06_python_3.9_funcional,Max Subarray Sum,Python,3.9,version_constrained,funcional,ChatGPT Free,free,36,YES,1.0,
+P06_python_3.9_iterativo,Max Subarray Sum,Python,3.9,version_constrained,iterativo,ChatGPT Free,free,21,YES,1.0,
+P06_python_3.9_to_3.11,Max Subarray Sum,Python,3.9 -> 3.11,refactor,N/A,ChatGPT Free,free,14,YES,1.0,
+P06_python_neutral,Max Subarray Sum,Python,cualquiera,neutral,neutral,ChatGPT Free,free,11,YES,1.0,
+P06_scala_2.13_funcional,Max Subarray Sum,Scala,2.13,version_constrained,funcional,ChatGPT Free,free,63,YES,1.0,
+P06_scala_2.13_iterativo,Max Subarray Sum,Scala,2.13,version_constrained,iterativo,ChatGPT Free,free,37,YES,1.0,
+P06_scala_2.13_to_3.3,Max Subarray Sum,Scala,2.13 -> 3.3,refactor,N/A,ChatGPT Free,free,66,YES,1.0,
+P06_scala_3.3_funcional,Max Subarray Sum,Scala,3.3,version_constrained,funcional,ChatGPT Free,free,22,NO,0.0,Compilation Error
+P06_scala_3.3_iterativo,Max Subarray Sum,Scala,3.3,version_constrained,iterativo,ChatGPT Free,free,20,YES,1.0,
+P06_scala_3.3_to_3.6,Max Subarray Sum,Scala,3.3 -> 3.6,refactor,N/A,ChatGPT Free,free,21,YES,1.0,
+P06_scala_3.6_funcional,Max Subarray Sum,Scala,3.6,version_constrained,funcional,ChatGPT Free,free,33,NO,0.0,Compilation Error
+P06_scala_3.6_iterativo,Max Subarray Sum,Scala,3.6,version_constrained,iterativo,ChatGPT Free,free,26,YES,1.0,
+P06_scala_neutral,Max Subarray Sum,Scala,cualquiera,neutral,neutral,ChatGPT Free,free,25,NO,0.0,Compilation Error
+P07_java_17_funcional,2D Flood Fill,Java,17,version_constrained,funcional,ChatGPT Free,free,182,YES,1.0,
+P07_java_17_iterativo,2D Flood Fill,Java,17,version_constrained,iterativo,ChatGPT Free,free,105,YES,1.0,
+P07_java_17_to_21,2D Flood Fill,Java,17 -> 21,refactor,N/A,ChatGPT Free,free,154,YES,1.0,
+P07_java_21_funcional,2D Flood Fill,Java,21,version_constrained,funcional,ChatGPT Free,free,239,YES,1.0,
+P07_java_21_iterativo,2D Flood Fill,Java,21,version_constrained,iterativo,ChatGPT Free,free,129,YES,1.0,
+P07_java_8_funcional,2D Flood Fill,Java,8,version_constrained,funcional,ChatGPT Free,free,174,YES,1.0,
+P07_java_8_iterativo,2D Flood Fill,Java,8,version_constrained,iterativo,ChatGPT Free,free,91,YES,1.0,
+P07_java_8_to_17,2D Flood Fill,Java,8 -> 17,refactor,N/A,ChatGPT Free,free,152,YES,1.0,
+P07_java_neutral,2D Flood Fill,Java,cualquiera,neutral,neutral,ChatGPT Free,free,90,YES,1.0,
+P07_python_3.11_funcional,2D Flood Fill,Python,3.11,version_constrained,funcional,ChatGPT Free,free,113,YES,0.0,
+P07_python_3.11_iterativo,2D Flood Fill,Python,3.11,version_constrained,iterativo,ChatGPT Free,free,61,YES,0.0,
+P07_python_3.11_to_3.14,2D Flood Fill,Python,3.11 -> 3.14,refactor,N/A,ChatGPT Free,free,52,YES,0.0,
+P07_python_3.14_funcional,2D Flood Fill,Python,3.14,version_constrained,funcional,ChatGPT Free,free,117,YES,0.0,
+P07_python_3.14_iterativo,2D Flood Fill,Python,3.14,version_constrained,iterativo,ChatGPT Free,free,61,YES,0.0,
+P07_python_3.9_funcional,2D Flood Fill,Python,3.9,version_constrained,funcional,ChatGPT Free,free,111,YES,0.0,
+P07_python_3.9_iterativo,2D Flood Fill,Python,3.9,version_constrained,iterativo,ChatGPT Free,free,56,YES,0.0,
+P07_python_3.9_to_3.11,2D Flood Fill,Python,3.9 -> 3.11,refactor,N/A,ChatGPT Free,free,52,YES,0.0,
+P07_python_neutral,2D Flood Fill,Python,cualquiera,neutral,neutral,ChatGPT Free,free,57,YES,0.0,
+P07_scala_2.13_funcional,2D Flood Fill,Scala,2.13,version_constrained,funcional,ChatGPT Free,free,184,NO,0.0,Compilation Error
+P07_scala_2.13_iterativo,2D Flood Fill,Scala,2.13,version_constrained,iterativo,ChatGPT Free,free,147,NO,0.0,Compilation Error
+P07_scala_2.13_to_3.3,2D Flood Fill,Scala,2.13 -> 3.3,refactor,N/A,ChatGPT Free,free,208,NO,0.0,Compilation Error
+P07_scala_3.3_funcional,2D Flood Fill,Scala,3.3,version_constrained,funcional,ChatGPT Free,free,182,YES,1.0,
+P07_scala_3.3_iterativo,2D Flood Fill,Scala,3.3,version_constrained,iterativo,ChatGPT Free,free,155,NO,0.0,Compilation Error
+P07_scala_3.3_to_3.6,2D Flood Fill,Scala,3.3 -> 3.6,refactor,N/A,ChatGPT Free,free,206,NO,0.0,Compilation Error
+P07_scala_3.6_funcional,2D Flood Fill,Scala,3.6,version_constrained,funcional,ChatGPT Free,free,271,YES,0.0,
+P07_scala_3.6_iterativo,2D Flood Fill,Scala,3.6,version_constrained,iterativo,ChatGPT Free,free,159,YES,0.0,
+P07_scala_neutral,2D Flood Fill,Scala,cualquiera,neutral,neutral,ChatGPT Free,free,90,NO,0.0,Compilation Error
+P01_java_17_funcional,Word Frequency,Java,17,version_constrained,funcional,Gemini Free,free,27,YES,1.0,
+P01_java_17_iterativo,Word Frequency,Java,17,version_constrained,iterativo,Gemini Free,free,23,YES,1.0,
+P01_java_17_to_21,Word Frequency,Java,17 -> 21,refactor,N/A,Gemini Free,free,18,YES,1.0,
+P01_java_21_funcional,Word Frequency,Java,21,version_constrained,funcional,Gemini Free,free,27,YES,1.0,
+P01_java_21_iterativo,Word Frequency,Java,21,version_constrained,iterativo,Gemini Free,free,23,YES,1.0,
+P01_java_8_funcional,Word Frequency,Java,8,version_constrained,funcional,Gemini Free,free,35,NO,0.0,Compilation Error
+P01_java_8_iterativo,Word Frequency,Java,8,version_constrained,iterativo,Gemini Free,free,31,NO,0.0,Compilation Error
+P01_java_8_to_17,Word Frequency,Java,8 -> 17,refactor,N/A,Gemini Free,free,18,YES,1.0,
+P01_java_neutral,Word Frequency,Java,cualquiera,neutral,neutral,Gemini Free,free,23,YES,1.0,
+P01_python_3.11_funcional,Word Frequency,Python,3.11,version_constrained,funcional,Gemini Free,free,14,NO,0.0,"File ""c:\Users\Ema\Documents\Dataset\unit_tests\python\test_p01_word_frequency.py"", line 33
+    cls.fn = staticmethod(cls.sol.word_frequency))
+                                                 ^
+Syntax"
+P01_python_3.11_iterativo,Word Frequency,Python,3.11,version_constrained,iterativo,Gemini Free,free,12,NO,0.0,"File ""c:\Users\Ema\Documents\Dataset\unit_tests\python\test_p01_word_frequency.py"", line 33
+    cls.fn = staticmethod(cls.sol.word_frequency))
+                                                 ^
+Syntax"
+P01_python_3.11_to_3.14,Word Frequency,Python,3.11 -> 3.14,refactor,N/A,Gemini Free,free,8,NO,0.0,"File ""c:\Users\Ema\Documents\Dataset\unit_tests\python\test_p01_word_frequency.py"", line 33
+    cls.fn = staticmethod(cls.sol.word_frequency))
+                                                 ^
+Syntax"
+P01_python_3.14_funcional,Word Frequency,Python,3.14,version_constrained,funcional,Gemini Free,free,14,NO,0.0,"File ""c:\Users\Ema\Documents\Dataset\unit_tests\python\test_p01_word_frequency.py"", line 33
+    cls.fn = staticmethod(cls.sol.word_frequency))
+                                                 ^
+Syntax"
+P01_python_3.14_iterativo,Word Frequency,Python,3.14,version_constrained,iterativo,Gemini Free,free,12,NO,0.0,"File ""c:\Users\Ema\Documents\Dataset\unit_tests\python\test_p01_word_frequency.py"", line 33
+    cls.fn = staticmethod(cls.sol.word_frequency))
+                                                 ^
+Syntax"
+P01_python_3.9_funcional,Word Frequency,Python,3.9,version_constrained,funcional,Gemini Free,free,14,NO,0.0,"File ""c:\Users\Ema\Documents\Dataset\unit_tests\python\test_p01_word_frequency.py"", line 33
+    cls.fn = staticmethod(cls.sol.word_frequency))
+                                                 ^
+Syntax"
+P01_python_3.9_iterativo,Word Frequency,Python,3.9,version_constrained,iterativo,Gemini Free,free,14,NO,0.0,"File ""c:\Users\Ema\Documents\Dataset\unit_tests\python\test_p01_word_frequency.py"", line 33
+    cls.fn = staticmethod(cls.sol.word_frequency))
+                                                 ^
+Syntax"
+P01_python_3.9_to_3.11,Word Frequency,Python,3.9 -> 3.11,refactor,N/A,Gemini Free,free,8,NO,0.0,"File ""c:\Users\Ema\Documents\Dataset\unit_tests\python\test_p01_word_frequency.py"", line 33
+    cls.fn = staticmethod(cls.sol.word_frequency))
+                                                 ^
+Syntax"
+P01_python_neutral,Word Frequency,Python,cualquiera,neutral,neutral,Gemini Free,free,12,NO,0.0,"File ""c:\Users\Ema\Documents\Dataset\unit_tests\python\test_p01_word_frequency.py"", line 33
+    cls.fn = staticmethod(cls.sol.word_frequency))
+                                                 ^
+Syntax"
+P01_scala_2.13_funcional,Word Frequency,Scala,2.13,version_constrained,funcional,Gemini Free,free,31,YES,1.0,
+P01_scala_2.13_iterativo,Word Frequency,Scala,2.13,version_constrained,iterativo,Gemini Free,free,25,YES,1.0,
+P01_scala_2.13_to_3.3,Word Frequency,Scala,2.13 -> 3.3,refactor,N/A,Gemini Free,free,30,NO,0.0,Compilation Error
+P01_scala_3.3_funcional,Word Frequency,Scala,3.3,version_constrained,funcional,Gemini Free,free,25,YES,1.0,
+P01_scala_3.3_iterativo,Word Frequency,Scala,3.3,version_constrained,iterativo,Gemini Free,free,24,YES,1.0,
+P01_scala_3.3_to_3.6,Word Frequency,Scala,3.3 -> 3.6,refactor,N/A,Gemini Free,free,30,NO,0.0,Compilation Error
+P01_scala_3.6_funcional,Word Frequency,Scala,3.6,version_constrained,funcional,Gemini Free,free,25,YES,1.0,
+P01_scala_3.6_iterativo,Word Frequency,Scala,3.6,version_constrained,iterativo,Gemini Free,free,24,YES,1.0,
+P01_scala_neutral,Word Frequency,Scala,cualquiera,neutral,neutral,Gemini Free,free,16,YES,1.0,
+P02_java_17_funcional,Binary Search,Java,17,version_constrained,funcional,Gemini Free,free,31,YES,1.0,
+P02_java_17_iterativo,Binary Search,Java,17,version_constrained,iterativo,Gemini Free,free,25,YES,1.0,
+P02_java_17_to_21,Binary Search,Java,17 -> 21,refactor,N/A,Gemini Free,free,24,YES,1.0,
+P02_java_21_funcional,Binary Search,Java,21,version_constrained,funcional,Gemini Free,free,43,NO,0.0,Compilation Error
+P02_java_21_iterativo,Binary Search,Java,21,version_constrained,iterativo,Gemini Free,free,26,YES,1.0,
+P02_java_8_funcional,Binary Search,Java,8,version_constrained,funcional,Gemini Free,free,35,YES,1.0,
+P02_java_8_iterativo,Binary Search,Java,8,version_constrained,iterativo,Gemini Free,free,25,YES,1.0,
+P02_java_8_to_17,Binary Search,Java,8 -> 17,refactor,N/A,Gemini Free,free,23,YES,1.0,
+P02_java_neutral,Binary Search,Java,cualquiera,neutral,neutral,Gemini Free,free,25,YES,1.0,
+P02_python_3.11_funcional,Binary Search,Python,3.11,version_constrained,funcional,Gemini Free,free,25,YES,1.0,
+P02_python_3.11_iterativo,Binary Search,Python,3.11,version_constrained,iterativo,Gemini Free,free,23,YES,1.0,
+P02_python_3.11_to_3.14,Binary Search,Python,3.11 -> 3.14,refactor,N/A,Gemini Free,free,17,YES,1.0,
+P02_python_3.14_funcional,Binary Search,Python,3.14,version_constrained,funcional,Gemini Free,free,25,YES,1.0,
+P02_python_3.14_iterativo,Binary Search,Python,3.14,version_constrained,iterativo,Gemini Free,free,26,YES,1.0,
+P02_python_3.9_funcional,Binary Search,Python,3.9,version_constrained,funcional,Gemini Free,free,24,YES,1.0,
+P02_python_3.9_iterativo,Binary Search,Python,3.9,version_constrained,iterativo,Gemini Free,free,23,YES,1.0,
+P02_python_3.9_to_3.11,Binary Search,Python,3.9 -> 3.11,refactor,N/A,Gemini Free,free,17,YES,1.0,
+P02_python_neutral,Binary Search,Python,cualquiera,neutral,neutral,Gemini Free,free,26,YES,1.0,
+P02_scala_2.13_funcional,Binary Search,Scala,2.13,version_constrained,funcional,Gemini Free,free,29,YES,1.0,
+P02_scala_2.13_iterativo,Binary Search,Scala,2.13,version_constrained,iterativo,Gemini Free,free,26,YES,1.0,
+P02_scala_2.13_to_3.3,Binary Search,Scala,2.13 -> 3.3,refactor,N/A,Gemini Free,free,17,YES,1.0,
+P02_scala_3.3_funcional,Binary Search,Scala,3.3,version_constrained,funcional,Gemini Free,free,22,YES,1.0,
+P02_scala_3.3_iterativo,Binary Search,Scala,3.3,version_constrained,iterativo,Gemini Free,free,20,YES,1.0,
+P02_scala_3.3_to_3.6,Binary Search,Scala,3.3 -> 3.6,refactor,N/A,Gemini Free,free,17,YES,1.0,
+P02_scala_3.6_funcional,Binary Search,Scala,3.6,version_constrained,funcional,Gemini Free,free,22,YES,1.0,
+P02_scala_3.6_iterativo,Binary Search,Scala,3.6,version_constrained,iterativo,Gemini Free,free,20,YES,1.0,
+P02_scala_neutral,Binary Search,Scala,cualquiera,neutral,neutral,Gemini Free,free,21,YES,1.0,
+P03_java_17_funcional,Flatten Nested List,Java,17,version_constrained,funcional,Gemini Free,free,34,YES,1.0,
+P03_java_17_iterativo,Flatten Nested List,Java,17,version_constrained,iterativo,Gemini Free,free,43,YES,1.0,
+P03_java_17_to_21,Flatten Nested List,Java,17 -> 21,refactor,N/A,Gemini Free,free,36,YES,1.0,
+P03_java_21_funcional,Flatten Nested List,Java,21,version_constrained,funcional,Gemini Free,free,36,YES,1.0,
+P03_java_21_iterativo,Flatten Nested List,Java,21,version_constrained,iterativo,Gemini Free,free,46,YES,1.0,
+P03_java_8_funcional,Flatten Nested List,Java,8,version_constrained,funcional,Gemini Free,free,37,NO,0.0,Compilation Error
+P03_java_8_iterativo,Flatten Nested List,Java,8,version_constrained,iterativo,Gemini Free,free,45,NO,0.0,Compilation Error
+P03_java_8_to_17,Flatten Nested List,Java,8 -> 17,refactor,N/A,Gemini Free,free,33,YES,1.0,
+P03_java_neutral,Flatten Nested List,Java,cualquiera,neutral,neutral,Gemini Free,free,34,YES,1.0,
+P03_python_3.11_funcional,Flatten Nested List,Python,3.11,version_constrained,funcional,Gemini Free,free,22,NO,0.0,"File ""c:\Users\Ema\Documents\Dataset\unit_tests\python\test_p03_flatten_list.py"", line 18
+    cls.fn = staticmethod(cls.sol.flatten
+                         ^
+SyntaxError: '(' was never closed"
+P03_python_3.11_iterativo,Flatten Nested List,Python,3.11,version_constrained,iterativo,Gemini Free,free,23,NO,0.0,"File ""c:\Users\Ema\Documents\Dataset\unit_tests\python\test_p03_flatten_list.py"", line 18
+    cls.fn = staticmethod(cls.sol.flatten
+                         ^
+SyntaxError: '(' was never closed"
+P03_python_3.11_to_3.14,Flatten Nested List,Python,3.11 -> 3.14,refactor,N/A,Gemini Free,free,20,NO,0.0,"File ""c:\Users\Ema\Documents\Dataset\unit_tests\python\test_p03_flatten_list.py"", line 18
+    cls.fn = staticmethod(cls.sol.flatten
+                         ^
+SyntaxError: '(' was never closed"
+P03_python_3.14_funcional,Flatten Nested List,Python,3.14,version_constrained,funcional,Gemini Free,free,22,NO,0.0,"File ""c:\Users\Ema\Documents\Dataset\unit_tests\python\test_p03_flatten_list.py"", line 18
+    cls.fn = staticmethod(cls.sol.flatten
+                         ^
+SyntaxError: '(' was never closed"
+P03_python_3.14_iterativo,Flatten Nested List,Python,3.14,version_constrained,iterativo,Gemini Free,free,23,NO,0.0,"File ""c:\Users\Ema\Documents\Dataset\unit_tests\python\test_p03_flatten_list.py"", line 18
+    cls.fn = staticmethod(cls.sol.flatten
+                         ^
+SyntaxError: '(' was never closed"
+P03_python_3.9_funcional,Flatten Nested List,Python,3.9,version_constrained,funcional,Gemini Free,free,19,NO,0.0,"File ""c:\Users\Ema\Documents\Dataset\unit_tests\python\test_p03_flatten_list.py"", line 18
+    cls.fn = staticmethod(cls.sol.flatten
+                         ^
+SyntaxError: '(' was never closed"
+P03_python_3.9_iterativo,Flatten Nested List,Python,3.9,version_constrained,iterativo,Gemini Free,free,23,NO,0.0,"File ""c:\Users\Ema\Documents\Dataset\unit_tests\python\test_p03_flatten_list.py"", line 18
+    cls.fn = staticmethod(cls.sol.flatten
+                         ^
+SyntaxError: '(' was never closed"
+P03_python_3.9_to_3.11,Flatten Nested List,Python,3.9 -> 3.11,refactor,N/A,Gemini Free,free,20,NO,0.0,"File ""c:\Users\Ema\Documents\Dataset\unit_tests\python\test_p03_flatten_list.py"", line 18
+    cls.fn = staticmethod(cls.sol.flatten
+                         ^
+SyntaxError: '(' was never closed"
+P03_python_neutral,Flatten Nested List,Python,cualquiera,neutral,neutral,Gemini Free,free,18,NO,0.0,"File ""c:\Users\Ema\Documents\Dataset\unit_tests\python\test_p03_flatten_list.py"", line 18
+    cls.fn = staticmethod(cls.sol.flatten
+                         ^
+SyntaxError: '(' was never closed"
+P03_scala_2.13_funcional,Flatten Nested List,Scala,2.13,version_constrained,funcional,Gemini Free,free,31,NO,0.0,Compilation Error
+P03_scala_2.13_iterativo,Flatten Nested List,Scala,2.13,version_constrained,iterativo,Gemini Free,free,41,NO,0.0,Compilation Error
+P03_scala_2.13_to_3.3,Flatten Nested List,Scala,2.13 -> 3.3,refactor,N/A,Gemini Free,free,17,NO,0.0,Compilation Error
+P03_scala_3.3_funcional,Flatten Nested List,Scala,3.3,version_constrained,funcional,Gemini Free,free,21,NO,0.0,Compilation Error
+P03_scala_3.3_iterativo,Flatten Nested List,Scala,3.3,version_constrained,iterativo,Gemini Free,free,29,NO,0.0,Compilation Error
+P03_scala_3.3_to_3.6,Flatten Nested List,Scala,3.3 -> 3.6,refactor,N/A,Gemini Free,free,17,NO,0.0,Compilation Error
+P03_scala_3.6_funcional,Flatten Nested List,Scala,3.6,version_constrained,funcional,Gemini Free,free,21,NO,0.0,Compilation Error
+P03_scala_3.6_iterativo,Flatten Nested List,Scala,3.6,version_constrained,iterativo,Gemini Free,free,29,NO,0.0,Compilation Error
+P03_scala_neutral,Flatten Nested List,Scala,cualquiera,neutral,neutral,Gemini Free,free,25,NO,0.0,Compilation Error
+P04_java_17_funcional,Balanced Parentheses,Java,17,version_constrained,funcional,Gemini Free,free,73,YES,1.0,
+P04_java_17_iterativo,Balanced Parentheses,Java,17,version_constrained,iterativo,Gemini Free,free,54,YES,1.0,
+P04_java_17_to_21,Balanced Parentheses,Java,17 -> 21,refactor,N/A,Gemini Free,free,36,YES,1.0,
+P04_java_21_funcional,Balanced Parentheses,Java,21,version_constrained,funcional,Gemini Free,free,73,YES,1.0,
+P04_java_21_iterativo,Balanced Parentheses,Java,21,version_constrained,iterativo,Gemini Free,free,53,YES,1.0,
+P04_java_8_funcional,Balanced Parentheses,Java,8,version_constrained,funcional,Gemini Free,free,87,YES,1.0,
+P04_java_8_iterativo,Balanced Parentheses,Java,8,version_constrained,iterativo,Gemini Free,free,46,YES,1.0,
+P04_java_8_to_17,Balanced Parentheses,Java,8 -> 17,refactor,N/A,Gemini Free,free,36,YES,1.0,
+P04_java_neutral,Balanced Parentheses,Java,cualquiera,neutral,neutral,Gemini Free,free,42,YES,1.0,
+P04_python_3.11_funcional,Balanced Parentheses,Python,3.11,version_constrained,funcional,Gemini Free,free,33,YES,1.0,
+P04_python_3.11_iterativo,Balanced Parentheses,Python,3.11,version_constrained,iterativo,Gemini Free,free,31,YES,1.0,
+P04_python_3.11_to_3.14,Balanced Parentheses,Python,3.11 -> 3.14,refactor,N/A,Gemini Free,free,23,YES,1.0,
+P04_python_3.14_funcional,Balanced Parentheses,Python,3.14,version_constrained,funcional,Gemini Free,free,34,YES,1.0,
+P04_python_3.14_iterativo,Balanced Parentheses,Python,3.14,version_constrained,iterativo,Gemini Free,free,31,YES,1.0,
+P04_python_3.9_funcional,Balanced Parentheses,Python,3.9,version_constrained,funcional,Gemini Free,free,29,YES,1.0,
+P04_python_3.9_iterativo,Balanced Parentheses,Python,3.9,version_constrained,iterativo,Gemini Free,free,23,YES,1.0,
+P04_python_3.9_to_3.11,Balanced Parentheses,Python,3.9 -> 3.11,refactor,N/A,Gemini Free,free,23,YES,1.0,
+P04_python_neutral,Balanced Parentheses,Python,cualquiera,neutral,neutral,Gemini Free,free,24,YES,1.0,
+P04_scala_2.13_funcional,Balanced Parentheses,Scala,2.13,version_constrained,funcional,Gemini Free,free,40,YES,1.0,
+P04_scala_2.13_iterativo,Balanced Parentheses,Scala,2.13,version_constrained,iterativo,Gemini Free,free,42,YES,1.0,
+P04_scala_2.13_to_3.3,Balanced Parentheses,Scala,2.13 -> 3.3,refactor,N/A,Gemini Free,free,23,NO,0.0,Compilation Error
+P04_scala_3.3_funcional,Balanced Parentheses,Scala,3.3,version_constrained,funcional,Gemini Free,free,33,YES,1.0,
+P04_scala_3.3_iterativo,Balanced Parentheses,Scala,3.3,version_constrained,iterativo,Gemini Free,free,34,YES,1.0,
+P04_scala_3.3_to_3.6,Balanced Parentheses,Scala,3.3 -> 3.6,refactor,N/A,Gemini Free,free,23,NO,0.0,Compilation Error
+P04_scala_3.6_funcional,Balanced Parentheses,Scala,3.6,version_constrained,funcional,Gemini Free,free,33,YES,1.0,
+P04_scala_3.6_iterativo,Balanced Parentheses,Scala,3.6,version_constrained,iterativo,Gemini Free,free,34,YES,1.0,
+P04_scala_neutral,Balanced Parentheses,Scala,cualquiera,neutral,neutral,Gemini Free,free,26,YES,1.0,
+P05_java_17_funcional,Transaction Pipeline,Java,17,version_constrained,funcional,Gemini Free,free,49,NO,0.0,Compilation Error
+P05_java_17_iterativo,Transaction Pipeline,Java,17,version_constrained,iterativo,Gemini Free,free,76,YES,1.0,
+P05_java_17_to_21,Transaction Pipeline,Java,17 -> 21,refactor,N/A,Gemini Free,free,102,NO,0.0,Compilation Error
+P05_java_21_funcional,Transaction Pipeline,Java,21,version_constrained,funcional,Gemini Free,free,58,NO,0.0,Compilation Error
+P05_java_21_iterativo,Transaction Pipeline,Java,21,version_constrained,iterativo,Gemini Free,free,80,YES,1.0,
+P05_java_8_funcional,Transaction Pipeline,Java,8,version_constrained,funcional,Gemini Free,free,82,NO,0.0,Compilation Error
+P05_java_8_iterativo,Transaction Pipeline,Java,8,version_constrained,iterativo,Gemini Free,free,85,NO,0.0,Compilation Error
+P05_java_8_to_17,Transaction Pipeline,Java,8 -> 17,refactor,N/A,Gemini Free,free,85,NO,0.0,Compilation Error
+P05_java_neutral,Transaction Pipeline,Java,cualquiera,neutral,neutral,Gemini Free,free,43,NO,0.0,Compilation Error
+P05_python_3.11_funcional,Transaction Pipeline,Python,3.11,version_constrained,funcional,Gemini Free,free,45,YES,1.0,
+P05_python_3.11_iterativo,Transaction Pipeline,Python,3.11,version_constrained,iterativo,Gemini Free,free,44,YES,1.0,
+P05_python_3.11_to_3.14,Transaction Pipeline,Python,3.11 -> 3.14,refactor,N/A,Gemini Free,free,20,YES,1.0,
+P05_python_3.14_funcional,Transaction Pipeline,Python,3.14,version_constrained,funcional,Gemini Free,free,50,YES,1.0,
+P05_python_3.14_iterativo,Transaction Pipeline,Python,3.14,version_constrained,iterativo,Gemini Free,free,44,YES,1.0,
+P05_python_3.9_funcional,Transaction Pipeline,Python,3.9,version_constrained,funcional,Gemini Free,free,34,YES,1.0,
+P05_python_3.9_iterativo,Transaction Pipeline,Python,3.9,version_constrained,iterativo,Gemini Free,free,35,YES,1.0,
+P05_python_3.9_to_3.11,Transaction Pipeline,Python,3.9 -> 3.11,refactor,N/A,Gemini Free,free,17,YES,1.0,
+P05_python_neutral,Transaction Pipeline,Python,cualquiera,neutral,neutral,Gemini Free,free,32,YES,1.0,
+P05_scala_2.13_funcional,Transaction Pipeline,Scala,2.13,version_constrained,funcional,Gemini Free,free,73,NO,0.0,Compilation Error
+P05_scala_2.13_iterativo,Transaction Pipeline,Scala,2.13,version_constrained,iterativo,Gemini Free,free,75,NO,0.0,Compilation Error
+P05_scala_2.13_to_3.3,Transaction Pipeline,Scala,2.13 -> 3.3,refactor,N/A,Gemini Free,free,63,NO,0.0,Compilation Error
+P05_scala_3.3_funcional,Transaction Pipeline,Scala,3.3,version_constrained,funcional,Gemini Free,free,76,NO,0.0,Compilation Error
+P05_scala_3.3_iterativo,Transaction Pipeline,Scala,3.3,version_constrained,iterativo,Gemini Free,free,63,NO,0.0,Compilation Error
+P05_scala_3.3_to_3.6,Transaction Pipeline,Scala,3.3 -> 3.6,refactor,N/A,Gemini Free,free,74,NO,0.0,Compilation Error
+P05_scala_3.6_funcional,Transaction Pipeline,Scala,3.6,version_constrained,funcional,Gemini Free,free,70,NO,0.0,Compilation Error
+P05_scala_3.6_iterativo,Transaction Pipeline,Scala,3.6,version_constrained,iterativo,Gemini Free,free,63,NO,0.0,Compilation Error
+P05_scala_neutral,Transaction Pipeline,Scala,cualquiera,neutral,neutral,Gemini Free,free,41,NO,0.0,Compilation Error
+P06_java_17_funcional,Max Subarray Sum,Java,17,version_constrained,funcional,Gemini Free,free,49,YES,1.0,
+P06_java_17_iterativo,Max Subarray Sum,Java,17,version_constrained,iterativo,Gemini Free,free,73,YES,1.0,
+P06_java_17_to_21,Max Subarray Sum,Java,17 -> 21,refactor,N/A,Gemini Free,free,20,YES,1.0,
+P06_java_21_funcional,Max Subarray Sum,Java,21,version_constrained,funcional,Gemini Free,free,49,YES,1.0,
+P06_java_21_iterativo,Max Subarray Sum,Java,21,version_constrained,iterativo,Gemini Free,free,45,YES,1.0,
+P06_java_8_funcional,Max Subarray Sum,Java,8,version_constrained,funcional,Gemini Free,free,54,YES,1.0,
+P06_java_8_iterativo,Max Subarray Sum,Java,8,version_constrained,iterativo,Gemini Free,free,40,YES,1.0,
+P06_java_8_to_17,Max Subarray Sum,Java,8 -> 17,refactor,N/A,Gemini Free,free,20,YES,1.0,
+P06_java_neutral,Max Subarray Sum,Java,cualquiera,neutral,neutral,Gemini Free,free,30,YES,1.0,
+P06_python_3.11_funcional,Max Subarray Sum,Python,3.11,version_constrained,funcional,Gemini Free,free,27,YES,1.0,
+P06_python_3.11_iterativo,Max Subarray Sum,Python,3.11,version_constrained,iterativo,Gemini Free,free,33,YES,1.0,
+P06_python_3.11_to_3.14,Max Subarray Sum,Python,3.11 -> 3.14,refactor,N/A,Gemini Free,free,21,YES,1.0,
+P06_python_3.14_funcional,Max Subarray Sum,Python,3.14,version_constrained,funcional,Gemini Free,free,28,YES,1.0,
+P06_python_3.14_iterativo,Max Subarray Sum,Python,3.14,version_constrained,iterativo,Gemini Free,free,30,YES,1.0,
+P06_python_3.9_funcional,Max Subarray Sum,Python,3.9,version_constrained,funcional,Gemini Free,free,26,YES,1.0,
+P06_python_3.9_iterativo,Max Subarray Sum,Python,3.9,version_constrained,iterativo,Gemini Free,free,27,YES,1.0,
+P06_python_3.9_to_3.11,Max Subarray Sum,Python,3.9 -> 3.11,refactor,N/A,Gemini Free,free,20,YES,1.0,
+P06_python_neutral,Max Subarray Sum,Python,cualquiera,neutral,neutral,Gemini Free,free,17,YES,1.0,
+P06_scala_2.13_funcional,Max Subarray Sum,Scala,2.13,version_constrained,funcional,Gemini Free,free,30,YES,1.0,
+P06_scala_2.13_iterativo,Max Subarray Sum,Scala,2.13,version_constrained,iterativo,Gemini Free,free,40,YES,1.0,
+P06_scala_2.13_to_3.3,Max Subarray Sum,Scala,2.13 -> 3.3,refactor,N/A,Gemini Free,free,21,YES,1.0,
+P06_scala_3.3_funcional,Max Subarray Sum,Scala,3.3,version_constrained,funcional,Gemini Free,free,28,YES,1.0,
+P06_scala_3.3_iterativo,Max Subarray Sum,Scala,3.3,version_constrained,iterativo,Gemini Free,free,35,YES,1.0,
+P06_scala_3.3_to_3.6,Max Subarray Sum,Scala,3.3 -> 3.6,refactor,N/A,Gemini Free,free,21,YES,1.0,
+P06_scala_3.6_funcional,Max Subarray Sum,Scala,3.6,version_constrained,funcional,Gemini Free,free,31,YES,1.0,
+P06_scala_3.6_iterativo,Max Subarray Sum,Scala,3.6,version_constrained,iterativo,Gemini Free,free,34,YES,1.0,
+P06_scala_neutral,Max Subarray Sum,Scala,cualquiera,neutral,neutral,Gemini Free,free,28,YES,1.0,
+P07_java_17_funcional,2D Flood Fill,Java,17,version_constrained,funcional,Gemini Free,free,80,YES,1.0,
+P07_java_17_iterativo,2D Flood Fill,Java,17,version_constrained,iterativo,Gemini Free,free,85,YES,1.0,
+P07_java_17_to_21,2D Flood Fill,Java,17 -> 21,refactor,N/A,Gemini Free,free,44,YES,1.0,
+P07_java_21_funcional,2D Flood Fill,Java,21,version_constrained,funcional,Gemini Free,free,80,YES,1.0,
+P07_java_21_iterativo,2D Flood Fill,Java,21,version_constrained,iterativo,Gemini Free,free,85,YES,1.0,
+P07_java_8_funcional,2D Flood Fill,Java,8,version_constrained,funcional,Gemini Free,free,74,YES,1.0,
+P07_java_8_iterativo,2D Flood Fill,Java,8,version_constrained,iterativo,Gemini Free,free,86,YES,1.0,
+P07_java_8_to_17,2D Flood Fill,Java,8 -> 17,refactor,N/A,Gemini Free,free,44,YES,1.0,
+P07_java_neutral,2D Flood Fill,Java,cualquiera,neutral,neutral,Gemini Free,free,79,YES,1.0,
+P07_python_3.11_funcional,2D Flood Fill,Python,3.11,version_constrained,funcional,Gemini Free,free,48,YES,1.0,
+P07_python_3.11_iterativo,2D Flood Fill,Python,3.11,version_constrained,iterativo,Gemini Free,free,35,YES,1.0,
+P07_python_3.11_to_3.14,2D Flood Fill,Python,3.11 -> 3.14,refactor,N/A,Gemini Free,free,23,YES,1.0,
+P07_python_3.14_funcional,2D Flood Fill,Python,3.14,version_constrained,funcional,Gemini Free,free,48,YES,1.0,
+P07_python_3.14_iterativo,2D Flood Fill,Python,3.14,version_constrained,iterativo,Gemini Free,free,35,YES,1.0,
+P07_python_3.9_funcional,2D Flood Fill,Python,3.9,version_constrained,funcional,Gemini Free,free,48,YES,1.0,
+P07_python_3.9_iterativo,2D Flood Fill,Python,3.9,version_constrained,iterativo,Gemini Free,free,34,YES,1.0,
+P07_python_3.9_to_3.11,2D Flood Fill,Python,3.9 -> 3.11,refactor,N/A,Gemini Free,free,23,YES,1.0,
+P07_python_neutral,2D Flood Fill,Python,cualquiera,neutral,neutral,Gemini Free,free,32,YES,1.0,
+P07_scala_2.13_funcional,2D Flood Fill,Scala,2.13,version_constrained,funcional,Gemini Free,free,74,NO,0.0,Compilation Error
+P07_scala_2.13_iterativo,2D Flood Fill,Scala,2.13,version_constrained,iterativo,Gemini Free,free,76,NO,0.0,Compilation Error
+P07_scala_2.13_to_3.3,2D Flood Fill,Scala,2.13 -> 3.3,refactor,N/A,Gemini Free,free,28,NO,0.0,Compilation Error
+P07_scala_3.3_funcional,2D Flood Fill,Scala,3.3,version_constrained,funcional,Gemini Free,free,67,NO,0.0,Compilation Error
+P07_scala_3.3_iterativo,2D Flood Fill,Scala,3.3,version_constrained,iterativo,Gemini Free,free,68,NO,0.0,Compilation Error
+P07_scala_3.3_to_3.6,2D Flood Fill,Scala,3.3 -> 3.6,refactor,N/A,Gemini Free,free,28,NO,0.0,Compilation Error
+P07_scala_3.6_funcional,2D Flood Fill,Scala,3.6,version_constrained,funcional,Gemini Free,free,67,NO,0.0,Compilation Error
+P07_scala_3.6_iterativo,2D Flood Fill,Scala,3.6,version_constrained,iterativo,Gemini Free,free,68,NO,0.0,Compilation Error
+P07_scala_neutral,2D Flood Fill,Scala,cualquiera,neutral,neutral,Gemini Free,free,68,NO,0.0,Compilation Error
+P01_java_17_funcional,Word Frequency,Java,17,version_constrained,funcional,Claude Free,free,48,YES,1.0,
+P01_java_17_iterativo,Word Frequency,Java,17,version_constrained,iterativo,Claude Free,free,45,YES,1.0,
+P01_java_17_to_21,Word Frequency,Java,17 -> 21,refactor,N/A,Claude Free,free,20,YES,1.0,
+P01_java_21_funcional,Word Frequency,Java,21,version_constrained,funcional,Claude Free,free,48,YES,1.0,
+P01_java_21_iterativo,Word Frequency,Java,21,version_constrained,iterativo,Claude Free,free,45,YES,1.0,
+P01_java_8_funcional,Word Frequency,Java,8,version_constrained,funcional,Claude Free,free,48,NO,0.0,Compilation Error
+P01_java_8_iterativo,Word Frequency,Java,8,version_constrained,iterativo,Claude Free,free,45,NO,0.0,Compilation Error
+P01_java_8_to_17,Word Frequency,Java,8 -> 17,refactor,N/A,Claude Free,free,20,YES,1.0,
+P01_java_neutral,Word Frequency,Java,cualquiera,neutral,neutral,Claude Free,free,42,YES,1.0,
+P01_python_3.11_funcional,Word Frequency,Python,3.11,version_constrained,funcional,Claude Free,free,27,NO,0.0,"File ""c:\Users\Ema\Documents\Dataset\unit_tests\python\test_p01_word_frequency.py"", line 33
+    cls.fn = staticmethod(cls.sol.word_frequency))
+                                                 ^
+Syntax"
+P01_python_3.11_iterativo,Word Frequency,Python,3.11,version_constrained,iterativo,Claude Free,free,25,NO,0.0,"File ""c:\Users\Ema\Documents\Dataset\unit_tests\python\test_p01_word_frequency.py"", line 33
+    cls.fn = staticmethod(cls.sol.word_frequency))
+                                                 ^
+Syntax"
+P01_python_3.11_to_3.14,Word Frequency,Python,3.11 -> 3.14,refactor,N/A,Claude Free,free,11,NO,0.0,"File ""c:\Users\Ema\Documents\Dataset\unit_tests\python\test_p01_word_frequency.py"", line 33
+    cls.fn = staticmethod(cls.sol.word_frequency))
+                                                 ^
+Syntax"
+P01_python_3.14_funcional,Word Frequency,Python,3.14,version_constrained,funcional,Claude Free,free,27,NO,0.0,"File ""c:\Users\Ema\Documents\Dataset\unit_tests\python\test_p01_word_frequency.py"", line 33
+    cls.fn = staticmethod(cls.sol.word_frequency))
+                                                 ^
+Syntax"
+P01_python_3.14_iterativo,Word Frequency,Python,3.14,version_constrained,iterativo,Claude Free,free,24,NO,0.0,"File ""c:\Users\Ema\Documents\Dataset\unit_tests\python\test_p01_word_frequency.py"", line 33
+    cls.fn = staticmethod(cls.sol.word_frequency))
+                                                 ^
+Syntax"
+P01_python_3.9_funcional,Word Frequency,Python,3.9,version_constrained,funcional,Claude Free,free,26,NO,0.0,"File ""c:\Users\Ema\Documents\Dataset\unit_tests\python\test_p01_word_frequency.py"", line 33
+    cls.fn = staticmethod(cls.sol.word_frequency))
+                                                 ^
+Syntax"
+P01_python_3.9_iterativo,Word Frequency,Python,3.9,version_constrained,iterativo,Claude Free,free,24,NO,0.0,"File ""c:\Users\Ema\Documents\Dataset\unit_tests\python\test_p01_word_frequency.py"", line 33
+    cls.fn = staticmethod(cls.sol.word_frequency))
+                                                 ^
+Syntax"
+P01_python_3.9_to_3.11,Word Frequency,Python,3.9 -> 3.11,refactor,N/A,Claude Free,free,11,NO,0.0,"File ""c:\Users\Ema\Documents\Dataset\unit_tests\python\test_p01_word_frequency.py"", line 33
+    cls.fn = staticmethod(cls.sol.word_frequency))
+                                                 ^
+Syntax"
+P01_python_neutral,Word Frequency,Python,cualquiera,neutral,neutral,Claude Free,free,19,NO,0.0,"File ""c:\Users\Ema\Documents\Dataset\unit_tests\python\test_p01_word_frequency.py"", line 33
+    cls.fn = staticmethod(cls.sol.word_frequency))
+                                                 ^
+Syntax"
+P01_scala_2.13_funcional,Word Frequency,Scala,2.13,version_constrained,funcional,Claude Free,free,34,YES,1.0,
+P01_scala_2.13_iterativo,Word Frequency,Scala,2.13,version_constrained,iterativo,Claude Free,free,35,YES,1.0,
+P01_scala_2.13_to_3.3,Word Frequency,Scala,2.13 -> 3.3,refactor,N/A,Claude Free,free,14,NO,0.0,Compilation Error
+P01_scala_3.3_funcional,Word Frequency,Scala,3.3,version_constrained,funcional,Claude Free,free,16,YES,1.0,
+P01_scala_3.3_iterativo,Word Frequency,Scala,3.3,version_constrained,iterativo,Claude Free,free,17,YES,1.0,
+P01_scala_3.3_to_3.6,Word Frequency,Scala,3.3 -> 3.6,refactor,N/A,Claude Free,free,14,NO,0.0,Compilation Error
+P01_scala_3.6_funcional,Word Frequency,Scala,3.6,version_constrained,funcional,Claude Free,free,16,YES,1.0,
+P01_scala_3.6_iterativo,Word Frequency,Scala,3.6,version_constrained,iterativo,Claude Free,free,17,YES,1.0,
+P01_scala_neutral,Word Frequency,Scala,cualquiera,neutral,neutral,Claude Free,free,19,YES,1.0,
+P02_java_17_funcional,Binary Search,Java,17,version_constrained,funcional,Claude Free,free,53,YES,1.0,
+P02_java_17_iterativo,Binary Search,Java,17,version_constrained,iterativo,Claude Free,free,38,YES,1.0,
+P02_java_17_to_21,Binary Search,Java,17 -> 21,refactor,N/A,Claude Free,free,19,YES,1.0,
+P02_java_21_funcional,Binary Search,Java,21,version_constrained,funcional,Claude Free,free,53,YES,1.0,
+P02_java_21_iterativo,Binary Search,Java,21,version_constrained,iterativo,Claude Free,free,38,YES,1.0,
+P02_java_8_funcional,Binary Search,Java,8,version_constrained,funcional,Claude Free,free,53,YES,1.0,
+P02_java_8_iterativo,Binary Search,Java,8,version_constrained,iterativo,Claude Free,free,38,YES,1.0,
+P02_java_8_to_17,Binary Search,Java,8 -> 17,refactor,N/A,Claude Free,free,19,YES,1.0,
+P02_java_neutral,Binary Search,Java,cualquiera,neutral,neutral,Claude Free,free,37,YES,1.0,
+P02_python_3.11_funcional,Binary Search,Python,3.11,version_constrained,funcional,Claude Free,free,33,YES,1.0,
+P02_python_3.11_iterativo,Binary Search,Python,3.11,version_constrained,iterativo,Claude Free,free,31,YES,1.0,
+P02_python_3.11_to_3.14,Binary Search,Python,3.11 -> 3.14,refactor,N/A,Claude Free,free,15,YES,1.0,
+P02_python_3.14_funcional,Binary Search,Python,3.14,version_constrained,funcional,Claude Free,free,33,YES,1.0,
+P02_python_3.14_iterativo,Binary Search,Python,3.14,version_constrained,iterativo,Claude Free,free,31,YES,1.0,
+P02_python_3.9_funcional,Binary Search,Python,3.9,version_constrained,funcional,Claude Free,free,33,YES,1.0,
+P02_python_3.9_iterativo,Binary Search,Python,3.9,version_constrained,iterativo,Claude Free,free,31,YES,1.0,
+P02_python_3.9_to_3.11,Binary Search,Python,3.9 -> 3.11,refactor,N/A,Claude Free,free,15,YES,1.0,
+P02_python_neutral,Binary Search,Python,cualquiera,neutral,neutral,Claude Free,free,30,YES,1.0,
+P02_scala_2.13_funcional,Binary Search,Scala,2.13,version_constrained,funcional,Claude Free,free,38,YES,1.0,
+P02_scala_2.13_iterativo,Binary Search,Scala,2.13,version_constrained,iterativo,Claude Free,free,41,YES,1.0,
+P02_scala_2.13_to_3.3,Binary Search,Scala,2.13 -> 3.3,refactor,N/A,Claude Free,free,14,NO,0.0,Compilation Error
+P02_scala_3.3_funcional,Binary Search,Scala,3.3,version_constrained,funcional,Claude Free,free,17,YES,1.0,
+P02_scala_3.3_iterativo,Binary Search,Scala,3.3,version_constrained,iterativo,Claude Free,free,20,YES,1.0,
+P02_scala_3.3_to_3.6,Binary Search,Scala,3.3 -> 3.6,refactor,N/A,Claude Free,free,14,NO,0.0,Compilation Error
+P02_scala_3.6_funcional,Binary Search,Scala,3.6,version_constrained,funcional,Claude Free,free,17,YES,1.0,
+P02_scala_3.6_iterativo,Binary Search,Scala,3.6,version_constrained,iterativo,Claude Free,free,20,YES,1.0,
+P02_scala_neutral,Binary Search,Scala,cualquiera,neutral,neutral,Claude Free,free,38,YES,1.0,
+P03_java_17_funcional,Flatten Nested List,Java,17,version_constrained,funcional,Claude Free,free,67,NO,0.0,Compilation Error
+P03_java_17_iterativo,Flatten Nested List,Java,17,version_constrained,iterativo,Claude Free,free,59,NO,0.0,Compilation Error
+P03_java_17_to_21,Flatten Nested List,Java,17 -> 21,refactor,N/A,Claude Free,free,34,YES,1.0,
+P03_java_21_funcional,Flatten Nested List,Java,21,version_constrained,funcional,Claude Free,free,79,NO,0.0,Compilation Error
+P03_java_21_iterativo,Flatten Nested List,Java,21,version_constrained,iterativo,Claude Free,free,62,YES,1.0,
+P03_java_8_funcional,Flatten Nested List,Java,8,version_constrained,funcional,Claude Free,free,66,NO,0.0,Compilation Error
+P03_java_8_iterativo,Flatten Nested List,Java,8,version_constrained,iterativo,Claude Free,free,60,NO,0.0,Compilation Error
+P03_java_8_to_17,Flatten Nested List,Java,8 -> 17,refactor,N/A,Claude Free,free,31,YES,1.0,
+P03_java_neutral,Flatten Nested List,Java,cualquiera,neutral,neutral,Claude Free,free,48,YES,1.0,
+P03_python_3.11_funcional,Flatten Nested List,Python,3.11,version_constrained,funcional,Claude Free,free,32,NO,0.0,"File ""c:\Users\Ema\Documents\Dataset\unit_tests\python\test_p03_flatten_list.py"", line 18
+    cls.fn = staticmethod(cls.sol.flatten
+                         ^
+SyntaxError: '(' was never closed"
+P03_python_3.11_iterativo,Flatten Nested List,Python,3.11,version_constrained,iterativo,Claude Free,free,47,NO,0.0,"File ""c:\Users\Ema\Documents\Dataset\unit_tests\python\test_p03_flatten_list.py"", line 18
+    cls.fn = staticmethod(cls.sol.flatten
+                         ^
+SyntaxError: '(' was never closed"
+P03_python_3.11_to_3.14,Flatten Nested List,Python,3.11 -> 3.14,refactor,N/A,Claude Free,free,15,NO,0.0,"File ""c:\Users\Ema\Documents\Dataset\unit_tests\python\test_p03_flatten_list.py"", line 18
+    cls.fn = staticmethod(cls.sol.flatten
+                         ^
+SyntaxError: '(' was never closed"
+P03_python_3.14_funcional,Flatten Nested List,Python,3.14,version_constrained,funcional,Claude Free,free,32,NO,0.0,"File ""c:\Users\Ema\Documents\Dataset\unit_tests\python\test_p03_flatten_list.py"", line 18
+    cls.fn = staticmethod(cls.sol.flatten
+                         ^
+SyntaxError: '(' was never closed"
+P03_python_3.14_iterativo,Flatten Nested List,Python,3.14,version_constrained,iterativo,Claude Free,free,47,NO,0.0,"File ""c:\Users\Ema\Documents\Dataset\unit_tests\python\test_p03_flatten_list.py"", line 18
+    cls.fn = staticmethod(cls.sol.flatten
+                         ^
+SyntaxError: '(' was never closed"
+P03_python_3.9_funcional,Flatten Nested List,Python,3.9,version_constrained,funcional,Claude Free,free,31,NO,0.0,"File ""c:\Users\Ema\Documents\Dataset\unit_tests\python\test_p03_flatten_list.py"", line 18
+    cls.fn = staticmethod(cls.sol.flatten
+                         ^
+SyntaxError: '(' was never closed"
+P03_python_3.9_iterativo,Flatten Nested List,Python,3.9,version_constrained,iterativo,Claude Free,free,44,NO,0.0,"File ""c:\Users\Ema\Documents\Dataset\unit_tests\python\test_p03_flatten_list.py"", line 18
+    cls.fn = staticmethod(cls.sol.flatten
+                         ^
+SyntaxError: '(' was never closed"
+P03_python_3.9_to_3.11,Flatten Nested List,Python,3.9 -> 3.11,refactor,N/A,Claude Free,free,15,NO,0.0,"File ""c:\Users\Ema\Documents\Dataset\unit_tests\python\test_p03_flatten_list.py"", line 18
+    cls.fn = staticmethod(cls.sol.flatten
+                         ^
+SyntaxError: '(' was never closed"
+P03_python_neutral,Flatten Nested List,Python,cualquiera,neutral,neutral,Claude Free,free,27,NO,0.0,"File ""c:\Users\Ema\Documents\Dataset\unit_tests\python\test_p03_flatten_list.py"", line 18
+    cls.fn = staticmethod(cls.sol.flatten
+                         ^
+SyntaxError: '(' was never closed"
+P03_scala_2.13_funcional,Flatten Nested List,Scala,2.13,version_constrained,funcional,Claude Free,free,59,NO,0.0,Compilation Error
+P03_scala_2.13_iterativo,Flatten Nested List,Scala,2.13,version_constrained,iterativo,Claude Free,free,55,NO,0.0,Compilation Error
+P03_scala_2.13_to_3.3,Flatten Nested List,Scala,2.13 -> 3.3,refactor,N/A,Claude Free,free,17,NO,0.0,Compilation Error
+P03_scala_3.3_funcional,Flatten Nested List,Scala,3.3,version_constrained,funcional,Claude Free,free,45,NO,0.0,Compilation Error
+P03_scala_3.3_iterativo,Flatten Nested List,Scala,3.3,version_constrained,iterativo,Claude Free,free,27,NO,0.0,Compilation Error
+P03_scala_3.3_to_3.6,Flatten Nested List,Scala,3.3 -> 3.6,refactor,N/A,Claude Free,free,17,NO,0.0,Compilation Error
+P03_scala_3.6_funcional,Flatten Nested List,Scala,3.6,version_constrained,funcional,Claude Free,free,45,NO,0.0,Compilation Error
+P03_scala_3.6_iterativo,Flatten Nested List,Scala,3.6,version_constrained,iterativo,Claude Free,free,27,NO,0.0,Compilation Error
+P03_scala_neutral,Flatten Nested List,Scala,cualquiera,neutral,neutral,Claude Free,free,33,NO,0.0,Compilation Error
+P04_java_17_funcional,Balanced Parentheses,Java,17,version_constrained,funcional,Claude Free,free,85,NO,0.0,Compilation Error
+P04_java_17_iterativo,Balanced Parentheses,Java,17,version_constrained,iterativo,Claude Free,free,54,YES,1.0,
+P04_java_17_to_21,Balanced Parentheses,Java,17 -> 21,refactor,N/A,Claude Free,free,27,YES,1.0,
+P04_java_21_funcional,Balanced Parentheses,Java,21,version_constrained,funcional,Claude Free,free,96,NO,0.0,Compilation Error
+P04_java_21_iterativo,Balanced Parentheses,Java,21,version_constrained,iterativo,Claude Free,free,54,YES,1.0,
+P04_java_8_funcional,Balanced Parentheses,Java,8,version_constrained,funcional,Claude Free,free,91,YES,1.0,
+P04_java_8_iterativo,Balanced Parentheses,Java,8,version_constrained,iterativo,Claude Free,free,55,YES,1.0,
+P04_java_8_to_17,Balanced Parentheses,Java,8 -> 17,refactor,N/A,Claude Free,free,27,YES,1.0,
+P04_java_neutral,Balanced Parentheses,Java,cualquiera,neutral,neutral,Claude Free,free,47,YES,1.0,
+P04_python_3.11_funcional,Balanced Parentheses,Python,3.11,version_constrained,funcional,Claude Free,free,45,YES,1.0,
+P04_python_3.11_iterativo,Balanced Parentheses,Python,3.11,version_constrained,iterativo,Claude Free,free,43,YES,1.0,
+P04_python_3.11_to_3.14,Balanced Parentheses,Python,3.11 -> 3.14,refactor,N/A,Claude Free,free,14,YES,1.0,
+P04_python_3.14_funcional,Balanced Parentheses,Python,3.14,version_constrained,funcional,Claude Free,free,45,YES,1.0,
+P04_python_3.14_iterativo,Balanced Parentheses,Python,3.14,version_constrained,iterativo,Claude Free,free,43,YES,1.0,
+P04_python_3.9_funcional,Balanced Parentheses,Python,3.9,version_constrained,funcional,Claude Free,free,43,YES,1.0,
+P04_python_3.9_iterativo,Balanced Parentheses,Python,3.9,version_constrained,iterativo,Claude Free,free,43,YES,1.0,
+P04_python_3.9_to_3.11,Balanced Parentheses,Python,3.9 -> 3.11,refactor,N/A,Claude Free,free,14,YES,1.0,
+P04_python_neutral,Balanced Parentheses,Python,cualquiera,neutral,neutral,Claude Free,free,36,YES,1.0,
+P04_scala_2.13_funcional,Balanced Parentheses,Scala,2.13,version_constrained,funcional,Claude Free,free,47,YES,1.0,
+P04_scala_2.13_iterativo,Balanced Parentheses,Scala,2.13,version_constrained,iterativo,Claude Free,free,50,YES,1.0,
+P04_scala_2.13_to_3.3,Balanced Parentheses,Scala,2.13 -> 3.3,refactor,N/A,Claude Free,free,23,NO,0.0,Compilation Error
+P04_scala_3.3_funcional,Balanced Parentheses,Scala,3.3,version_constrained,funcional,Claude Free,free,39,YES,1.0,
+P04_scala_3.3_iterativo,Balanced Parentheses,Scala,3.3,version_constrained,iterativo,Claude Free,free,26,YES,1.0,
+P04_scala_3.3_to_3.6,Balanced Parentheses,Scala,3.3 -> 3.6,refactor,N/A,Claude Free,free,23,NO,0.0,Compilation Error
+P04_scala_3.6_funcional,Balanced Parentheses,Scala,3.6,version_constrained,funcional,Claude Free,free,39,YES,1.0,
+P04_scala_3.6_iterativo,Balanced Parentheses,Scala,3.6,version_constrained,iterativo,Claude Free,free,26,YES,1.0,
+P04_scala_neutral,Balanced Parentheses,Scala,cualquiera,neutral,neutral,Claude Free,free,48,YES,1.0,
+P05_java_17_funcional,Transaction Pipeline,Java,17,version_constrained,funcional,Claude Free,free,62,NO,0.0,Compilation Error
+P05_java_17_iterativo,Transaction Pipeline,Java,17,version_constrained,iterativo,Claude Free,free,56,NO,0.0,Compilation Error
+P05_java_17_to_21,Transaction Pipeline,Java,17 -> 21,refactor,N/A,Claude Free,free,39,YES,1.0,
+P05_java_21_funcional,Transaction Pipeline,Java,21,version_constrained,funcional,Claude Free,free,75,NO,0.0,Compilation Error
+P05_java_21_iterativo,Transaction Pipeline,Java,21,version_constrained,iterativo,Claude Free,free,54,NO,0.0,Compilation Error
+P05_java_8_funcional,Transaction Pipeline,Java,8,version_constrained,funcional,Claude Free,free,70,NO,0.0,Compilation Error
+P05_java_8_iterativo,Transaction Pipeline,Java,8,version_constrained,iterativo,Claude Free,free,59,NO,0.0,Compilation Error
+P05_java_8_to_17,Transaction Pipeline,Java,8 -> 17,refactor,N/A,Claude Free,free,39,YES,1.0,
+P05_java_neutral,Transaction Pipeline,Java,cualquiera,neutral,neutral,Claude Free,free,64,NO,0.0,Compilation Error
+P05_python_3.11_funcional,Transaction Pipeline,Python,3.11,version_constrained,funcional,Claude Free,free,50,YES,1.0,
+P05_python_3.11_iterativo,Transaction Pipeline,Python,3.11,version_constrained,iterativo,Claude Free,free,44,YES,1.0,
+P05_python_3.11_to_3.14,Transaction Pipeline,Python,3.11 -> 3.14,refactor,N/A,Claude Free,free,10,YES,1.0,
+P05_python_3.14_funcional,Transaction Pipeline,Python,3.14,version_constrained,funcional,Claude Free,free,50,YES,1.0,
+P05_python_3.14_iterativo,Transaction Pipeline,Python,3.14,version_constrained,iterativo,Claude Free,free,44,YES,1.0,
+P05_python_3.9_funcional,Transaction Pipeline,Python,3.9,version_constrained,funcional,Claude Free,free,44,YES,1.0,
+P05_python_3.9_iterativo,Transaction Pipeline,Python,3.9,version_constrained,iterativo,Claude Free,free,38,YES,1.0,
+P05_python_3.9_to_3.11,Transaction Pipeline,Python,3.9 -> 3.11,refactor,N/A,Claude Free,free,10,YES,1.0,
+P05_python_neutral,Transaction Pipeline,Python,cualquiera,neutral,neutral,Claude Free,free,39,YES,1.0,
+P05_scala_2.13_funcional,Transaction Pipeline,Scala,2.13,version_constrained,funcional,Claude Free,free,48,NO,0.0,Compilation Error
+P05_scala_2.13_iterativo,Transaction Pipeline,Scala,2.13,version_constrained,iterativo,Claude Free,free,51,NO,0.0,Compilation Error
+P05_scala_2.13_to_3.3,Transaction Pipeline,Scala,2.13 -> 3.3,refactor,N/A,Claude Free,free,25,NO,0.0,Compilation Error
+P05_scala_3.3_funcional,Transaction Pipeline,Scala,3.3,version_constrained,funcional,Claude Free,free,43,NO,0.0,Compilation Error
+P05_scala_3.3_iterativo,Transaction Pipeline,Scala,3.3,version_constrained,iterativo,Claude Free,free,45,NO,0.0,Compilation Error
+P05_scala_3.3_to_3.6,Transaction Pipeline,Scala,3.3 -> 3.6,refactor,N/A,Claude Free,free,25,NO,0.0,Compilation Error
+P05_scala_3.6_funcional,Transaction Pipeline,Scala,3.6,version_constrained,funcional,Claude Free,free,43,NO,0.0,Compilation Error
+P05_scala_3.6_iterativo,Transaction Pipeline,Scala,3.6,version_constrained,iterativo,Claude Free,free,43,NO,0.0,Compilation Error
+P05_scala_neutral,Transaction Pipeline,Scala,cualquiera,neutral,neutral,Claude Free,free,50,NO,0.0,Compilation Error
+P06_java_17_funcional,Max Subarray Sum,Java,17,version_constrained,funcional,Claude Free,free,32,YES,1.0,
+P06_java_17_iterativo,Max Subarray Sum,Java,17,version_constrained,iterativo,Claude Free,free,30,YES,1.0,
+P06_java_17_to_21,Max Subarray Sum,Java,17 -> 21,refactor,N/A,Claude Free,free,51,YES,1.0,
+P06_java_21_funcional,Max Subarray Sum,Java,21,version_constrained,funcional,Claude Free,free,32,YES,1.0,
+P06_java_21_iterativo,Max Subarray Sum,Java,21,version_constrained,iterativo,Claude Free,free,24,YES,1.0,
+P06_java_8_funcional,Max Subarray Sum,Java,8,version_constrained,funcional,Claude Free,free,38,YES,1.0,
+P06_java_8_iterativo,Max Subarray Sum,Java,8,version_constrained,iterativo,Claude Free,free,40,YES,1.0,
+P06_java_8_to_17,Max Subarray Sum,Java,8 -> 17,refactor,N/A,Claude Free,free,49,YES,1.0,
+P06_java_neutral,Max Subarray Sum,Java,cualquiera,neutral,neutral,Claude Free,free,33,YES,1.0,
+P06_python_3.11_funcional,Max Subarray Sum,Python,3.11,version_constrained,funcional,Claude Free,free,30,YES,1.0,
+P06_python_3.11_iterativo,Max Subarray Sum,Python,3.11,version_constrained,iterativo,Claude Free,free,31,YES,1.0,
+P06_python_3.11_to_3.14,Max Subarray Sum,Python,3.11 -> 3.14,refactor,N/A,Claude Free,free,14,YES,1.0,
+P06_python_3.14_funcional,Max Subarray Sum,Python,3.14,version_constrained,funcional,Claude Free,free,30,YES,1.0,
+P06_python_3.14_iterativo,Max Subarray Sum,Python,3.14,version_constrained,iterativo,Claude Free,free,31,YES,1.0,
+P06_python_3.9_funcional,Max Subarray Sum,Python,3.9,version_constrained,funcional,Claude Free,free,29,YES,1.0,
+P06_python_3.9_iterativo,Max Subarray Sum,Python,3.9,version_constrained,iterativo,Claude Free,free,30,YES,1.0,
+P06_python_3.9_to_3.11,Max Subarray Sum,Python,3.9 -> 3.11,refactor,N/A,Claude Free,free,14,YES,1.0,
+P06_python_neutral,Max Subarray Sum,Python,cualquiera,neutral,neutral,Claude Free,free,28,YES,1.0,
+P06_scala_2.13_funcional,Max Subarray Sum,Scala,2.13,version_constrained,funcional,Claude Free,free,23,YES,1.0,
+P06_scala_2.13_iterativo,Max Subarray Sum,Scala,2.13,version_constrained,iterativo,Claude Free,free,23,YES,1.0,
+P06_scala_2.13_to_3.3,Max Subarray Sum,Scala,2.13 -> 3.3,refactor,N/A,Claude Free,free,19,NO,0.0,Compilation Error
+P06_scala_3.3_funcional,Max Subarray Sum,Scala,3.3,version_constrained,funcional,Claude Free,free,18,YES,1.0,
+P06_scala_3.3_iterativo,Max Subarray Sum,Scala,3.3,version_constrained,iterativo,Claude Free,free,17,YES,1.0,
+P06_scala_3.3_to_3.6,Max Subarray Sum,Scala,3.3 -> 3.6,refactor,N/A,Claude Free,free,19,NO,0.0,Compilation Error
+P06_scala_3.6_funcional,Max Subarray Sum,Scala,3.6,version_constrained,funcional,Claude Free,free,18,YES,1.0,
+P06_scala_3.6_iterativo,Max Subarray Sum,Scala,3.6,version_constrained,iterativo,Claude Free,free,17,YES,1.0,
+P06_scala_neutral,Max Subarray Sum,Scala,cualquiera,neutral,neutral,Claude Free,free,16,YES,1.0,
+P07_java_17_funcional,2D Flood Fill,Java,17,version_constrained,funcional,Claude Free,free,70,YES,1.0,
+P07_java_17_iterativo,2D Flood Fill,Java,17,version_constrained,iterativo,Claude Free,free,45,YES,1.0,
+P07_java_17_to_21,2D Flood Fill,Java,17 -> 21,refactor,N/A,Claude Free,free,87,YES,1.0,
+P07_java_21_funcional,2D Flood Fill,Java,21,version_constrained,funcional,Claude Free,free,70,YES,1.0,
+P07_java_21_iterativo,2D Flood Fill,Java,21,version_constrained,iterativo,Claude Free,free,45,YES,1.0,
+P07_java_8_funcional,2D Flood Fill,Java,8,version_constrained,funcional,Claude Free,free,88,YES,1.0,
+P07_java_8_iterativo,2D Flood Fill,Java,8,version_constrained,iterativo,Claude Free,free,43,YES,1.0,
+P07_java_8_to_17,2D Flood Fill,Java,8 -> 17,refactor,N/A,Claude Free,free,87,YES,1.0,
+P07_java_neutral,2D Flood Fill,Java,cualquiera,neutral,neutral,Claude Free,free,42,YES,1.0,
+P07_python_3.11_funcional,2D Flood Fill,Python,3.11,version_constrained,funcional,Claude Free,free,42,YES,1.0,
+P07_python_3.11_iterativo,2D Flood Fill,Python,3.11,version_constrained,iterativo,Claude Free,free,25,YES,1.0,
+P07_python_3.11_to_3.14,2D Flood Fill,Python,3.11 -> 3.14,refactor,N/A,Claude Free,free,22,YES,1.0,
+P07_python_3.14_funcional,2D Flood Fill,Python,3.14,version_constrained,funcional,Claude Free,free,41,YES,1.0,
+P07_python_3.14_iterativo,2D Flood Fill,Python,3.14,version_constrained,iterativo,Claude Free,free,25,YES,1.0,
+P07_python_3.9_funcional,2D Flood Fill,Python,3.9,version_constrained,funcional,Claude Free,free,41,YES,1.0,
+P07_python_3.9_iterativo,2D Flood Fill,Python,3.9,version_constrained,iterativo,Claude Free,free,25,YES,1.0,
+P07_python_3.9_to_3.11,2D Flood Fill,Python,3.9 -> 3.11,refactor,N/A,Claude Free,free,22,YES,1.0,
+P07_python_neutral,2D Flood Fill,Python,cualquiera,neutral,neutral,Claude Free,free,25,YES,1.0,
+P07_scala_2.13_funcional,2D Flood Fill,Scala,2.13,version_constrained,funcional,Claude Free,free,53,YES,1.0,
+P07_scala_2.13_iterativo,2D Flood Fill,Scala,2.13,version_constrained,iterativo,Claude Free,free,79,YES,1.0,
+P07_scala_2.13_to_3.3,2D Flood Fill,Scala,2.13 -> 3.3,refactor,N/A,Claude Free,free,29,NO,0.0,Compilation Error
+P07_scala_3.3_funcional,2D Flood Fill,Scala,3.3,version_constrained,funcional,Claude Free,free,44,YES,1.0,
+P07_scala_3.3_iterativo,2D Flood Fill,Scala,3.3,version_constrained,iterativo,Claude Free,free,66,YES,1.0,
+P07_scala_3.3_to_3.6,2D Flood Fill,Scala,3.3 -> 3.6,refactor,N/A,Claude Free,free,29,NO,0.0,Compilation Error
+P07_scala_3.6_funcional,2D Flood Fill,Scala,3.6,version_constrained,funcional,Claude Free,free,44,YES,1.0,
+P07_scala_3.6_iterativo,2D Flood Fill,Scala,3.6,version_constrained,iterativo,Claude Free,free,66,YES,1.0,
+P07_scala_neutral,2D Flood Fill,Scala,cualquiera,neutral,neutral,Claude Free,free,38,YES,1.0,

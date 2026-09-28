@@ -1,0 +1,52 @@
+El siguiente codigo resuelve "Balanced Parentheses" en Scala version 3.3:
+
+```scala
+﻿// P04: Balanced Parentheses — Scala 2.13 (codigo base para refactoring)
+// Estilo: Stack mutable con operaciones push/pop explicitas
+import scala.collection.mutable
+
+object P04BalancedParentheses_v213 {
+
+  def isBalanced(s: String): Boolean = {
+    val stack = mutable.Stack[Char]()
+    val pairs = Map(')' -> '(', ']' -> '[', '}' -> '{')
+    var balanced = true
+
+    var i = 0
+    while (i < s.length && balanced) {
+      val c = s(i)
+      if ("([{".contains(c)) {
+        stack.push(c)
+      } else if (")]}".contains(c)) {
+        if (stack.isEmpty || stack.top != pairs(c)) {
+          balanced = false
+        } else {
+          stack.pop()
+        }
+      }
+      i += 1
+    }
+    balanced && stack.isEmpty
+  }
+
+  def main(args: Array[String]): Unit = {
+    assert(isBalanced("()") == true)
+    assert(isBalanced("([)]") == false)
+    assert(isBalanced("") == true)
+    assert(isBalanced("{[]}") == true)
+    println("All tests passed")
+  }
+}
+```
+
+Migra este codigo a Scala version 3.6:
+
+1. CARACTERISTICAS NUEVAS: Usa las de Scala 3.6 que mejoren legibilidad o rendimiento. Al inicio, en un comentario, lista cuales usaste y por que.
+
+2. COMPORTAMIENTO IDENTICO: Misma logica, mismos resultados.
+
+3. NOMBRE DE FUNCION: Debe permanecer exactamente "isBalanced".
+
+4. MISMOS TESTS: Conserva los casos de prueba, adaptados a Scala 3.6.
+
+5. EXPLICA TUS CAMBIOS: Al final en un comentario, enumera los cambios y por que son idiomaticos en Scala 3.6.

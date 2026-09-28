@@ -1,0 +1,32 @@
+Resuelve el siguiente problema en Python version 3.11, usando ESTRICTAMENTE el paradigma funcional.
+
+Problema: 2D Flood Fill
+﻿Escribe una funcion en Python que implemente el algoritmo Flood Fill sobre
+una matriz 2D de enteros. Dada la posicion inicial (fila, columna) y un nuevo color,
+reemplaza el color en esa posicion y todos los pixeles conectados en 4 direcciones
+(arriba, abajo, izquierda, derecha) que tengan el mismo color original, con el nuevo color.
+Retorna la matriz modificada.
+
+Requisitos:
+- El nombre de la funcion debe ser exactamente: flood_fill
+- Si el color en (fila, col) ya es el nuevo color, retorna la matriz sin cambios.
+- Conectividad: 4 direcciones (no diagonal).
+
+Ejemplo:
+  grid = [[1,1,1],[1,1,0],[1,0,1]], row=1, col=1, new_color=2
+  resultado: [[2,2,2],[2,2,0],[2,0,1]]
+
+Incluye al final del archivo 3 casos de prueba usando assert.
+
+
+=== REQUISITOS ADICIONALES ===
+
+1. LENGUAJE Y VERSION: Usa EXCLUSIVAMENTE Python 3.11. Usa las caracteristicas nuevas de 3.11 cuando esten disponibles.
+
+2. PARADIGMA FUNCIONAL: Usa inmutabilidad. Emplea map(),filter(),functools.reduce(). Evita for/while con estado mutable.
+
+3. NOMBRE DE FUNCION: Exactamente "flood_fill".
+
+4. BIBLIOTECA ESTANDAR UNICAMENTE: No uses librerias de terceros.
+
+5. TESTS: Incluye al final 3 casos de prueba usando el mecanismo estandar de Python.

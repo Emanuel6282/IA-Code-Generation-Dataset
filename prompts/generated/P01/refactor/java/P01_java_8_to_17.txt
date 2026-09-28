@@ -1,0 +1,40 @@
+El siguiente codigo resuelve "Word Frequency" en Java version 8:
+
+```java
+﻿// P01: Word Frequency — Java 8 (codigo base para refactoring)
+import java.util.*;
+
+public class P01WordFrequency_v8 {
+
+    public static Map<String, Integer> wordFrequency(List<String> words) {
+        Map<String, Integer> result = new HashMap<>();
+        for (String word : words) {
+            if (result.containsKey(word)) {
+                result.put(word, result.get(word) + 1);
+            } else {
+                result.put(word, 1);
+            }
+        }
+        return result;
+    }
+
+    public static void main(String[] args) {
+        assert wordFrequency(Arrays.asList("the","fox","the")).equals(Map.of("the",2,"fox",1));
+        assert wordFrequency(Collections.emptyList()).equals(Map.of());
+        assert wordFrequency(Arrays.asList("hello")).equals(Map.of("hello",1));
+        System.out.println("All tests passed");
+    }
+}
+```
+
+Migra este codigo a Java version 17:
+
+1. CARACTERISTICAS NUEVAS: Usa las de Java 17 que mejoren legibilidad o rendimiento. Al inicio, en un comentario, lista cuales usaste y por que.
+
+2. COMPORTAMIENTO IDENTICO: Misma logica, mismos resultados.
+
+3. NOMBRE DE FUNCION: Debe permanecer exactamente "wordFrequency".
+
+4. MISMOS TESTS: Conserva los casos de prueba, adaptados a Java 17.
+
+5. EXPLICA TUS CAMBIOS: Al final en un comentario, enumera los cambios y por que son idiomaticos en Java 17.

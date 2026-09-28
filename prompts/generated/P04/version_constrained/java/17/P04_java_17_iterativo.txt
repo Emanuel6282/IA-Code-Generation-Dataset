@@ -1,0 +1,27 @@
+Resuelve el siguiente problema en Java version 17, usando ESTRICTAMENTE el paradigma iterativo.
+
+Problema: Balanced Parentheses
+﻿Escribe una funcion en Java que, dada una cadena que contiene solo los caracteres
+"(", ")", "[", "]", "{", "}", retorne verdadero si todos los parentesis/corchetes estan
+correctamente balanceados y cerrados en orden. Retorna falso en caso contrario.
+
+Requisitos:
+- El nombre de la funcion debe ser exactamente: isBalanced
+- Una cadena vacia es considerada balanceada.
+
+Ejemplos: "()" -> true | "([)]" -> false | "{[]}" -> true
+
+Incluye al final del archivo 3 casos de prueba usando assert.
+
+
+=== REQUISITOS ADICIONALES ===
+
+1. LENGUAJE Y VERSION: Usa EXCLUSIVAMENTE Java 17. Usa las caracteristicas nuevas de 17 cuando esten disponibles.
+
+2. PARADIGMA ITERATIVO: Usa bucles for/while, ArrayList, HashMap. Evita Streams, lambdas y recursion.
+
+3. NOMBRE DE FUNCION: Exactamente "isBalanced".
+
+4. BIBLIOTECA ESTANDAR UNICAMENTE: No uses librerias de terceros.
+
+5. TESTS: Incluye al final 3 casos de prueba usando el mecanismo estandar de Java.

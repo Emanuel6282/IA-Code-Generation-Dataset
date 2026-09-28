@@ -1,0 +1,66 @@
+El siguiente codigo resuelve "2D Flood Fill" en Scala version 3.3:
+
+```scala
+﻿// P07: Flood Fill — Scala 2.13 (codigo base para refactoring)
+// Estilo: BFS iterativo con mutable.Queue y actualizacion in-place de la matriz 2D
+// El desafio funcional en el refactor es propagar el estado mediante Set inmutable de coordenadas
+
+import scala.collection.mutable
+
+object P07FloodFill_v213 {
+
+  def floodFill(grid: Array[Array[Int]], row: Int, col: Int, newColor: Int): Array[Array[Int]] = {
+    val originalColor = grid(row)(col)
+    if (originalColor == newColor) return grid
+
+    val rows = grid.length
+    val cols = grid(0).length
+    val queue = mutable.Queue[(Int, Int)]()
+    queue.enqueue((row, col))
+    grid(row)(col) = newColor
+
+    val directions = List((-1,0),(1,0),(0,-1),(0,1))
+
+    while (queue.nonEmpty) {
+      val (r, c) = queue.dequeue()
+      for ((dr, dc) <- directions) {
+        val nr = r + dr
+        val nc = c + dc
+        if (nr >= 0 && nr < rows && nc >= 0 && nc < cols && grid(nr)(nc) == originalColor) {
+          grid(nr)(nc) = newColor
+          queue.enqueue((nr, nc))
+        }
+      }
+    }
+    grid
+  }
+
+  def main(args: Array[String]): Unit = {
+    // TC01: fill clasico
+    val r1 = floodFill(Array(Array(1,1,1),Array(1,1,0),Array(1,0,1)), 1, 1, 2)
+    assert(r1.deep == Array(Array(2,2,2),Array(2,2,0),Array(2,0,1)).deep)
+
+    // TC02: grilla completa
+    val r2 = floodFill(Array(Array(0,0,0),Array(0,0,0)), 0, 0, 1)
+    assert(r2.deep == Array(Array(1,1,1),Array(1,1,1)).deep)
+
+    // TC03: mismo color
+    val r3 = floodFill(Array(Array(1,1,1),Array(1,1,0),Array(1,0,1)), 1, 1, 1)
+    assert(r3.deep == Array(Array(1,1,1),Array(1,1,0),Array(1,0,1)).deep)
+
+    println("All tests passed")
+  }
+}
+```
+
+Migra este codigo a Scala version 3.6:
+
+1. CARACTERISTICAS NUEVAS: Usa las de Scala 3.6 que mejoren legibilidad o rendimiento. Al inicio, en un comentario, lista cuales usaste y por que.
+
+2. COMPORTAMIENTO IDENTICO: Misma logica, mismos resultados.
+
+3. NOMBRE DE FUNCION: Debe permanecer exactamente "floodFill".
+
+4. MISMOS TESTS: Conserva los casos de prueba, adaptados a Scala 3.6.
+
+5. EXPLICA TUS CAMBIOS: Al final en un comentario, enumera los cambios y por que son idiomaticos en Scala 3.6.

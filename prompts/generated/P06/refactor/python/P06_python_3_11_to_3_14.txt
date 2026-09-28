@@ -1,0 +1,34 @@
+El siguiente codigo resuelve "Max Subarray Sum" en Python version 3.11:
+
+```python
+﻿# P06: Max Subarray Sum (Kadane) — Python 3.9 (codigo base para refactoring)
+from typing import List
+
+def max_subarray_sum(arr: List[int]) -> int:
+    current_max = arr[0]
+    global_max = arr[0]
+    for i in range(1, len(arr)):
+        if current_max + arr[i] > arr[i]:
+            current_max = current_max + arr[i]
+        else:
+            current_max = arr[i]
+        if current_max > global_max:
+            global_max = current_max
+    return global_max
+
+assert max_subarray_sum([-2,1,-3,4,-1,2,1,-5,4]) == 6
+assert max_subarray_sum([1]) == 1
+assert max_subarray_sum([-2,-1]) == -1
+```
+
+Migra este codigo a Python version 3.14:
+
+1. CARACTERISTICAS NUEVAS: Usa las de Python 3.14 que mejoren legibilidad o rendimiento. Al inicio, en un comentario, lista cuales usaste y por que.
+
+2. COMPORTAMIENTO IDENTICO: Misma logica, mismos resultados.
+
+3. NOMBRE DE FUNCION: Debe permanecer exactamente "max_subarray_sum".
+
+4. MISMOS TESTS: Conserva los casos de prueba, adaptados a Python 3.14.
+
+5. EXPLICA TUS CAMBIOS: Al final en un comentario, enumera los cambios y por que son idiomaticos en Python 3.14.

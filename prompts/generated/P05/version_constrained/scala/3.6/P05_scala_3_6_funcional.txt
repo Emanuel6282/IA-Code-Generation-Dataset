@@ -1,0 +1,37 @@
+Resuelve el siguiente problema en Scala version 3.6, usando ESTRICTAMENTE el paradigma funcional.
+
+Problema: Transaction Pipeline
+﻿Escribe una funcion en Scala que procese una lista de transacciones financieras.
+Cada transaccion es un objeto/diccionario con los campos:
+  - id (entero)
+  - amount (decimal/float)
+  - status (string: "approved" o "rejected")
+  - category (string)
+
+La funcion debe:
+1. Filtrar: mantener solo transacciones con status == "approved" Y amount > 0
+2. Aplicar: una comision del 10% (multiplicar cada amount por 0.9)
+3. Retornar: la suma total de los amounts resultantes, redondeada a 2 decimales.
+
+Requisitos:
+- El nombre de la funcion debe ser exactamente: processTransactions
+- Lista vacia o sin transacciones validas -> retorna 0.0
+
+Ejemplo:
+  Entrada: [{id:1, amount:100.0, status:"approved"}, {id:2, amount:200.0, status:"rejected"}]
+  Salida:  90.0  (solo la primera aplica: 100 * 0.9 = 90)
+
+Incluye al final del archivo 3 casos de prueba usando assert.
+
+
+=== REQUISITOS ADICIONALES ===
+
+1. LENGUAJE Y VERSION: Usa EXCLUSIVAMENTE Scala 3.6. Usa las caracteristicas nuevas de 3.6 cuando esten disponibles.
+
+2. PARADIGMA FUNCIONAL: Usa val, colecciones inmutables, map(),filter(),foldLeft(),flatMap(). Usa @tailrec. Evita var y mutable.*.
+
+3. NOMBRE DE FUNCION: Exactamente "processTransactions".
+
+4. BIBLIOTECA ESTANDAR UNICAMENTE: No uses librerias de terceros.
+
+5. TESTS: Incluye al final 3 casos de prueba usando el mecanismo estandar de Scala.

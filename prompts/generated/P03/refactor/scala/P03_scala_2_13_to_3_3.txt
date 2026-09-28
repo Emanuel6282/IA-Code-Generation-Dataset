@@ -1,0 +1,46 @@
+El siguiente codigo resuelve "Flatten Nested List" en Scala version 2.13:
+
+```scala
+﻿// P03: Flatten Nested List — Scala 2.13 (codigo base para refactoring)
+// Estilo: Stack explicita mutable (desafio iterativo), para forzar pattern matching recursivo en el refactor
+import scala.collection.mutable
+
+object P03FlattenList_v213 {
+
+  def flatten(nested: Any): List[Int] = {
+    val result = mutable.ListBuffer[Int]()
+    val stack = mutable.Stack[Any](nested)
+
+    while (stack.nonEmpty) {
+      stack.pop() match {
+        case list: List[_] =>
+          // Agregar en orden inverso para preservar orden
+          list.reverse.foreach(stack.push)
+        case n: Int =>
+          result += n
+        case _ => // ignorar otros tipos
+      }
+    }
+    result.toList
+  }
+
+  def main(args: Array[String]): Unit = {
+    assert(flatten(List(1, List(2,3), List(4, List(5,6)))) == List(1,2,3,4,5,6))
+    assert(flatten(List.empty) == List.empty)
+    assert(flatten(List(1,2,3)) == List(1,2,3))
+    println("All tests passed")
+  }
+}
+```
+
+Migra este codigo a Scala version 3.3:
+
+1. CARACTERISTICAS NUEVAS: Usa las de Scala 3.3 que mejoren legibilidad o rendimiento. Al inicio, en un comentario, lista cuales usaste y por que.
+
+2. COMPORTAMIENTO IDENTICO: Misma logica, mismos resultados.
+
+3. NOMBRE DE FUNCION: Debe permanecer exactamente "flatten".
+
+4. MISMOS TESTS: Conserva los casos de prueba, adaptados a Scala 3.3.
+
+5. EXPLICA TUS CAMBIOS: Al final en un comentario, enumera los cambios y por que son idiomaticos en Scala 3.3.

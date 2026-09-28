@@ -1,0 +1,50 @@
+﻿=============================================================================
+TEMPLATE: PROMPT DE REFACTORIZACION
+=============================================================================
+Reemplaza las variables antes de enviar:
+  {LANGUAGE}         -> python | java | scala
+  {OLD_VERSION}      -> version del codigo base (3.9 | 8 | 2.13)
+  {NEW_VERSION}      -> version objetivo (3.11 o 3.14 | 17 o 21 | 3.3 o 3.8)
+  {BASE_CODE}        -> codigo fuente base (copiar desde base_code/{LANGUAGE}/)
+  {FUNC_NAME}        -> nombre de la funcion
+=============================================================================
+
+--- PROMPT A ENVIAR ---
+
+El siguiente codigo esta escrito en {LANGUAGE} version {OLD_VERSION}:
+
+```{LANGUAGE}
+{BASE_CODE}
+```
+
+Migra este codigo a {LANGUAGE} version {NEW_VERSION} aplicando las siguientes mejoras:
+
+1. Adopta las nuevas caracteristicas del lenguaje introducidas en {NEW_VERSION}
+   que mejoren la legibilidad o concision del codigo. Menciona en un comentario
+   cuales caracteristicas nuevas usaste y por que.
+2. Mantiene EXACTAMENTE la misma logica y el mismo comportamiento observable.
+3. El nombre de la funcion debe permanecer: {FUNC_NAME}
+4. No cambies la interfaz de la funcion (mismos parametros, mismo tipo de retorno).
+5. Incluye al final los mismos casos de prueba que el codigo original, adaptados
+   a la sintaxis de {LANGUAGE} {NEW_VERSION}.
+
+--- FIN DEL PROMPT ---
+
+=============================================================================
+TRANSICIONES DE VERSION POR LENGUAJE:
+  Python: 3.9 -> 3.11  |  3.11 -> 3.14
+  Java:   8   -> 17    |  17   -> 21
+  Scala:  2.13-> 3.3   |  3.3  -> 3.8
+
+TABLA DE COMBINACIONES (7 x 3 lenguajes x 2 transiciones = 42 prompts, x 4 modelos = 168 filas):
+
+| Problema | Lenguaje | Desde | Hacia | GPT-4o | Claude | Gemini Pro | Gemini Flash |
+|----------|----------|-------|-------|--------|--------|------------|--------------|
+| P01      | Python   | 3.9   | 3.11  |        |        |            |              |
+| P01      | Python   | 3.11  | 3.14  |        |        |            |              |
+| P01      | Java     | 8     | 17    |        |        |            |              |
+| P01      | Java     | 17    | 21    |        |        |            |              |
+| P01      | Scala    | 2.13  | 3.3   |        |        |            |              |
+| P01      | Scala    | 3.3   | 3.8   |        |        |            |              |
+| ...      |          |       |       |        |        |            |              |
+=============================================================================

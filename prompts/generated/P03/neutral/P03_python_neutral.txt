@@ -1,0 +1,11 @@
+﻿Escribe una funcion en Python que, dada una lista arbitrariamente anidada de enteros,
+retorne una lista plana con todos los enteros en el mismo orden de aparicion.
+
+Requisitos:
+- El nombre de la funcion debe ser exactamente: flatten
+- La funcion debe manejar cualquier nivel de anidamiento.
+- Lista vacia -> lista vacia.
+
+Ejemplo: [1, [2, 3], [4, [5, 6]]] -> [1, 2, 3, 4, 5, 6]
+
+Incluye al final del archivo 3 casos de prueba usando assert.

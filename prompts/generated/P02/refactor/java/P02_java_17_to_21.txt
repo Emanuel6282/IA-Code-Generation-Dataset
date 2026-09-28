@@ -1,0 +1,38 @@
+El siguiente codigo resuelve "Binary Search" en Java version 17:
+
+```java
+﻿// P02: Binary Search — Java 8 (codigo base para refactoring)
+public class P02BinarySearch_v8 {
+
+    public static int binarySearch(int[] arr, int target) {
+        int left = 0;
+        int right = arr.length - 1;
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            if (arr[mid] == target) return mid;
+            else if (arr[mid] < target) left = mid + 1;
+            else right = mid - 1;
+        }
+        return -1;
+    }
+
+    public static void main(String[] args) {
+        assert binarySearch(new int[]{1,3,5,7,9}, 5) == 2;
+        assert binarySearch(new int[]{1,3,5,7,9}, 4) == -1;
+        assert binarySearch(new int[]{}, 1) == -1;
+        System.out.println("All tests passed");
+    }
+}
+```
+
+Migra este codigo a Java version 21:
+
+1. CARACTERISTICAS NUEVAS: Usa las de Java 21 que mejoren legibilidad o rendimiento. Al inicio, en un comentario, lista cuales usaste y por que.
+
+2. COMPORTAMIENTO IDENTICO: Misma logica, mismos resultados.
+
+3. NOMBRE DE FUNCION: Debe permanecer exactamente "binarySearch".
+
+4. MISMOS TESTS: Conserva los casos de prueba, adaptados a Java 21.
+
+5. EXPLICA TUS CAMBIOS: Al final en un comentario, enumera los cambios y por que son idiomaticos en Java 21.
