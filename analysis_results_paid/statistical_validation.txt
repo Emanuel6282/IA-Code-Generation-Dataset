@@ -1,0 +1,72 @@
+== 1. TASA DE EXITO POR MODELO (IC Wilson 95%) ==
+ChatGPT Plus: 151/189 = 79.89%  IC95% [73.6, 85.0]
+Claude Pro: 161/189 = 85.19%  IC95% [79.4, 89.5]
+Gemini Pro: 160/189 = 84.66%  IC95% [78.8, 89.1]
+
+== 2. CHI-CUADRADO GLOBAL (3 modelos, independiente) ==
+chi2=2.301, gl=2, p=0.3164
+Q de Cochran (datos pareados): Q=10.706, p=0.0047
+
+== 3. COMPARACIONES PAREADAS (McNemar exacto, Holm-Bonferroni, OR y h de Cohen) ==
+ChatGPT Plus vs Claude Pro: discordantes 0/10, dif=-5.29 pp, p(McNemar)=0.0020, p(Holm)=0.0059, OR=0.00, h=-0.140
+ChatGPT Plus vs Gemini Pro: discordantes 4/13, dif=-4.76 pp, p(McNemar)=0.0490, p(Holm)=0.0981, OR=0.31, h=-0.125
+Claude Pro vs Gemini Pro: discordantes 4/3, dif=0.53 pp, p(McNemar)=1.0000, p(Holm)=1.0000, OR=1.33, h=0.015
+
+== 4. POR LENGUAJE (exito %, n=63 por celda) + Fisher/Chi2 entre modelos ==
+Java: ChatGPT Plus: 82.5% (n=63) | Claude Pro: 82.5% (n=63) | Gemini Pro: 79.4% (n=63) | chi2 p=0.8691
+Python: ChatGPT Plus: 96.8% (n=63) | Claude Pro: 100.0% (n=63) | Gemini Pro: 100.0% (n=63) | chi2 p=0.1325
+Scala: ChatGPT Plus: 60.3% (n=63) | Claude Pro: 73.0% (n=63) | Gemini Pro: 74.6% (n=63) | chi2 p=0.1627
+
+== 5. POR VERSION (solo prompts con version; exito % agregado de 3 modelos y por modelo) ==
+Java 17       n= 42 total= 85.7% | ChatGPT Plus: 85.7% | Claude Pro: 85.7% | Gemini Pro: 85.7%
+Java 17 -> 21 n= 21 total= 95.2% | ChatGPT Plus: 100.0% | Claude Pro: 100.0% | Gemini Pro: 85.7%
+Java 21       n= 42 total= 85.7% | ChatGPT Plus: 85.7% | Claude Pro: 85.7% | Gemini Pro: 85.7%
+Java 8        n= 42 total= 57.1% | ChatGPT Plus: 57.1% | Claude Pro: 57.1% | Gemini Pro: 57.1%
+Java 8 -> 17  n= 21 total= 95.2% | ChatGPT Plus: 100.0% | Claude Pro: 100.0% | Gemini Pro: 85.7%
+Java cualquiera n= 21 total= 85.7% | ChatGPT Plus: 85.7% | Claude Pro: 85.7% | Gemini Pro: 85.7%
+Python 3.11     n= 42 total= 95.2% | ChatGPT Plus: 85.7% | Claude Pro: 100.0% | Gemini Pro: 100.0%
+Python 3.11 -> 3.14 n= 21 total=100.0% | ChatGPT Plus: 100.0% | Claude Pro: 100.0% | Gemini Pro: 100.0%
+Python 3.14     n= 42 total=100.0% | ChatGPT Plus: 100.0% | Claude Pro: 100.0% | Gemini Pro: 100.0%
+Python 3.9      n= 42 total=100.0% | ChatGPT Plus: 100.0% | Claude Pro: 100.0% | Gemini Pro: 100.0%
+Python 3.9 -> 3.11 n= 21 total=100.0% | ChatGPT Plus: 100.0% | Claude Pro: 100.0% | Gemini Pro: 100.0%
+Python cualquiera n= 21 total=100.0% | ChatGPT Plus: 100.0% | Claude Pro: 100.0% | Gemini Pro: 100.0%
+Scala 2.13     n= 42 total= 61.9% | ChatGPT Plus: 50.0% | Claude Pro: 64.3% | Gemini Pro: 71.4%
+Scala 2.13 -> 3.3 n= 21 total= 90.5% | ChatGPT Plus: 85.7% | Claude Pro: 100.0% | Gemini Pro: 85.7%
+Scala 3.3      n= 42 total= 61.9% | ChatGPT Plus: 50.0% | Claude Pro: 64.3% | Gemini Pro: 71.4%
+Scala 3.3 -> 3.6 n= 21 total= 90.5% | ChatGPT Plus: 85.7% | Claude Pro: 100.0% | Gemini Pro: 85.7%
+Scala 3.6      n= 42 total= 61.9% | ChatGPT Plus: 50.0% | Claude Pro: 64.3% | Gemini Pro: 71.4%
+Scala cualquiera n= 21 total= 71.4% | ChatGPT Plus: 71.4% | Claude Pro: 71.4% | Gemini Pro: 71.4%
+
+== 6. POR TIPO DE PROMPT ==
+neutral              n= 63 total= 85.7% | ChatGPT Plus: 85.7% | Claude Pro: 85.7% | Gemini Pro: 85.7%
+refactor             n=126 total= 95.2% | ChatGPT Plus: 95.2% | Claude Pro: 100.0% | Gemini Pro: 90.5%
+version_constrained  n=378 total= 78.8% | ChatGPT Plus: 73.8% | Claude Pro: 80.2% | Gemini Pro: 82.5%
+
+== 7. POR PARADIGMA (solo version_constrained) ==
+funcional  n=189 total= 78.8% | ChatGPT Plus: 76.2% | Claude Pro: 77.8% | Gemini Pro: 82.5%
+iterativo  n=189 total= 78.8% | ChatGPT Plus: 71.4% | Claude Pro: 82.5% | Gemini Pro: 82.5%
+Chi2 paradigma vs exito: p=1.0000
+
+== 8. REGRESION LOGISTICA (version_constrained): exito ~ modelo + lenguaje + paradigma + version ordinal ==
+                                     Coef.  Std.Err.       z   P>|z|  [0.025  0.975]
+Intercept                           0.4620    0.3433  1.3458  0.1784 -0.2108  1.1347
+C(ai_model_name)[T.Claude Pro]      0.4323    0.3305  1.3079  0.1909 -0.2155  1.0801
+C(ai_model_name)[T.Gemini Pro]      0.6142    0.3379  1.8174  0.0691 -0.0482  1.2766
+C(language)[T.Python]               3.0031    0.7452  4.0298  0.0001  1.5425  4.4636
+C(language)[T.Scala]               -0.7021    0.2835 -2.4762  0.0133 -1.2578 -0.1464
+C(paradigm_requested)[T.iterativo] -0.0000    0.2755 -0.0000  1.0000 -0.5400  0.5400
+vidx                                0.3963    0.1708  2.3195  0.0204  0.0614  0.7311
+
+== 9. PRUEBA DE LOC (solo exitosos): Kruskal-Wallis + Mann-Whitney ==
+ChatGPT Plus: media=46.7, mediana=35.0, sd=37.1, n=151
+Claude Pro: media=47.2, mediana=43.0, sd=28.8, n=161
+Gemini Pro: media=33.1, mediana=29.5, sd=17.9, n=160
+Kruskal-Wallis H=20.098, p=0.00004
+  ChatGPT Plus vs Claude Pro: U=10899, p=0.11466, r_rb=0.103
+  ChatGPT Plus vs Gemini Pro: U=14019, p=0.01442, r_rb=-0.161
+  Claude Pro vs Gemini Pro: U=16724, p=0.00000, r_rb=-0.298
+
+== 10. COMPILACION / FALLOS ==
+ChatGPT Plus: compila/ejecuta=81.0%, ratio medio de tests=0.799, fallo por compilacion=36, fallo logico=2
+Claude Pro: compila/ejecuta=85.2%, ratio medio de tests=0.852, fallo por compilacion=28, fallo logico=0
+Gemini Pro: compila/ejecuta=84.7%, ratio medio de tests=0.847, fallo por compilacion=29, fallo logico=0

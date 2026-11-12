@@ -1,56 +1,61 @@
-# Análisis de Resultados - Modelos LLM Gratuitos
+# Análisis de Resultados — Modelos LLM Gratuitos ($n = 567$)
 
-Este directorio (`analysis_results_free`) contiene los resultados estadísticos y gráficos de la evaluación del código generado por Modelos de Lenguaje Grande (LLMs) en su capa gratuita (ChatGPT Free, Gemini Free y Claude Free).
+Este directorio (`analysis_results_free`) contiene los resultados empíricos y gráficos de la evaluación del código generado por Modelos de Lenguaje de Gran Escala (LLMs) en su nivel de acceso gratuito (**ChatGPT Free / `GPT-4o mini`**, **Gemini Free / `Gemini 3.5 Flash`** y **Claude Free / `Claude Sonnet 5`**).
 
 ## Metodología de la Investigación
 
-Para sustentar la rigurosidad científica de estos resultados, el proceso de recopilación, evaluación y análisis se estructuró en tres fases metodológicas:
+El proceso de recopilación, evaluación y análisis se estructuró en tres fases metodológicas:
 
-### 1. Generación del Dataset y Recolección de Datos
-*   **Diseño Experimental:** Se elaboraron 7 problemas algorítmicos base (Word Frequency, Binary Search, Flatten List, Balanced Parentheses, Transaction Pipeline, Max Subarray, y Flood Fill).
-*   **Diversidad Estructural:** Para cada problema, se crearon permutaciones de *prompts* exigiendo soluciones en 3 lenguajes de programación (Java, Python, Scala), abarcando múltiples restricciones de versiones, y exigiendo diferentes paradigmas de programación (iterativo, funcional) y tareas de refactorización. Esto dio como resultado 189 prompts únicos.
-*   **Interacción Zero-Shot:** La obtención del código se realizó de manera manual copiando y pegando el prompt directamente en las interfaces web oficiales de los modelos. Esto garantiza que se mide la respuesta natural que recibe un usuario promedio, evitando optimizaciones o *system prompts* implícitos asociados al uso de APIs.
-*   **Modelos Evaluados:** ChatGPT Free, Gemini Free y Claude Free (totalizando 567 archivos de código fuente).
+### 1. Diseño del Corpus y Recolección de Datos
+*   **Problemas Algorítmicos Base (`P01`–`P07`):** Se evaluaron 7 problemas canónicos (*Word Frequency*, *Binary Search*, *Flatten Nested List*, *Balanced Parentheses*, *Transaction Pipeline*, *Max Subarray Sum* y *2D Flood Fill*).
+*   **Construcción Paso a Paso de los Prompts:** Para un solo lenguaje de programación sobre los 7 problemas se formularon:
+    *   `7` Prompts Neutrales ($7 \times 1 = 7$).
+    *   `42` Prompts Restringidos por Versión y Paradigma ($7\text{ problemas} \times 3\text{ versiones} \times 2\text{ paradigmas} = 42$).
+    *   `14` Prompts de Refactorización Temporal ($7\text{ problemas} \times 2\text{ transiciones} = 14$).
+    Esto suma **63 prompts por lenguaje**, que al replicarse en los **3 lenguajes** (Python `3.9/3.11/3.14`, Java `8/17/21` LTS y Scala `2.13/3.3 LTS/3.6`) conforman **189 prompts únicos**.
+*   **Interacción Zero-Shot:** La obtención del código se realizó mediante las interfaces web oficiales de ChatGPT, Gemini y Claude apoyándose en el navegador interactivo `prompts/prompt_browser.html`, replicando las condiciones reales de uso de un desarrollador.
+*   **Muestras del Nivel Gratuito:** Los 189 prompts fueron respondidos por los 3 modelos gratuitos, totalizando **$n = 567$ archivos de código fuente**.
 
-### 2. Entorno de Evaluación Automatizada y Aislada
-Para verificar de forma empírica si las respuestas de la inteligencia artificial cumplían los requisitos, se implementó un sistema automatizado (`scripts/dataset_builder.py`) que actuó como un evaluador ciego:
-*   **Inyección Dinámica:** El script procesó los 567 códigos fuente, detectó el lenguaje, y adaptó dinámicamente las funciones generadas en clases predefinidas (`Solution`).
-*   **Aislamiento Estricto:** Para garantizar que una falla de compilación fuese responsabilidad exclusiva del código evaluado, se aplicó una técnica de aislamiento (renombrando temporalmente archivos de pruebas ajenas para evitar colisiones).
-*   **Limpieza de Entorno:** Se procesaron y eliminaron automáticamente metadatos invisibles añadidos por sistemas operativos (como el UTF-8 BOM), garantizando que las compilaciones de `javac` y `scalac` fallaran única y exclusivamente por errores sintácticos o semánticos propios del LLM.
-*   **Marcos de Prueba (Test Frameworks):** Se utilizó Unittest para Python, JUnit (Maven) para Java y ScalaTest (sbt) para Scala. Cada código debió superar una batería de 5 a 7 casos de prueba formales (`TC01`, `TC02`...) diseñados para validar casos base y límites algorítmicos.
+### 2. Entorno de Evaluación Automatizada (`scripts/dataset_builder.py`)
+*   **Saneamiento e Inyección en Contenedor `Solution`:** El script elimina marcas `UTF-8 BOM`, contabiliza las líneas de código efectivas (`LOC`, sin líneas vacías ni comentarios) y normaliza las clases u objetos dentro de `Solution` ignorando bloques de comentarios (`strip_comments`).
+*   **Compilación Estricta por Versión y Pruebas Unitarias:**
+    *   **Python:** `unittest` en subproceso aislado (`unit_tests/python/`).
+    *   **Java:** Apache Maven + JUnit 5 sobre JDK 21 aplicando `-Dmaven.compiler.release={8|17|21}`.
+    *   **Scala:** SBT + ScalaTest conmutando dinámicamente el compilador entre `2.13.12`, `3.3.3` y `3.6.0` previa limpieza de artefactos `.class` y `.tasty`.
 
-### 3. Procesamiento Estadístico
-Los resultados de la fase de pruebas se consolidaron en el archivo `dataset_free_models.csv`. Posteriormente, mediante un entorno de Python utilizando las librerías `pandas`, `matplotlib` y `seaborn`, se calcularon las tasas de éxito y la verbosidad computacional de las respuestas.
+### 3. Métricas de Evaluación
+Los resultados se consolidaron en `dataset_free_models.csv`, evaluando tres indicadores directos:
+1.  **Tasa de Éxito Funcional (`pass@1`):** Porcentaje de soluciones que compilan sin errores (`compiles_or_runs = YES`) y aprueban el 100 % de los casos de prueba unitarios (`tests_passed_ratio = 1.0`) en el primer intento.
+2.  **Clasificación de Modos de Fallo:** Desglose de soluciones fallidas entre *Fallos de Compilación* (`compiles_or_runs = NO`) y *Fallos Lógicos* (`compiles_or_runs = YES` pero `tests_passed_ratio < 1.0`).
+3.  **Verbosidad Computacional (`LOC`):** Promedio y mediana de líneas de código efectivas en las soluciones exitosas.
 
 ---
 
-## Resultados y Conclusiones Preliminares (Fase Gratuita)
+## Resultados y Conclusiones (Nivel Gratuito, $n = 567$)
 
-Sobre un universo de 567 archivos generados, el análisis empírico arrojó los siguientes resultados:
+Sobre las **567 muestras evaluadas** en el nivel gratuito se obtuvieron **444 soluciones exitosas**, lo que representa una tasa de éxito global del **78.31 %** (con 100 fallos de compilación y 23 fallos lógicos):
 
-### A. Tasa de Éxito Global
-*(Porcentaje de códigos que compilaron y superaron el 100% de las pruebas unitarias en el primer intento sin intervención humana).*
+### A. Tasa de Éxito Global (`pass@1`) y Modos de Fallo por Modelo
 
-1.  **Gemini Free:** 67.72%
-2.  **Claude Free:** 67.20%
-3.  **ChatGPT Free:** 60.85%
+| Modelo Evaluado | Éxitos / Total | Tasa de Éxito (`pass@1`) | Fallos de Compilación | Fallos Lógicos | LOC Promedio (Mediana) |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| **Claude Free (`Sonnet 5`)** | 161 / 189 | **85.19 %** | 28 | **0** | 34.8 (32.0) |
+| **Gemini Free (`3.5 Flash`)** | 149 / 189 | **78.84 %** | 38 | 2 | **33.4 (28.0)** |
+| **ChatGPT Free (`GPT-4o mini`)** | 134 / 189 | **70.90 %** | 34 | **21** | 47.9 (29.0) |
+| **Total Nivel Gratuito** | **444 / 567** | **78.31 %** | **100** | **23** | **38.3 (30.0)** |
 
-**Análisis:** Los modelos desarrollados por Google y Anthropic superan estadísticamente al modelo gratuito de OpenAI en capacidades lógicas y algorítmicas bajo escenarios "zero-shot". La paridad técnica entre Gemini y Claude sugiere que sus arquitecturas recientes poseen una mayor capacidad de inferencia algorítmica sin requerir iteraciones o correcciones adicionales por parte del usuario.
+**Hallazgos principales:**
+*   **Claude Free (`Sonnet 5`)** lidera el nivel gratuito con **85.19 %**, superando en +6.35 puntos porcentuales a **Gemini Free (`3.5 Flash`)** (78.84 %) y en +14.29 puntos porcentuales a **ChatGPT Free (`GPT-4o mini`)** (70.90 %).
+*   Mientras que la totalidad de los fallos de Claude Free (28) y casi todos los de Gemini Free (38 de 40) corresponden a errores de compilación estática en Java y Scala, **ChatGPT Free concentra 21 de los 23 fallos lógicos** de toda la capa gratuita.
 
-### B. Rendimiento Según Paradigma y Lenguaje
-Al agrupar la tasa de éxito según el lenguaje de programación impuesto:
+### B. Rendimiento según Lenguaje, Versión y Paradigma ($n = 63$ por modelo y lenguaje)
 
-*   **Java:** Gemini (80.9%), Claude (74.6%), ChatGPT (74.6%).
-*   **Python:** Gemini (71.4%), Claude (71.4%), ChatGPT (55.6%).
-*   **Scala:** Claude (55.6%), ChatGPT (52.4%), Gemini (50.8%).
+*   **Python (92.1 % global en nivel gratuito):** Claude Free (**100.0 %**, 63/63), Gemini Free (**96.8 %**, 61/63) y ChatGPT Free (**79.4 %**, 50/63).
+*   **Java (77.8 % global en nivel gratuito):** Gemini Free (**81.0 %**), Claude Free (**77.8 %**) y ChatGPT Free (**74.6 %**). En **Java 8 LTS** el éxito cae a **52.4 %** frente al **78.6 %** en **Java 17 LTS** y **Java 21 LTS**, debido al uso de métodos introducidos en Java 9+ (`List.of()`, `Map.of()`, `var`) que no existían en Java 8.
+*   **Scala (65.1 % global en nivel gratuito):** Claude Free destaca con **77.8 %** (incluyendo 100 % de éxito en refactorización de código hacia Scala 3) frente al **58.7 %** de Gemini Free y ChatGPT Free.
+*   **Paradigma (en prompts restringidos):** En el nivel gratuito el enfoque **iterativo alcanza 75.1 %** de éxito frente al **72.0 % en el enfoque funcional**.
 
-**Análisis:** Se observa una correlación directa entre el volumen de documentación histórica de un lenguaje y el rendimiento algorítmico del LLM. Java resultó ser el entorno más propenso al éxito automatizado; su tipado estático y rigidez estructural minimizan la ambigüedad que habitualmente afecta a los modelos de lenguaje. Python, a pesar de su popularidad, evidenció una caída considerable en la efectividad de ChatGPT debido a su tipado dinámico. Por último, Scala representa una barrera de complejidad evidente: su paradigma funcional avanzado y menor presencia en las bases de datos de entrenamiento provocaron que la efectividad de todos los modelos descendiera a valores cercanos al 50%.
-
-### C. Eficiencia Computacional y Verbosidad (Líneas de Código - LOC)
-Analizando de forma exclusiva los algoritmos que fueron exitosos, se midió el promedio de líneas escritas necesarias para resolver el mismo problema:
-
-1.  **Gemini Free:** 35.4 líneas promedio
-2.  **Claude Free:** 36.9 líneas promedio
-3.  **ChatGPT Free:** 49.4 líneas promedio
-
-**Análisis:** ChatGPT Free tiende a presentar una verbosidad significativamente mayor (produciendo aproximadamente 14 líneas adicionales por solución en promedio). En el contexto de la Ingeniería de Software, un código más conciso e idiomático, que preserve la legibilidad y la corrección lógica, es fundamental para disminuir la deuda técnica. Gemini y Claude demostraron una capacidad de síntesis superior, empleando abstracciones de las bibliotecas estándar de manera más eficiente.
+### C. Verbosidad Computacional (`LOC` en soluciones exitosas)
+1.  **Gemini Free (`3.5 Flash`):** **33.4 líneas promedio** (mediana = 28.0, $n = 149$).
+2.  **Claude Free (`Sonnet 5`):** **34.8 líneas promedio** (mediana = 32.0, $n = 161$).
+3.  **ChatGPT Free (`GPT-4o mini`):** **47.9 líneas promedio** (mediana = 29.0, $n = 134$).

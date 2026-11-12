@@ -1,51 +1,48 @@
-# Dataset de Tesis — Evaluación de LLMs para Generación de Código
+# Dataset de Tesis — Análisis del código generado por Inteligencia Artificial según paradigma de programación, versión del lenguaje y tipo de modelo
 
 ## Objetivo
-Evaluar la capacidad de los LLMs para generar código **correcto**, **con conciencia de versión** y **adherente al paradigma solicitado** en distintos lenguajes, versiones y niveles de modelo.
+Analizar empíricamente la fiabilidad funcional (`pass@1`), los modos de fallo (compilación frente a lógica) y la concisión (`LOC`) del código generado por Inteligencia Artificial según el **paradigma de programación**, la **versión del lenguaje** y el **tipo de modelo** (gratuito frente a de paga).
 
 ---
 
 ## Modelos Evaluados
-| Tier     | Modelo identificado                     |
-|----------|-----------------------------------------|
-| Gratuito | ChatGPT Free (GPT-4o mini)              |
-| Pago     | ChatGPT Plus (GPT-4o)                   |
-| Gratuito | Gemini Free (3.5 Flash)                 |
-| Pago     | Gemini Advanced (3.5 Pro)               |
-| Gratuito | Claude Free (Sonnet 5)                  |
-| Pago     | Claude Pro (Sonnet 5)                   |
+| Proveedor | Nivel Gratuito (`Free`)         | Nivel de Paga (`Paid`)         | Muestras |
+|-----------|---------------------------------|--------------------------------|----------|
+| OpenAI    | ChatGPT Free (`GPT-4o mini`)    | ChatGPT Plus (`GPT-6`)         | 378      |
+| Google    | Gemini Free (`3.5 Flash`)       | Gemini Pro (`3.1 Pro`)         | 378      |
+| Anthropic | Claude Free (`Sonnet 5`)        | Claude Pro (`Opus 5.5`)        | 378      |
 
 ---
 
 ## Lenguajes y Versiones
-| Lenguaje | Versión 1 | Versión 2 | Versión 3 |
-|----------|-----------|-----------|-----------|
-| Python   | 3.9       | 3.11      | 3.14      |
-| Java     | 8         | 17        | 21        |
-| Scala    | 2.13      | 3.3       | 3.6       |
+| Lenguaje | Versión Heredada ($v_1$) | Versión Intermedia ($v_2$) | Versión Moderna ($v_3$) |
+|----------|--------------------------|----------------------------|-------------------------|
+| Python   | 3.9                      | 3.11                       | 3.14                    |
+| Java     | 8 (LTS)                  | 17 (LTS)                   | 21 (LTS)                |
+| Scala    | 2.13 (`2.13.12`)         | 3.3 LTS (`3.3.3`)          | 3.6 (`3.6.0`)           |
 
 ---
 
-## Problemas (P01-P07)
-| ID  | Nombre                              | Sesgo Natural |
-|-----|-------------------------------------|---------------|
-| P01 | Word Frequency                      | Funcional     |
-| P02 | Binary Search                       | Iterativo     |
-| P03 | Flatten Nested List                 | Funcional     |
-| P04 | Balanced Parentheses                | Neutro        |
-| P05 | Transaction Pipeline                | Funcional     |
-| P06 | Max Subarray Sum (Kadane)           | Iterativo     |
-| P07 | 2D Flood Fill                       | Iterativo     |
+## Problemas Algorítmicos (P01-P07)
+| ID  | Nombre                              | Sesgo Natural | Casos de Prueba (TC) |
+|-----|-------------------------------------|---------------|----------------------|
+| P01 | Word Frequency                      | Funcional     | 5                    |
+| P02 | Binary Search                       | Iterativo     | 7                    |
+| P03 | Flatten Nested List                 | Funcional     | 6                    |
+| P04 | Balanced Parentheses                | Neutro        | 8                    |
+| P05 | Transaction Pipeline                | Funcional     | 5                    |
+| P06 | Max Subarray Sum (Kadane)           | Iterativo     | 7                    |
+| P07 | 2D Flood Fill                       | Iterativo     | 5                    |
 
 ---
 
-## Tamaño del Dataset
-| Tipo de Prompt        | Cálculo                                     | Filas |
-|-----------------------|---------------------------------------------|-------|
-| Neutro                | 7 × 3 lenguajes × 6 modelos                 | 126   |
-| Restringido (versión) | 7 × 3L × 3V × 2 paradigmas × 6 modelos      | 756   |
-| Refactorización       | 7 × 3L × 2 transiciones × 6 modelos         | 252   |
-| **TOTAL**             |                                             | **1134**|
+## Construcción Paso a Paso del Dataset ($N = 1134$)
+| Tipo de Prompt                    | 1 Lenguaje (7 problemas) | 3 Lenguajes ($\times 3$) | 6 Modelos ($\times 6$) |
+|-----------------------------------|--------------------------|--------------------------|------------------------|
+| Neutral                           | $7 \times 1 = 7$         | 21                       | 126                    |
+| Restringido (Versión y Paradigma) | $7 \times 6 = 42$        | 126                      | 756                    |
+| Refactorización Temporal          | $7 \times 2 = 14$        | 42                       | 252                    |
+| **TOTAL GLOBAL**                  | **63 prompts**           | **189 prompts**          | **1134 muestras**      |
 
 ---
 
@@ -53,25 +50,47 @@ Evaluar la capacidad de los LLMs para generar código **correcto**, **con concie
 ```
 Dataset/
 ├── README.md
-├── dataset_template.csv
+├── requirements.txt
+├── dataset_free_models.csv          <- Resultados empíricos de los 3 modelos gratuitos (567 filas)
+├── dataset_paid_models.csv          <- Resultados empíricos de los 3 modelos de pago (567 filas)
+├── dataset_all_models.csv           <- Corpus consolidado completo (1.134 filas)
+├── dataset_template.csv             <- Plantilla base del esquema de datos
+├── llm_responses/                   <- los 1.134 archivos de código generados por los 6 LLMs
+│   ├── chatgpt-free/                <- 189 respuestas de ChatGPT Free (GPT-4o mini)
+│   ├── gemini-free/                 <- 189 respuestas de Gemini Free (3.5 Flash)
+│   ├── claude-free/                 <- 189 respuestas de Claude Free (Sonnet 5)
+│   ├── chatgpt-plus/                <- 189 respuestas de ChatGPT Plus (GPT-6)
+│   ├── gemini-pro/                  <- 189 respuestas de Gemini Pro (3.1 Pro)
+│   └── claude-pro/                  <- 189 respuestas de Claude Pro (Opus 5.5)
 ├── prompts/
-│   ├── neutral/               <- 7 prompts (uno por problema)
-│   ├── version_constrained/   <- Template + instrucciones
-│   ├── refactor/              <- Template + instrucciones
-│   ├── generated/             <- Los 189 prompts exactos en formato texto (.txt) listos para usar
-│   ├── prompts_data.json      <- Base de datos con metadatos de cada prompt
-│   └── prompt_browser.html    <- (Recomendado) Interfaz visual para explorar los prompts interactivamente en el navegador
+│   ├── neutral/                     <- 7 prompts (uno por problema)
+│   ├── version_constrained/         <- Template + instrucciones
+│   ├── refactor/                    <- Template + instrucciones
+│   ├── generated/                   <- Los 189 prompts exactos en formato texto (.txt) listos para usar
+│   ├── prompts_data.json            <- Base de datos con metadatos de cada prompt
+│   └── prompt_browser.html          <- Interfaz visual para explorar los prompts interactivamente
 ├── unit_tests/
-│   ├── test_cases.json        <- Especificación universal de casos
-│   ├── python/                <- 7 archivos unittest
-│   ├── java/                  <- 7 archivos JUnit 5 + pom.xml
-│   └── scala/                 <- 7 archivos ScalaTest + build.sbt
+│   ├── test_cases.json              <- Especificación universal de casos de prueba
+│   ├── python/                      <- 7 suites de prueba unittest (Python)
+│   ├── java/                        <- 7 suites JUnit 5 + pom.xml (Maven)
+│   └── scala/                       <- 7 suites ScalaTest + build.sbt (sbt)
 ├── base_code/
-│   ├── python/                <- Código base v3.9 para refactoring
-│   ├── java/                  <- Código base Java 8 para refactoring
-│   └── scala/                 <- Código base Scala 2.13 para refactoring
-└── scripts/
-    └── dataset_builder.py     <- Script de métricas automáticas
+│   ├── python/                      <- Código base v3.9 para refactoring
+│   ├── java/                        <- Código base Java 8 para refactoring
+│   └── scala/                       <- Código base Scala 2.13 para refactoring
+├── scripts/
+│   ├── dataset_builder.py           <- Ejecutor de pruebas y constructor del dataset gratuito
+│   ├── dataset_builder_paid.py      <- Ejecutor de pruebas y constructor del dataset de pago
+│   ├── data_analysis.py             <- Generación de gráficos para modelos gratuitos (imagenes/)
+│   ├── data_analysis_paid.py        <- Generación de gráficos para modelos de pago (imagenes/)
+│   ├── data_analysis_combined.py    <- Generación de gráficos comparativos globales (imagenes/)
+│   ├── statistical_validation.py    <- Validación estadística exploratoria (Free)
+│   ├── statistical_validation_paid.py <- Validación estadística exploratoria (Paid)
+│   └── statistical_validation_combined.py <- Validación estadística exploratoria global
+├── imagenes/                        <- Las 10 figuras exportadas a 300 DPI utilizadas en la tesis
+├── analysis_results_free/           <- Gráficos y reportes exploratorios (Modelos Gratuitos)
+├── analysis_results_paid/           <- Gráficos y reportes exploratorios (Modelos de Pago)
+└── analysis_results_combined/       <- Gráficos, reporte comparativo global e informe de fallos
 ```
 
 ---
@@ -89,28 +108,104 @@ Dataset/
 
 ---
 
-## Flujo de Trabajo
-1. **Ir a** `prompts/` y seleccionar el prompt del tipo deseado
-2. **Enviar** a cada modelo (ChatGPT, Claude, Gemini Pro, Gemini Flash)
-3. **Guardar** el código generado como `solution.py` / `Solution.java` / `Solution.scala`
-4. **Ejecutar** el unit test correspondiente
-5. **Registrar** resultados en `dataset_template.csv`
-6. **Automatizar** métricas con `scripts/dataset_builder.py`
+## Instalación y Ejecución
+
+A continuación se detallan los requisitos y comandos para ejecutar el análisis estadístico, la generación de gráficos y la evaluación automatizada de las pruebas unitarias.
+
+### 1. Requisitos del Entorno
+
+* **Análisis estadístico y generación de gráficos:**
+  * **Python 3.11+** y `pip`.
+* **Compilación y ejecución de las pruebas unitarias:**
+  * **Python 3.11+**: ejecuta las suites de `unit_tests/python/` mediante `unittest`.
+  * **Java JDK 21 + Apache Maven (`mvn`)**: ejecuta las suites de `unit_tests/java/` (JUnit 5) aplicando validación de versión mediante el parámetro `-Dmaven.compiler.release={8|17|21}`.
+  * **sbt (Scala Build Tool 1.9+)**: ejecuta las suites de `unit_tests/scala/` (ScalaTest) alternando el compilador entre `Scala 2.13.12`, `Scala 3.3.3` y `Scala 3.6.0`.
 
 ---
 
-## Instalación y Ejecución
+### 2. Instalación de Dependencias de Python
 
-Para replicar el análisis estadístico y la generación de gráficas, asegúrate de instalar las dependencias de Python:
+Desde la raíz del proyecto, crear un entorno virtual e instalar las librerías requeridas (`pandas`, `matplotlib`, `seaborn`, `scipy`, `statsmodels`):
 
 ```bash
 # 1. Crear entorno virtual
 python -m venv env
-source env/bin/activate  # En Windows: env\Scripts\activate
 
-# 2. Instalar dependencias
+# 2. Activar el entorno virtual
+# En Windows (PowerShell):
+.\env\Scripts\Activate.ps1
+# En Windows (CMD):
+env\Scripts\activate
+# En Linux / macOS:
+source env/bin/activate
+
+# 3. Instalar dependencias
 pip install -r requirements.txt
-
-# 3. Ejecutar el script de análisis
-python scripts/data_analysis.py
 ```
+
+---
+
+### 3. Ejecución del Análisis de Resultados y Generación de Gráficos
+
+Comandos para calcular las métricas de evaluación (tasas de éxito funcional `pass@1`, desglose de modos de fallo de compilación frente a lógicos, y concisión en líneas de código `LOC`) y generar las gráficas (`300 DPI`):
+
+```bash
+# A. Modelos Gratuitos -> actualiza analysis_results_free/
+python scripts/data_analysis.py
+python scripts/statistical_validation.py
+
+# B. Modelos de Pago -> actualiza analysis_results_paid/
+python scripts/data_analysis_paid.py
+python scripts/statistical_validation_paid.py
+
+# C. Comparativa Global (Free vs. Paid, 1.134 pruebas) -> actualiza analysis_results_combined/
+python scripts/data_analysis_combined.py
+python scripts/statistical_validation_combined.py
+```
+
+Los archivos generados se almacenan en:
+* `analysis_results_free/statistical_validation.txt` y `analysis_results_free/*.png`
+* `analysis_results_paid/statistical_validation.txt` y `analysis_results_paid/*.png`
+* `analysis_results_combined/statistical_validation.txt` y `analysis_results_combined/*.png`
+* `analysis_results_combined/INFORME_PRUEBAS_FALLIDAS.md`
+
+---
+
+### 4. Ejecución de las Pruebas Unitarias (Construcción de los Datasets)
+
+Para evaluar los 1.134 archivos de código en `llm_responses/` compilando y ejecutando cada caso de prueba en Python, Java y Scala:
+
+```bash
+# 1. Evaluar los 567 archivos de los modelos gratuitos -> genera dataset_free_models.csv
+python scripts/dataset_builder.py
+
+# 2. Evaluar los 567 archivos de los modelos de pago -> genera dataset_paid_models.csv
+python scripts/dataset_builder_paid.py
+```
+
+> **Nota:** En la primera ejecución, `Maven` y `sbt` descargan las dependencias de JUnit 5, ScalaTest y los compiladores de Scala (`2.13.12`, `3.3.3`, `3.6.0`).
+
+---
+
+### 5. Ejecución de una Prueba Individual por Lenguaje
+
+Para evaluar un archivo individual de `llm_responses/` de forma aislada:
+
+* **En Python:**
+  ```bash
+  # En PowerShell:
+  $env:SOLUTION_PATH="llm_responses/claude-pro/P01_python_3.11_funcional.py"
+  python unit_tests/python/test_p01_word_frequency.py
+  ```
+* **En Java (especificando la versión objetivo `8`, `17` o `21`):**
+  1. Copiar el código a `unit_tests/java/src/main/java/Solution.java` (con la clase pública nombrada `Solution`).
+  2. Ejecutar desde `unit_tests/java/`:
+     ```bash
+     mvn test -Dtest=TestP01WordFrequency -Dmaven.compiler.release=21
+     ```
+* **En Scala (especificando la versión objetivo `2.13.12`, `3.3.3` o `3.6.0`):**
+  1. Copiar el código a `unit_tests/scala/src/main/scala/Solution.scala` (dentro de `object Solution`).
+  2. Ejecutar desde `unit_tests/scala/`:
+     ```bash
+     sbt "++ 3.3.3" "testOnly *P01WordFrequencySpec"
+     ```

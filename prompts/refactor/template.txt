@@ -1,4 +1,4 @@
-﻿=============================================================================
+=============================================================================
 TEMPLATE: PROMPT DE REFACTORIZACION
 =============================================================================
 Reemplaza las variables antes de enviar:
@@ -38,7 +38,7 @@ TRANSICIONES DE VERSION POR LENGUAJE:
 
 TABLA DE COMBINACIONES (7 x 3 lenguajes x 2 transiciones = 42 prompts, x 4 modelos = 168 filas):
 
-| Problema | Lenguaje | Desde | Hacia | GPT-4o | Claude | Gemini Pro | Gemini Flash |
+| Problema | Lenguaje | Desde | Hacia | GPT-6  | Claude | Gemini Pro | Gemini Flash |
 |----------|----------|-------|-------|--------|--------|------------|--------------|
 | P01      | Python   | 3.9   | 3.11  |        |        |            |              |
 | P01      | Python   | 3.11  | 3.14  |        |        |            |              |

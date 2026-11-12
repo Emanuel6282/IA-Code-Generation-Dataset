@@ -1,0 +1,100 @@
+=========================================================================
+VALIDACION ESTADISTICA GLOBAL: MODELOS GRATUITOS VS. DE PAGO (N = 1134)
+=========================================================================
+
+== 1. TASA DE EXITO POR MODELO Y POR TIER (IC Wilson 95%) ==
+ChatGPT Free (GPT-4o mini)    : 134/189 =  70.90%  IC95% [ 64.1%,  76.9%]
+ChatGPT Plus (GPT-6)          : 151/189 =  79.89%  IC95% [ 73.6%,  85.0%]
+Gemini Free (3.5 Flash)       : 149/189 =  78.84%  IC95% [ 72.5%,  84.1%]
+Gemini Pro (3.1 Pro)          : 160/189 =  84.66%  IC95% [ 78.8%,  89.1%]
+Claude Free (Sonnet 5)        : 161/189 =  85.19%  IC95% [ 79.4%,  89.5%]
+Claude Pro (Opus 5.5)         : 161/189 =  85.19%  IC95% [ 79.4%,  89.5%]
+-------------------------------------------------------------------------
+TIER GRATUITO (Agregado)      : 444/567 =  78.31%  IC95% [ 74.7%,  81.5%]
+TIER DE PAGO (Agregado)       : 472/567 =  83.25%  IC95% [ 79.9%,  86.1%]
+CORPUS TOTAL (6 Modelos)      : 916/1134 =  80.78%  IC95% [ 78.4%,  83.0%]
+
+== 2. CONTRASTES GLOBALES (6 Modelos y Free vs. Paid) ==
+6 Modelos - Chi-cuadrado independiente: chi2=18.990, gl=5, p=0.0019
+6 Modelos - Q de Cochran (bloque pareado n=189): Q=49.762, gl=5, p=0.000000
+Free vs Paid Global (567 pares pareados prompt x proveedor): Free=78.31% vs Paid=83.25%, discordantes (Free_ok/Paid_fail=17, Free_fail/Paid_ok=45), p(McNemar)=0.0005, h=0.126
+
+== 3. COMPARACION INTRA-PROVEEDOR: FREE VS. PAID (McNemar exacto, Holm-Bonferroni, OR, h de Cohen) ==
+OpenAI     (ChatGPT Free -> ChatGPT Plus): dif= +8.99 pp (Free_only=10, Paid_only=27), p(McNemar)=0.0076, p(Holm)=0.0229, OR(Paid/Free)=2.70, h=+0.210
+Google     (Gemini Free -> Gemini Pro): dif= +5.82 pp (Free_only=4, Paid_only=15), p(McNemar)=0.0192, p(Holm)=0.0384, OR(Paid/Free)=3.75, h=+0.151
+Anthropic  (Claude Free -> Claude Pro): dif= +0.00 pp (Free_only=3, Paid_only=3), p(McNemar)=1.0000, p(Holm)=1.0000, OR(Paid/Free)=1.00, h=+0.000
+
+== 4. POR LENGUAJE Y MODELO (exito %, n=63 por celda) ==
+Java    [Free= 77.8% | Paid= 81.5% | chi2_6mod p=0.8704]: ChatGPT Free: 74.6% | ChatGPT Plus: 82.5% | Gemini Free: 81.0% | Gemini Pro: 79.4% | Claude Free: 77.8% | Claude Pro: 82.5%
+Python  [Free= 92.1% | Paid= 98.9% | chi2_6mod p=0.0000]: ChatGPT Free: 79.4% | ChatGPT Plus: 96.8% | Gemini Free: 96.8% | Gemini Pro: 100.0% | Claude Free: 100.0% | Claude Pro: 100.0%
+Scala   [Free= 65.1% | Paid= 69.3% | chi2_6mod p=0.0478]: ChatGPT Free: 58.7% | ChatGPT Plus: 60.3% | Gemini Free: 58.7% | Gemini Pro: 74.6% | Claude Free: 77.8% | Claude Pro: 73.0%
+
+== 5. POR VERSION (Free vs Paid y desglose por modelo) ==
+Java   17           (n= 84) Total= 82.1% [Free= 78.6% vs Paid= 85.7%] | ChatGPT Free:  71.4% | ChatGPT Plus:  85.7% | Gemini Free:  92.9% | Gemini Pro:  85.7% | Claude Free:  71.4% | Claude Pro:  85.7%
+Java   17 -> 21     (n= 42) Total= 95.2% [Free= 95.2% vs Paid= 95.2%] | ChatGPT Free: 100.0% | ChatGPT Plus: 100.0% | Gemini Free:  85.7% | Gemini Pro:  85.7% | Claude Free: 100.0% | Claude Pro: 100.0%
+Java   21           (n= 84) Total= 82.1% [Free= 78.6% vs Paid= 85.7%] | ChatGPT Free:  71.4% | ChatGPT Plus:  85.7% | Gemini Free:  85.7% | Gemini Pro:  85.7% | Claude Free:  78.6% | Claude Pro:  85.7%
+Java   8            (n= 84) Total= 54.8% [Free= 52.4% vs Paid= 57.1%] | ChatGPT Free:  42.9% | ChatGPT Plus:  57.1% | Gemini Free:  57.1% | Gemini Pro:  57.1% | Claude Free:  57.1% | Claude Pro:  57.1%
+Java   8 -> 17      (n= 42) Total= 95.2% [Free= 95.2% vs Paid= 95.2%] | ChatGPT Free: 100.0% | ChatGPT Plus: 100.0% | Gemini Free:  85.7% | Gemini Pro:  85.7% | Claude Free: 100.0% | Claude Pro: 100.0%
+Java   cualquiera   (n= 42) Total= 88.1% [Free= 90.5% vs Paid= 85.7%] | ChatGPT Free: 100.0% | ChatGPT Plus:  85.7% | Gemini Free:  85.7% | Gemini Pro:  85.7% | Claude Free:  85.7% | Claude Pro:  85.7%
+Python 3.11         (n= 84) Total= 92.9% [Free= 90.5% vs Paid= 95.2%] | ChatGPT Free:  78.6% | ChatGPT Plus:  85.7% | Gemini Free:  92.9% | Gemini Pro: 100.0% | Claude Free: 100.0% | Claude Pro: 100.0%
+Python 3.11 -> 3.14 (n= 42) Total= 95.2% [Free= 90.5% vs Paid=100.0%] | ChatGPT Free:  71.4% | ChatGPT Plus: 100.0% | Gemini Free: 100.0% | Gemini Pro: 100.0% | Claude Free: 100.0% | Claude Pro: 100.0%
+Python 3.14         (n= 84) Total= 95.2% [Free= 90.5% vs Paid=100.0%] | ChatGPT Free:  78.6% | ChatGPT Plus: 100.0% | Gemini Free:  92.9% | Gemini Pro: 100.0% | Claude Free: 100.0% | Claude Pro: 100.0%
+Python 3.9          (n= 84) Total= 96.4% [Free= 92.9% vs Paid=100.0%] | ChatGPT Free:  78.6% | ChatGPT Plus: 100.0% | Gemini Free: 100.0% | Gemini Pro: 100.0% | Claude Free: 100.0% | Claude Pro: 100.0%
+Python 3.9 -> 3.11  (n= 42) Total= 97.6% [Free= 95.2% vs Paid=100.0%] | ChatGPT Free:  85.7% | ChatGPT Plus: 100.0% | Gemini Free: 100.0% | Gemini Pro: 100.0% | Claude Free: 100.0% | Claude Pro: 100.0%
+Python cualquiera   (n= 42) Total= 97.6% [Free= 95.2% vs Paid=100.0%] | ChatGPT Free:  85.7% | ChatGPT Plus: 100.0% | Gemini Free: 100.0% | Gemini Pro: 100.0% | Claude Free: 100.0% | Claude Pro: 100.0%
+Scala  2.13         (n= 84) Total= 59.5% [Free= 57.1% vs Paid= 61.9%] | ChatGPT Free:  42.9% | ChatGPT Plus:  50.0% | Gemini Free:  57.1% | Gemini Pro:  71.4% | Claude Free:  71.4% | Claude Pro:  64.3%
+Scala  2.13 -> 3.3  (n= 42) Total= 88.1% [Free= 85.7% vs Paid= 90.5%] | ChatGPT Free:  85.7% | ChatGPT Plus:  85.7% | Gemini Free:  71.4% | Gemini Pro:  85.7% | Claude Free: 100.0% | Claude Pro: 100.0%
+Scala  3.3          (n= 84) Total= 61.9% [Free= 61.9% vs Paid= 61.9%] | ChatGPT Free:  57.1% | ChatGPT Plus:  50.0% | Gemini Free:  57.1% | Gemini Pro:  71.4% | Claude Free:  71.4% | Claude Pro:  64.3%
+Scala  3.3 -> 3.6   (n= 42) Total= 85.7% [Free= 81.0% vs Paid= 90.5%] | ChatGPT Free:  85.7% | ChatGPT Plus:  85.7% | Gemini Free:  57.1% | Gemini Pro:  85.7% | Claude Free: 100.0% | Claude Pro: 100.0%
+Scala  3.6          (n= 84) Total= 60.7% [Free= 59.5% vs Paid= 61.9%] | ChatGPT Free:  50.0% | ChatGPT Plus:  50.0% | Gemini Free:  57.1% | Gemini Pro:  71.4% | Claude Free:  71.4% | Claude Pro:  64.3%
+Scala  cualquiera   (n= 42) Total= 66.7% [Free= 61.9% vs Paid= 71.4%] | ChatGPT Free:  57.1% | ChatGPT Plus:  71.4% | Gemini Free:  57.1% | Gemini Pro:  71.4% | Claude Free:  71.4% | Claude Pro:  71.4%
+
+== 6. POR TIPO DE PROMPT (Free vs Paid y por modelo) ==
+neutral              (n=126) Total= 84.1% [Free= 82.5% vs Paid= 85.7%] | ChatGPT Free:  81.0% | ChatGPT Plus:  85.7% | Gemini Free:  81.0% | Gemini Pro:  85.7% | Claude Free:  85.7% | Claude Pro:  85.7%
+refactor             (n=252) Total= 92.9% [Free= 90.5% vs Paid= 95.2%] | ChatGPT Free:  88.1% | ChatGPT Plus:  95.2% | Gemini Free:  83.3% | Gemini Pro:  90.5% | Claude Free: 100.0% | Claude Pro: 100.0%
+version_constrained  (n=756) Total= 76.2% [Free= 73.5% vs Paid= 78.8%] | ChatGPT Free:  63.5% | ChatGPT Plus:  73.8% | Gemini Free:  77.0% | Gemini Pro:  82.5% | Claude Free:  80.2% | Claude Pro:  80.2%
+
+== 7. POR PARADIGMA (solo version_constrained, n=756) ==
+funcional  (n=378) Total= 75.4% [Free= 72.0% vs Paid= 78.8%] | ChatGPT Free:  63.5% | ChatGPT Plus:  76.2% | Gemini Free:  73.0% | Gemini Pro:  82.5% | Claude Free:  79.4% | Claude Pro:  77.8%
+iterativo  (n=378) Total= 77.0% [Free= 75.1% vs Paid= 78.8%] | ChatGPT Free:  63.5% | ChatGPT Plus:  71.4% | Gemini Free:  81.0% | Gemini Pro:  82.5% | Claude Free:  81.0% | Claude Pro:  82.5%
+Chi2 paradigma vs exito (global 6 modelos): p=0.6694
+
+== 8. POR PROBLEMA ALGORITMICO (P01-P07, n=162 por problema) ==
+P01 (Word Frequency        ) Total= 89.5% [Free= 90.1% vs Paid= 88.9%] | Java:  77.8% | Python: 100.0% | Scala:  90.7%
+P02 (Binary Search         ) Total= 98.1% [Free= 96.3% vs Paid=100.0%] | Java:  94.4% | Python: 100.0% | Scala: 100.0%
+P03 (Flatten Nested List   ) Total= 60.5% [Free= 56.8% vs Paid= 64.2%] | Java:  72.2% | Python:  87.0% | Scala:  22.2%
+P04 (Balanced Parentheses  ) Total= 95.7% [Free= 91.4% vs Paid=100.0%] | Java:  94.4% | Python: 100.0% | Scala:  92.6%
+P05 (Transaction Pipeline  ) Total= 48.1% [Free= 53.1% vs Paid= 43.2%] | Java:  20.4% | Python:  98.1% | Scala:  25.9%
+P06 (Max Subarray Sum      ) Total= 96.3% [Free= 92.6% vs Paid=100.0%] | Java:  98.1% | Python: 100.0% | Scala:  90.7%
+P07 (2D Flood Fill         ) Total= 77.2% [Free= 67.9% vs Paid= 86.4%] | Java: 100.0% | Python:  83.3% | Scala:  48.1%
+
+== 9. REGRESION LOGISTICA MULTIFACTORIAL (Corpus completo N=1134) ==
+                                        Coef.  Std.Err.       z   P>|z|  [0.025  0.975]
+Intercept                              1.8227    0.3158  5.7722  0.0000  1.2038  2.4416
+C(ai_tier)[T.paid]                     0.3722    0.1639  2.2709  0.0232  0.0510  0.6933
+C(provider)[T.Google]                 -0.2835    0.2095 -1.3534  0.1759 -0.6940  0.1271
+C(provider)[T.OpenAI]                 -0.7279    0.2020 -3.6044  0.0003 -1.1237 -0.3321
+C(language)[T.Python]                  1.7486    0.2828  6.1832  0.0000  1.1943  2.3029
+C(language)[T.Scala]                  -0.6945    0.1746 -3.9766  0.0001 -1.0368 -0.3522
+C(prompt_type)[T.refactor]             0.9627    0.3584  2.6863  0.0072  0.2603  1.6651
+C(prompt_type)[T.version_constrained] -0.5684    0.2722 -2.0880  0.0368 -1.1019 -0.0349
+
+== 10. PRUEBA DE LOC (solo exitosos): Kruskal-Wallis (6 modelos) y Mann-Whitney (Free vs Paid por proveedor) ==
+ChatGPT Free (GPT-4o mini)    : media= 47.9, mediana= 29.0, sd= 43.2, n=134
+ChatGPT Plus (GPT-6)          : media= 46.7, mediana= 35.0, sd= 37.1, n=151
+Gemini Free (3.5 Flash)       : media= 33.4, mediana= 28.0, sd= 17.9, n=149
+Gemini Pro (3.1 Pro)          : media= 33.1, mediana= 29.5, sd= 17.9, n=160
+Claude Free (Sonnet 5)        : media= 34.8, mediana= 32.0, sd= 16.8, n=161
+Claude Pro (Opus 5.5)         : media= 47.2, mediana= 43.0, sd= 28.8, n=161
+Kruskal-Wallis (6 modelos) H=26.752, p=0.000064
+  OpenAI     LOC (ChatGPT Free vs ChatGPT Plus): media 47.9 -> 46.7 (mediana 29.0 -> 35.0), U=9626, p=0.48027
+  Google     LOC (Gemini Free vs Gemini Pro): media 33.4 -> 33.1 (mediana 28.0 -> 29.5), U=11929, p=0.99135
+  Anthropic  LOC (Claude Free vs Claude Pro): media 34.8 -> 47.2 (mediana 32.0 -> 43.0), U=9790, p=0.00015
+
+== 11. CLASIFICACION DE FALLOS (Compilacion vs Logicos) EN LOS 6 MODELOS ==
+ChatGPT Free (GPT-4o mini)    : compila/ejecuta= 82.0%, total_fallos=55 (compilacion=34, fallo_logico=21)
+ChatGPT Plus (GPT-6)          : compila/ejecuta= 81.0%, total_fallos=38 (compilacion=36, fallo_logico= 2)
+Gemini Free (3.5 Flash)       : compila/ejecuta= 79.9%, total_fallos=40 (compilacion=38, fallo_logico= 2)
+Gemini Pro (3.1 Pro)          : compila/ejecuta= 84.7%, total_fallos=29 (compilacion=29, fallo_logico= 0)
+Claude Free (Sonnet 5)        : compila/ejecuta= 85.2%, total_fallos=28 (compilacion=28, fallo_logico= 0)
+Claude Pro (Opus 5.5)         : compila/ejecuta= 85.2%, total_fallos=28 (compilacion=28, fallo_logico= 0)

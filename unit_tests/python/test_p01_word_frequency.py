@@ -1,4 +1,4 @@
-﻿"""
+"""
 Unit Tests — P01: Word Frequency
 =================================
 Instrucciones:
@@ -30,7 +30,7 @@ class TestWordFrequency(unittest.TestCase):
         cls.sol = load_solution()
         if not hasattr(cls.sol, "word_frequency"):
             raise AttributeError("La solucion debe definir la funcion 'word_frequency(words)'")
-        cls.fn = staticmethod(cls.sol.word_frequency))
+        cls.fn = staticmethod(cls.sol.word_frequency)
 
     # TC01 — Palabra repetida basica
     def test_tc01_basic_repeated(self):

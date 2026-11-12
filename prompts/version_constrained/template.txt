@@ -1,4 +1,4 @@
-﻿=============================================================================
+=============================================================================
 TEMPLATE: PROMPT RESTRINGIDO (Version-Constrained)
 =============================================================================
 Reemplaza las variables entre llaves antes de enviar al modelo:
@@ -48,7 +48,7 @@ PARADIGMA FUNCIONAL:
 TABLA DE COMBINACIONES (7 problemas x 3 lenguajes x 3 versiones x 2 paradigmas = 126 prompts)
 Usa esta tabla para llevar registro:
 
-| Problema | Lenguaje | Version | Paradigma   | GPT-4o | Claude | Gemini Pro | Gemini Flash |
+| Problema | Lenguaje | Version | Paradigma   | GPT-6  | Claude | Gemini Pro | Gemini Flash |
 |----------|----------|---------|-------------|--------|--------|------------|--------------|
 | P01      | Python   | 3.9     | iterativo   |        |        |            |              |
 | P01      | Python   | 3.9     | funcional   |        |        |            |              |

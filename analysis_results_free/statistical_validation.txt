@@ -1,0 +1,72 @@
+== 1. TASA DE EXITO POR MODELO (IC Wilson 95%) ==
+ChatGPT Free: 134/189 = 70.90%  IC95% [64.1, 76.9]
+Claude Free: 161/189 = 85.19%  IC95% [79.4, 89.5]
+Gemini Free: 149/189 = 78.84%  IC95% [72.5, 84.1]
+
+== 2. CHI-CUADRADO GLOBAL (3 modelos, independiente) ==
+chi2=11.400, gl=2, p=0.0033
+Q de Cochran (datos pareados): Q=21.115, p=0.0000
+
+== 3. COMPARACIONES PAREADAS (McNemar exacto, Holm-Bonferroni, OR y h de Cohen) ==
+ChatGPT Free vs Claude Free: discordantes 7/34, dif=-14.29 pp, p(McNemar)=0.0000, p(Holm)=0.0001, OR=0.21, h=-0.349
+ChatGPT Free vs Gemini Free: discordantes 13/28, dif=-7.94 pp, p(McNemar)=0.0275, p(Holm)=0.0338, OR=0.46, h=-0.183
+Claude Free vs Gemini Free: discordantes 17/5, dif=6.35 pp, p(McNemar)=0.0169, p(Holm)=0.0338, OR=3.40, h=0.166
+
+== 4. POR LENGUAJE (exito %, n=63 por celda) + Fisher/Chi2 entre modelos ==
+Java: ChatGPT Free: 74.6% (n=63) | Claude Free: 77.8% (n=63) | Gemini Free: 81.0% (n=63) | chi2 p=0.6926
+Python: ChatGPT Free: 79.4% (n=63) | Claude Free: 100.0% (n=63) | Gemini Free: 96.8% (n=63) | chi2 p=0.0000
+Scala: ChatGPT Free: 58.7% (n=63) | Claude Free: 77.8% (n=63) | Gemini Free: 58.7% (n=63) | chi2 p=0.0350
+
+== 5. POR VERSION (solo prompts con version; exito % agregado de 3 modelos y por modelo) ==
+Java 17       n= 42 total= 78.6% | ChatGPT Free: 71.4% | Claude Free: 71.4% | Gemini Free: 92.9%
+Java 17 -> 21 n= 21 total= 95.2% | ChatGPT Free: 100.0% | Claude Free: 100.0% | Gemini Free: 85.7%
+Java 21       n= 42 total= 78.6% | ChatGPT Free: 71.4% | Claude Free: 78.6% | Gemini Free: 85.7%
+Java 8        n= 42 total= 52.4% | ChatGPT Free: 42.9% | Claude Free: 57.1% | Gemini Free: 57.1%
+Java 8 -> 17  n= 21 total= 95.2% | ChatGPT Free: 100.0% | Claude Free: 100.0% | Gemini Free: 85.7%
+Java cualquiera n= 21 total= 90.5% | ChatGPT Free: 100.0% | Claude Free: 85.7% | Gemini Free: 85.7%
+Python 3.11     n= 42 total= 90.5% | ChatGPT Free: 78.6% | Claude Free: 100.0% | Gemini Free: 92.9%
+Python 3.11 -> 3.14 n= 21 total= 90.5% | ChatGPT Free: 71.4% | Claude Free: 100.0% | Gemini Free: 100.0%
+Python 3.14     n= 42 total= 90.5% | ChatGPT Free: 78.6% | Claude Free: 100.0% | Gemini Free: 92.9%
+Python 3.9      n= 42 total= 92.9% | ChatGPT Free: 78.6% | Claude Free: 100.0% | Gemini Free: 100.0%
+Python 3.9 -> 3.11 n= 21 total= 95.2% | ChatGPT Free: 85.7% | Claude Free: 100.0% | Gemini Free: 100.0%
+Python cualquiera n= 21 total= 95.2% | ChatGPT Free: 85.7% | Claude Free: 100.0% | Gemini Free: 100.0%
+Scala 2.13     n= 42 total= 57.1% | ChatGPT Free: 42.9% | Claude Free: 71.4% | Gemini Free: 57.1%
+Scala 2.13 -> 3.3 n= 21 total= 85.7% | ChatGPT Free: 85.7% | Claude Free: 100.0% | Gemini Free: 71.4%
+Scala 3.3      n= 42 total= 61.9% | ChatGPT Free: 57.1% | Claude Free: 71.4% | Gemini Free: 57.1%
+Scala 3.3 -> 3.6 n= 21 total= 81.0% | ChatGPT Free: 85.7% | Claude Free: 100.0% | Gemini Free: 57.1%
+Scala 3.6      n= 42 total= 59.5% | ChatGPT Free: 50.0% | Claude Free: 71.4% | Gemini Free: 57.1%
+Scala cualquiera n= 21 total= 61.9% | ChatGPT Free: 57.1% | Claude Free: 71.4% | Gemini Free: 57.1%
+
+== 6. POR TIPO DE PROMPT ==
+neutral              n= 63 total= 82.5% | ChatGPT Free: 81.0% | Claude Free: 85.7% | Gemini Free: 81.0%
+refactor             n=126 total= 90.5% | ChatGPT Free: 88.1% | Claude Free: 100.0% | Gemini Free: 83.3%
+version_constrained  n=378 total= 73.5% | ChatGPT Free: 63.5% | Claude Free: 80.2% | Gemini Free: 77.0%
+
+== 7. POR PARADIGMA (solo version_constrained) ==
+funcional  n=189 total= 72.0% | ChatGPT Free: 63.5% | Claude Free: 79.4% | Gemini Free: 73.0%
+iterativo  n=189 total= 75.1% | ChatGPT Free: 63.5% | Claude Free: 81.0% | Gemini Free: 81.0%
+Chi2 paradigma vs exito: p=0.5599
+
+== 8. REGRESION LOGISTICA (version_constrained): exito ~ modelo + lenguaje + paradigma + version ordinal ==
+                                     Coef.  Std.Err.       z   P>|z|  [0.025  0.975]
+Intercept                          -0.0773    0.3184 -0.2427  0.8082 -0.7014  0.5468
+C(ai_model_name)[T.Claude Free]     0.9472    0.3082  3.0730  0.0021  0.3431  1.5513
+C(ai_model_name)[T.Gemini Free]     0.7400    0.2996  2.4696  0.0135  0.1527  1.3272
+C(language)[T.Python]               1.5619    0.3771  4.1422  0.0000  0.8229  2.3009
+C(language)[T.Scala]               -0.4790    0.2732 -1.7535  0.0795 -1.0144  0.0564
+C(paradigm_requested)[T.iterativo]  0.1880    0.2507  0.7502  0.4531 -0.3032  0.6793
+vidx                                0.3048    0.1545  1.9724  0.0486  0.0019  0.6077
+
+== 9. PRUEBA DE LOC (solo exitosos): Kruskal-Wallis + Mann-Whitney ==
+ChatGPT Free: media=47.9, mediana=29.0, sd=43.2, n=134
+Claude Free: media=34.8, mediana=32.0, sd=16.8, n=161
+Gemini Free: media=33.4, mediana=28.0, sd=17.9, n=149
+Kruskal-Wallis H=1.412, p=0.49351
+  ChatGPT Free vs Claude Free: U=11040, p=0.72967, r_rb=-0.023
+  ChatGPT Free vs Gemini Free: U=10509, p=0.44431, r_rb=-0.053
+  Claude Free vs Gemini Free: U=12982, p=0.21067, r_rb=-0.082
+
+== 10. COMPILACION / FALLOS ==
+ChatGPT Free: compila/ejecuta=82.0%, ratio medio de tests=0.728, fallo por compilacion=34, fallo logico=21
+Claude Free: compila/ejecuta=85.2%, ratio medio de tests=0.852, fallo por compilacion=28, fallo logico=0
+Gemini Free: compila/ejecuta=79.9%, ratio medio de tests=0.788, fallo por compilacion=38, fallo logico=2

@@ -1,4 +1,4 @@
-﻿"""
+"""
 Unit Tests — P03: Flatten Nested List
 =======================================
 """
@@ -15,7 +15,7 @@ class TestFlattenList(unittest.TestCase):
     def setUpClass(cls):
         cls.sol = load_solution()
         if not hasattr(cls.sol, "flatten"): raise AttributeError("Falta funcion 'flatten(nested)'")
-        cls.fn = staticmethod(cls.sol.flatten
+        cls.fn = staticmethod(cls.sol.flatten)
 
     def test_tc01_basic_nesting(self):
         self.assertEqual(self.fn([1,[2,3],[4,[5,6]]]), [1,2,3,4,5,6])

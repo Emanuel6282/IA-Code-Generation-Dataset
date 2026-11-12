@@ -62,3 +62,10 @@ project/plugins/project/
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# IDEs and Editors
+.idea/
+.vscode/
+*.swp
+*.swo
+.bsp/

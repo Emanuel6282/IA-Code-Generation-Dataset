@@ -44,6 +44,57 @@ TEST_MAP_SCALA = {
     'p07': 'P07FloodFillSpec',
 }
 
+FUNC_MAP_SCALA = {
+    'p01': 'wordFrequency',
+    'p02': 'binarySearch',
+    'p03': 'flatten',
+    'p04': 'isBalanced',
+    'p05': 'processTransactions',
+    'p06': 'maxSubarraySum',
+    'p07': 'floodFill',
+}
+
+def strip_comments(code):
+    code = re.sub(r'/\*.*?\*/', lambda m: ' ' * len(m.group(0)), code, flags=re.S)
+    code = re.sub(r'//[^\n]*', lambda m: ' ' * len(m.group(0)), code)
+    return code
+
+def prepare_java_code(code):
+    if not code.strip().startswith('import'):
+        code = "import java.util.*;\nimport java.util.stream.*;\n" + code
+    nc = strip_comments(code)
+    m = re.search(r'\bpublic\s+class\s+(\w+)', nc)
+    if m:
+        orig_name = m.group(1)
+        code = re.sub(r'\bpublic\s+class\s+' + re.escape(orig_name) + r'\b', 'public class Solution', code, count=1)
+        if orig_name != 'Solution':
+            code = re.sub(r'\b' + re.escape(orig_name) + r'\b', 'Solution', code)
+    else:
+        code = f"public class Solution {{\n{code}\n}}"
+    return code
+
+def prepare_scala_code(code, prompt_id):
+    problem_id = prompt_id.split('_')[0].lower()
+    fn = FUNC_MAP_SCALA.get(problem_id, '')
+    nc = strip_comments(code)
+    is_top_level_fn = bool(fn and re.search(rf'(?m)^def\s+{fn}\b', nc))
+    objs = list(re.finditer(r'\bobject\s+(\w+)', nc))
+    if objs and not is_top_level_fn:
+        fn_m = re.search(rf'\bdef\s+{fn}\b', nc) if fn else None
+        target_obj = objs[-1].group(1)
+        if fn_m:
+            before = [o.group(1) for o in objs if o.start() < fn_m.start()]
+            if before:
+                target_obj = before[-1]
+        code = re.sub(r'\bobject\s+' + re.escape(target_obj) + r'\b', 'object Solution', code, count=1)
+        if target_obj != 'Solution':
+            code = re.sub(r'\b' + re.escape(target_obj) + r'\b', 'Solution', code)
+        if not code.endswith('\n'):
+            code += '\n'
+    else:
+        code = f"object Solution {{\n{code}\n}}\n"
+    return code
+
 def count_loc(code):
     return len([line for line in code.splitlines() if line.strip() and not line.strip().startswith(('#', '//'))])
 
@@ -79,14 +130,7 @@ def run_java_test(prompt_id, file_path, target_version):
     if not test_class:
         return 'NO', '0.0', 'Test map not found'
         
-    code = file_path.read_text('utf-8')
-    if not code.strip().startswith('import'):
-        code = "import java.util.*;\nimport java.util.stream.*;\n" + code
-
-    if 'public class' in code:
-        code = re.sub(r'public\s+class\s+\w+', 'public class Solution', code)
-    else:
-        code = f"public class Solution {{\n{code}\n}}"
+    code = prepare_java_code(file_path.read_text('utf-8'))
         
     dest = BASE_DIR / 'unit_tests' / 'java' / 'src' / 'main' / 'java' / 'Solution.java'
     if dest.exists(): dest.unlink()
@@ -139,11 +183,7 @@ def run_scala_test(prompt_id, file_path, target_version):
     if not test_class:
         return 'NO', '0.0', 'Test map not found'
         
-    code = file_path.read_text('utf-8')
-    if re.search(r'\bobject\s+\w+', code):
-        code = re.sub(r'\bobject\s+\w+', 'object Solution', code)
-    else:
-        code = f"object Solution {{\n{code}\n}}"
+    code = prepare_scala_code(file_path.read_text('utf-8'), prompt_id)
         
     dest = BASE_DIR / 'unit_tests' / 'scala' / 'src' / 'main' / 'scala' / 'Solution.scala'
     if dest.exists(): dest.unlink()
